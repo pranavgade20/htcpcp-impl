@@ -15,19 +15,22 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include <iostream>
+#ifndef HTCPCP_POT_H
+#define HTCPCP_POT_H
+
 #include <string>
-#include "networking/ServerSocket.h"
-#include "networking/Socket.h"
-#include "networking/Request.h"
 
-int main() {
-    ServerSocket serverSocket;
-    Socket* socket = serverSocket.accept();
+#include <Socket.h>
+#include <HTTPRequestType.h>
+#include "additions/MilkType.h"
 
-    Request request(socket);
-    *socket << "HTTP/1.1 200 OK\r\n\r\n Hello World\r\n" << std::endl;
+class Pot {
+private:
+    bool brewing;
+public:
+    Pot(float capacity) : capacity(capacity) {};
+    const float capacity;
+};
 
-    socket->close();
-    return 0;
-}
+
+#endif //HTCPCP_POT_H

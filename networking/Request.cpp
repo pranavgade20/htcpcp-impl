@@ -15,19 +15,19 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
+#include "Request.h"
+
 #include <iostream>
-#include <string>
-#include "networking/ServerSocket.h"
-#include "networking/Socket.h"
-#include "networking/Request.h"
 
-int main() {
-    ServerSocket serverSocket;
-    Socket* socket = serverSocket.accept();
+Request::Request(Socket *socket) {
+    std::string method, path, protocol;
+    *socket >> method;
+    *socket >> path;
+    *socket >> protocol;
 
-    Request request(socket);
-    *socket << "HTTP/1.1 200 OK\r\n\r\n Hello World\r\n" << std::endl;
-
-    socket->close();
-    return 0;
+    std::cout << method << path << std::endl;
+    // TODO : read into a map
+    std::string line;
+    *socket >> line;
+    std::cout << line << std::endl;
 }

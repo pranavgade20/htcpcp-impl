@@ -15,19 +15,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include <iostream>
-#include <string>
-#include "networking/ServerSocket.h"
-#include "networking/Socket.h"
-#include "networking/Request.h"
+#ifndef HTCPCP_MILKTYPE_H
+#define HTCPCP_MILKTYPE_H
 
-int main() {
-    ServerSocket serverSocket;
-    Socket* socket = serverSocket.accept();
 
-    Request request(socket);
-    *socket << "HTTP/1.1 200 OK\r\n\r\n Hello World\r\n" << std::endl;
+enum class MilkType {
+    CREAM, HALF_AND_HALF, WHOLE_MILK, PART_SKIM, SKIM, NON_DAIRY,
+};
 
-    socket->close();
-    return 0;
-}
+
+#endif //HTCPCP_MILKTYPE_H

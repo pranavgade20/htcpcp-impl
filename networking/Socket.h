@@ -21,6 +21,8 @@
 #include <streambuf>
 #include <ostream>
 #include <istream>
+#include <sys/socket.h>
+#include <unistd.h>
 
 class Socket : public std::streambuf, public std::ostream, public std::istream {
 private:

@@ -16,8 +16,6 @@
  *************************************************************************/
 
 #include "Socket.h"
-#include <sys/socket.h>
-#include <unistd.h>
 
 Socket::Socket(int fd) : std::ostream(this), std::istream(this) {
     fd_ = fd;

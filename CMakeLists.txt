@@ -6,8 +6,10 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 add_subdirectory(networking)
 
+include(pots/CMakeLists.txt)
 set(SRC
         main.cpp
+        ${POTS_SRC}
 )
 
 add_executable(htcpcp ${SRC})

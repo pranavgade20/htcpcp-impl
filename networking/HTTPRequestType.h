@@ -15,19 +15,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include <iostream>
-#include <string>
-#include "networking/ServerSocket.h"
-#include "networking/Socket.h"
-#include "networking/Request.h"
+#ifndef HTCPCP_HTTPREQUESTTYPE_H
+#define HTCPCP_HTTPREQUESTTYPE_H
 
-int main() {
-    ServerSocket serverSocket;
-    Socket* socket = serverSocket.accept();
 
-    Request request(socket);
-    *socket << "HTTP/1.1 200 OK\r\n\r\n Hello World\r\n" << std::endl;
+enum class HTTPRequestType {
+    GET, POST, BREW,
+};
 
-    socket->close();
-    return 0;
-}
+
+#endif //HTCPCP_HTTPREQUESTTYPE_H
