@@ -31,3 +31,37 @@ Request::Request(Socket *socket) {
     *socket >> line;
     std::cout << line << std::endl;
 }
+
+
+// Sample request
+
+// BREW /pot-2 HTCPCP/1.0
+// Host: localhost:8081
+// User-Agent: curl
+// Accept: text/html
+// Accept-Language: en-US,en
+// Content-type: application/coffee-pot-command; boundary=---------------------------58123037437716747452831683647
+// Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;
+
+// -----------------------------58123037437716747452831683647
+// Content-Type: message/coffeepot
+
+// start
+
+
+// HTCPCP/1.0 406 Not Acceptable
+// Date: Fri, 04 Jun 2021 15:22:53 GMT
+// Server: Coffee Pot
+// Content-Type: text/html; charset=utf-8
+
+// HTCPCP/1.0 418 I'm a teapot
+// Date: Fri, 04 Jun 2021 15:22:53 GMT
+// Server: Tea Pot
+// Content-Type: text/html; charset=utf-8
+
+// HTCPCP/1.0 200 OK
+// Date: Fri, 04 Jun 2021 15:22:53 GMT
+// Server: Coffee Pot
+// Content-Type: text/html; charset=utf-8
+
+// <html> Brewing </html>
