@@ -19,8 +19,10 @@
 #define HTCPCP_SOCKET_H
 
 #include <streambuf>
+#include <ostream>
+#include <istream>
 
-class Socket : public std::streambuf {
+class Socket : public std::streambuf, public std::ostream, public std::istream {
 private:
     static const int bufSize = 1024;
     char outBuf_[bufSize];

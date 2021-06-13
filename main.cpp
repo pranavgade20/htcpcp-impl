@@ -24,16 +24,14 @@ int main() {
     ServerSocket serverSocket;
     Socket* socket = serverSocket.accept();
 
-    std::istream in(socket);
-    std::ostream out(socket);
     std::string str;
-    in >> str;
+    *socket >> str;
     std::cout << str << " ";
-    in >> str;
+    *socket >> str;
     std::cout << str << " ";
-    in >> str;
+    *socket >> str;
     std::cout << str << std::endl;
-    out << "HTTP/1.1 200 OK\r\n\r\n Hello World\r\n" << std::endl;
+    *socket << "HTTP/1.1 200 OK\r\n\r\n Hello World\r\n" << std::endl;
 
     socket->close();
     return 0;

@@ -19,7 +19,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
-Socket::Socket(int fd) {
+Socket::Socket(int fd) : std::ostream(this), std::istream(this) {
     fd_ = fd;
     setg(inBuf_, inBuf_, inBuf_);
     setp(outBuf_, outBuf_ + bufSize - 1);
