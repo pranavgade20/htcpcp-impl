@@ -20,7 +20,7 @@
 
 
 enum class SpiceType { 
-    CINNAMON, NUTMEG, CARDAMOM, CLOVE, 
+    NONE, CINNAMON, NUTMEG, CARDAMOM, CLOVE, 
 };
 
 

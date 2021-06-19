@@ -20,7 +20,7 @@
 
 
 enum class SyrupType {
-    VANILLA, ALMOND, RASPBERRY, CHOCOLATE,
+    NONE, VANILLA, ALMOND, RASPBERRY, CHOCOLATE,
 };
 
 

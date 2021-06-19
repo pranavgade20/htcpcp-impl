@@ -22,7 +22,11 @@
 
 #include <Socket.h>
 #include <HTTPRequestType.h>
+#include "additions/AlcoholType.h"
 #include "additions/MilkType.h"
+#include "additions/SpiceType.h"
+#include "additions/SweetenerType.h"
+#include "additions/SyrupType.h"
 
 class Pot {
 private:

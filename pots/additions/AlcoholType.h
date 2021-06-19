@@ -20,7 +20,7 @@
 
 
 enum class AlcoholType {
-    WHISKY, RUM, KAHLUA, AQUAVIT,
+    NONE, WHISKY, RUM, KAHLUA, AQUAVIT,
 };
 
 
