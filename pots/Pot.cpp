@@ -31,24 +31,24 @@ Cup* Pot::brew(Request req) {
     return cup; 
 };
 
-Pot::addMilk(Cup* cup, std::string type) {
-    
+Pot::addMilk(Cup* cup, int type) {
+    cup->setMilk(type);
 };
 
-Pot::addSweetener(Cup* cup, std::string type) {
-    
+Pot::addSweetener(Cup* cup, int type) {
+    cup->setSweetener(type);
 };
 
-Pot::addSyrup(Cup* cup, std::string type) {
-    
+Pot::addSyrup(Cup* cup, int type) {
+    cup->setSyrup(type);
 };
 
-Pot::addSpice(Cup* cup, std::string type) {
-    
+Pot::addSpice(Cup* cup, int type) {
+    cup->setSpice(type);
 };
 
-Pot::addAlcohol(Cup* cup, std::string type) {
-    
+Pot::addAlcohol(Cup* cup, int type) {
+    cup->setAlcohol(type);
 };
 
 
