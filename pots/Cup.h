@@ -1,5 +1,5 @@
 /*************************************************************************
- *  Copyright (C) 2020 by Pranav Gade <pranavgade20@gmail.com>, Nehal Sharma <lcs2020001@iiitl.ac.in>            *
+ *  Copyright (C) 2020 by Nehal Sharma <lcs2020001@iiitl.ac.in>           *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -15,44 +15,23 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "Pot.h"
-#include "Cup.h"
+#ifndef HTCPCP_CUP_H
+#define HTCPCP_CUP_H 
 
-Cup Pot::brew(Request req) {
-    // placeholder additions map, called add_map from req
-    std::map<std::string, std::string> add_map;
-    Cup cup = Cup();
-    brewing = true;
-    try {
-        cup = addMilk(Cup cup, add_map["milk-type"]);
-        cup = addSweetener(Cup cup, add_map["sweetener-type"]); 
-        cup = addSyrup(Cup cup, add_map["syrup-type"]);
-        cup = addSpice(Cup cup, add_map["spice-type"]);
-        cup = addAlcohol(Cup cup, add_map["alcohol-type"]);
-        return cup; 
-    } catch (Error e) {
+#include <string> 
 
-    }
-} 
+#include "additions/AlcoholType.h"
+#include "additions/MilkType.h"
+#include "additions/SpiceType.h"
+#include "additions/SweetenerType.h"
+#include "additions/SyrupType.h"
 
-Cup Pot::addMilk(Cup cup, std::string type) {
+class Cup {
+private:
     
-}
-
-Cup Pot::addSweetener(Cup cup, std::string type) {
-    
-}
-
-Cup Pot::addSyrup(Cup cup, std::string type) {
-    
-}
-
-Cup Pot::addSpice(Cup cup, std::string type) {
-    
-}
-
-Cup Pot::addAlcohol(Cup cup, std::string type) {
-    
-}
+public:
+    Cup();
+};
 
 
+#endif //HTCPCP_CUP_H
