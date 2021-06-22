@@ -1,5 +1,5 @@
 /*************************************************************************
- *  Copyright (C) 2020 by Pranav Gade <pranavgade20@gmail.com>           *
+ *  Copyright (C) 2020 by Pranav Gade <pranavgade20@gmail.com>, Nehal Sharma <lcs2020001@iiitl.ac.in>           *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -16,24 +16,32 @@
  *************************************************************************/
 
 #ifndef HTCPCP_POT_H
-#define HTCPCP_POT_H
+#define HTCPCP_POT_H 
 
 #include <string>
-
+#include <map>
+#include "Cup.h"
 #include <Socket.h>
 #include <HTTPRequestType.h>
+#include <Request.h>
 #include "additions/AlcoholType.h"
 #include "additions/MilkType.h"
 #include "additions/SpiceType.h"
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
 
-class Pot {
-private:
+class Pot { 
+private: 
     bool brewing;
 public:
-    Pot(float capacity) : capacity(capacity) {};
-    const float capacity;
+    Pot(float capacity) : capacity(capacity) {}; 
+    Cup* brew(Request* req);
+    virtual void addMilk(Cup* cup, std::string type);
+    virtual void addSweetener(Cup* cup, std::string type);
+    virtual void addSyrup(Cup* cup, std::string type);
+    virtual void addSpice(Cup* cup, std::string type);
+    virtual void addAlcohol(Cup* cup, std::string type);
+    const float capacity; 
 };
 
 
