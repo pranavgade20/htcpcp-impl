@@ -17,22 +17,28 @@
 
 #include "Cup.h"
 
+#include "additions/AlcoholType.h"
+#include "additions/MilkType.h"
+#include "additions/SpiceType.h"
+#include "additions/SweetenerType.h"
+#include "additions/SyrupType.h"
+
 Cup::setMilk(int key) {
-    milk = key;
+    milk = static_cast<MilkType>(key);
 };
 
 Cup::setSweetener(int key) {
-    sweetener = key;
+    sweetener = static_cast<SweetenerType>(key);
 };
 
 Cup::setSyrup(int key) {
-    syrup = key;
+    syrup = static_cast<SyrupType>(key);
 };
 
 Cup::setSpice(int key) {
-    spice = key;
+    spice = static_cast<SpiceType>(key);
 };
 
 Cup::setAlcohol(int key) {
-    alcohol = key;
+    alcohol = static_cast<AlcoholType>(key);
 };
