@@ -19,6 +19,7 @@
 #define HTCPCP_POT_H 
 
 #include <string>
+#include <map>
 #include "Cup.h"
 #include <Socket.h>
 #include <HTTPRequestType.h>
