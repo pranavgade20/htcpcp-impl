@@ -36,11 +36,11 @@ private:
 public:
     Pot(float capacity) : capacity(capacity) {}; 
     Cup* brew(Request* req);
-    virtual void addMilk(Cup* cup, std::string type);
-    virtual void addSweetener(Cup* cup, std::string type);
-    virtual void addSyrup(Cup* cup, std::string type);
-    virtual void addSpice(Cup* cup, std::string type);
-    virtual void addAlcohol(Cup* cup, std::string type);
+    virtual void addMilk(Cup* cup, int type);
+    virtual void addSweetener(Cup* cup, int type);
+    virtual void addSyrup(Cup* cup, int type);
+    virtual void addSpice(Cup* cup, int type);
+    virtual void addAlcohol(Cup* cup, int type);
     const float capacity; 
 };
 
