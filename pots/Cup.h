@@ -28,9 +28,18 @@
 
 class Cup {
 private:
-    
+    MilkType milk;
+    SweetenerType sweetener;
+    SyrupType syrup;
+    SpiceType spice;
+    AlcoholType alcohol;
 public:
     Cup();
+    setMilk(int key);
+    setSweetener(int key);
+    setSyrup(int key);
+    setSpice(int key);
+    setAlcohol(int key);
 };
 
 
