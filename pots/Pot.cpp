@@ -14,45 +14,41 @@
  *  You should have received a copy of the GNU General Public License    *
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
-//https://github.com/pranavgade20/htcpcp-impl/pull/1/checks?check_run_id=2886199472
+
 #include "Pot.h"
 #include "Cup.h"
 
-Cup Pot::brew(Request req) {
+Cup* Pot::brew(Request req) {
     // placeholder additions map, called add_map from req
     std::map<std::string, std::string> add_map;
-    Cup cup = Cup();
+    Cup* cup = new Cup;
     brewing = true;
-    try {
-        cup = addMilk(Cup cup, add_map["milk-type"]);
-        cup = addSweetener(Cup cup, add_map["sweetener-type"]); 
-        cup = addSyrup(Cup cup, add_map["syrup-type"]);
-        cup = addSpice(Cup cup, add_map["spice-type"]);
-        cup = addAlcohol(Cup cup, add_map["alcohol-type"]);
-        return cup; 
-    } catch (Error e) {
+    addMilk(cup, add_map["milk-type"]);
+    addSweetener(cup, add_map["sweetener-type"]); 
+    addSyrup(cup, add_map["syrup-type"]);
+    addSpice(cup, add_map["spice-type"]);
+    addAlcohol(cup, add_map["alcohol-type"]);
+    return cup; 
+};
 
-    }
-} 
-
-Cup Pot::addMilk(Cup cup, std::string type) {
+Pot::addMilk(Cup* cup, std::string type) {
     
-}
+};
 
-Cup Pot::addSweetener(Cup cup, std::string type) {
+Pot::addSweetener(Cup* cup, std::string type) {
     
-}
+};
 
-Cup Pot::addSyrup(Cup cup, std::string type) {
+Pot::addSyrup(Cup* cup, std::string type) {
     
-}
+};
 
-Cup Pot::addSpice(Cup cup, std::string type) {
+Pot::addSpice(Cup* cup, std::string type) {
     
-}
+};
 
-Cup Pot::addAlcohol(Cup cup, std::string type) {
+Pot::addAlcohol(Cup* cup, std::string type) {
     
-}
+};
 
 
