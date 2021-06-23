@@ -37,27 +37,27 @@ Cup* Pot::brew(Request req) {
     return cup; 
 };
 
-Pot::addMilk(Cup* cup, int type) {
+void Pot::addMilk(Cup* cup, int type) {
     MilkType milk = static_cast<MilkType>(type);
     cup->setMilk(milk);
 };
 
-Pot::addSweetener(Cup* cup, int type) {
+void Pot::addSweetener(Cup* cup, int type) {
     SweetenerType sweetener = static_cast<SweetenerType>(type);
     cup->setSweetener(sweetener);
 };
 
-Pot::addSyrup(Cup* cup, int type) {
+void Pot::addSyrup(Cup* cup, int type) {
     SyrupType syrup = static_cast<SyrupType>(type);
     cup->setSyrup(syrup);
 };
 
-Pot::addSpice(Cup* cup, int type) {
+void Pot::addSpice(Cup* cup, int type) {
     SpiceType spice = static_cast<SpiceType>(type);
     cup->setSpice(spice);
 };
 
-Pot::addAlcohol(Cup* cup, int type) {
+void Pot::addAlcohol(Cup* cup, int type) {
     AlcoholType alcohol = static_cast<AlcoholType>(type);
     cup->setAlcohol(alcohol);
 };
