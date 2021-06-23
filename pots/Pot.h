@@ -34,7 +34,7 @@ class Pot {
 private: 
     bool brewing;
 public:
-    Pot() : brewingy(false) {}; 
+    Pot() : brewing(false) {}; 
     Cup* brew(Request* req);
     virtual void addMilk(Cup* cup, int type);
     virtual void addSweetener(Cup* cup, int type);
