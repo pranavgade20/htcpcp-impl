@@ -32,21 +32,21 @@ Cup::Cup() {
 }
 
 void Cup::setMilk(MilkType milk) {
-    this.milk = milk;
+    this->milk = milk;
 };
 
 void Cup::setSweetener(SweeteerType sweetener) {
-    this.sweetener = sweetener;
+    this->sweetener = sweetener;
 };
 
 void Cup::setSyrup(SyrupType syrup) {
-    this.syrup = syrup;
+    this->syrup = syrup;
 };
 
 void Cup::setSpice(SpiceType spice) {
-    this.spice = spice;
+    this->spice = spice;
 };
 
 void Cup::setAlcohol(AlcoholType alcohol) {
-    this.alcohol = alcohol;
+    this->alcohol = alcohol;
 };
