@@ -24,7 +24,7 @@
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
 
-Cup* Pot::brew(Request req) {
+Cup* Pot::brew(Request* req) {
     // placeholder additions map, called add_map from req
     std::map<std::string, int> add_map;
     Cup* cup = new Cup;
