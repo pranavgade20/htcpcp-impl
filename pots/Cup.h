@@ -35,11 +35,11 @@ private:
     AlcoholType alcohol;
 public:
     Cup();
-    void setMilk(int key);
-    void setSweetener(int key);
-    void setSyrup(int key);
-    void setSpice(int key);
-    void setAlcohol(int key);
+    void setMilk(MilkType milk);
+    void setSweetener(SweetenerType sweetener);
+    void setSyrup(SyrupType syrup);
+    void setSpice(SpiceType spice);
+    void setAlcohol(AlcoholType alcohol);
 };
 
 

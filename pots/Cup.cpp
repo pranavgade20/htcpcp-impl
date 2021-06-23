@@ -23,22 +23,30 @@
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
 
-Cup::setMilk(int key) {
-    milk = static_cast<MilkType>(key);
+Cup::Cup() {
+    milk = MilkType::NONE;
+    sweetener = SweetenerType::NONE;
+    syrup = SyrupType::NONE;
+    spice = SpiceType::NONE;
+    alcohol = AlcoholType::NONE;
+}
+
+Cup::setMilk(MilkType milk) {
+    this.milk = milk;
 };
 
-Cup::setSweetener(int key) {
-    sweetener = static_cast<SweetenerType>(key);
+Cup::setSweetener(SweeteerType sweetener) {
+    this.sweetener = sweetener;
 };
 
-Cup::setSyrup(int key) {
-    syrup = static_cast<SyrupType>(key);
+Cup::setSyrup(SyrupType syrup) {
+    this.syrup = syrup;
 };
 
-Cup::setSpice(int key) {
-    spice = static_cast<SpiceType>(key);
+Cup::setSpice(SpiceType spice) {
+    this.spice = spice;
 };
 
-Cup::setAlcohol(int key) {
-    alcohol = static_cast<AlcoholType>(key);
+Cup::setAlcohol(AlcoholType alcohol) {
+    this.alcohol = alcohol;
 };

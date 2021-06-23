@@ -18,9 +18,15 @@
 #include "Pot.h"
 #include "Cup.h"
 
+#include "additions/AlcoholType.h"
+#include "additions/MilkType.h"
+#include "additions/SpiceType.h"
+#include "additions/SweetenerType.h"
+#include "additions/SyrupType.h"
+
 Cup* Pot::brew(Request req) {
     // placeholder additions map, called add_map from req
-    std::map<std::string, std::string> add_map;
+    std::map<std::string, int> add_map;
     Cup* cup = new Cup;
     brewing = true;
     addMilk(cup, add_map["milk-type"]);
@@ -32,23 +38,28 @@ Cup* Pot::brew(Request req) {
 };
 
 Pot::addMilk(Cup* cup, int type) {
-    cup->setMilk(type);
+    MilkType milk = static_cast<MilkType>(type);
+    cup->setMilk(milk);
 };
 
 Pot::addSweetener(Cup* cup, int type) {
-    cup->setSweetener(type);
+    SweetenerType sweetener = static_cast<SweetenerType>(type);
+    cup->setSweetener(sweetener);
 };
 
 Pot::addSyrup(Cup* cup, int type) {
-    cup->setSyrup(type);
+    SyrupType syrup = static_cast<SyrupType>(type);
+    cup->setSyrup(syrup);
 };
 
 Pot::addSpice(Cup* cup, int type) {
-    cup->setSpice(type);
+    SpiceType spice = static_cast<SpiceType>(type);
+    cup->setSpice(spice);
 };
 
 Pot::addAlcohol(Cup* cup, int type) {
-    cup->setAlcohol(type);
+    AlcoholType alcohol = static_cast<AlcoholType>(type);
+    cup->setAlcohol(alcohol);
 };
 
 
