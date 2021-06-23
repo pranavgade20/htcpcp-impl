@@ -31,22 +31,22 @@ Cup::Cup() {
     alcohol = AlcoholType::NONE;
 }
 
-Cup::setMilk(MilkType milk) {
+void Cup::setMilk(MilkType milk) {
     this.milk = milk;
 };
 
-Cup::setSweetener(SweeteerType sweetener) {
+void Cup::setSweetener(SweeteerType sweetener) {
     this.sweetener = sweetener;
 };
 
-Cup::setSyrup(SyrupType syrup) {
+void Cup::setSyrup(SyrupType syrup) {
     this.syrup = syrup;
 };
 
-Cup::setSpice(SpiceType spice) {
+void Cup::setSpice(SpiceType spice) {
     this.spice = spice;
 };
 
-Cup::setAlcohol(AlcoholType alcohol) {
+void Cup::setAlcohol(AlcoholType alcohol) {
     this.alcohol = alcohol;
 };
