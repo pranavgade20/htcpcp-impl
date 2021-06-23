@@ -35,7 +35,7 @@ void Cup::setMilk(MilkType milk) {
     this->milk = milk;
 };
 
-void Cup::setSweetener(SweeteerType sweetener) {
+void Cup::setSweetener(SweetenerType sweetener) {
     this->sweetener = sweetener;
 };
 
