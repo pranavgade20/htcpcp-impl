@@ -24,18 +24,28 @@
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
 
-Cup* Pot::brew(Request* req) {
+void Pot::brew(Request* req) {
     // placeholder additions map, called add_map from req
     std::map<std::string, int> add_map;
-    Cup* cup = new Cup;
+    cup = new Cup;
     brewing = true;
     addMilk(cup, add_map["milk-type"]);
     addSweetener(cup, add_map["sweetener-type"]); 
     addSyrup(cup, add_map["syrup-type"]);
     addSpice(cup, add_map["spice-type"]);
     addAlcohol(cup, add_map["alcohol-type"]);
-    return cup; 
+    brewing = false;
 };
+
+/**
+ * get the cup from this pot
+ * @return pointer to cup if not removed already, nullptr otherwise
+ */
+Cup* Pot::removeCup() {
+    Cup* ret = cup;
+    cup = nullptr;
+    return ret;
+}
 
 void Pot::addMilk(Cup* cup, int type) {
     MilkType milk = static_cast<MilkType>(type);
@@ -60,6 +70,10 @@ void Pot::addSpice(Cup* cup, int type) {
 void Pot::addAlcohol(Cup* cup, int type) {
     AlcoholType alcohol = static_cast<AlcoholType>(type);
     cup->setAlcohol(alcohol);
+}
+
+bool Pot::isBrewing() {
+    return brewing;
 };
 
 

@@ -10,11 +10,12 @@ set(NETWORKING_SRC
         Request.h
 )
 
-add_library(networking ServerSocket.cpp Socket.cpp HTTPRequestType.h Request.cpp)
+add_library(networking STATIC ${NETWORKING_SRC})
 
+#target_link_libraries(networking pots)
 target_include_directories(networking
         INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
         )
 
-install(TARGETS networking DESTINATION lib)
-install(FILES ${NETWORKING_SRC} DESTINATION include)
+#install(TARGETS networking DESTINATION lib)
+#install(FILES ${NETWORKING_SRC} DESTINATION include)

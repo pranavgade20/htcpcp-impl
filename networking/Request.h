@@ -18,7 +18,7 @@
 #ifndef HTCPCP_REQUEST_H
 #define HTCPCP_REQUEST_H
 
-#include <Socket.h>
+#include "Socket.h"
 
 class Request {
 public:

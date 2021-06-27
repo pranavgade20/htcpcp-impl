@@ -33,14 +33,18 @@
 class Pot { 
 private: 
     bool brewing;
+    Cup* cup;
 public:
-    Pot() : brewing(false) {}; 
-    Cup* brew(Request* req);
+    Pot() : brewing(false),cup(nullptr) {};
+    void brew(Request* req);
     virtual void addMilk(Cup* cup, int type);
     virtual void addSweetener(Cup* cup, int type);
     virtual void addSyrup(Cup* cup, int type);
     virtual void addSpice(Cup* cup, int type);
-    virtual void addAlcohol(Cup* cup, int type); 
+    virtual void addAlcohol(Cup* cup, int type);
+
+    Cup* removeCup();
+    bool isBrewing();
 };
 
 

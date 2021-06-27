@@ -1,11 +1,21 @@
 cmake_minimum_required(VERSION 3.20)
 
-include(pots/additions/CMakeLists.txt)
+include(additions/CMakeLists.txt)
 
 set(POTS_SRC
-        pots/Pot.cpp
-        pots/Pot.h
-        pots/Cup.cpp
-        pots/Cup.h
+        Pot.cpp
+        Pot.h
+        Cup.cpp
+        Cup.h
         ${ADDITIONS_SRC}
 )
+
+add_library(pots STATIC ${POTS_SRC})
+
+target_link_libraries(pots networking)
+target_include_directories(pots
+        INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+
+#install(TARGETS networking DESTINATION lib)
+#install(FILES ${POTS_SRC} DESTINATION include)
