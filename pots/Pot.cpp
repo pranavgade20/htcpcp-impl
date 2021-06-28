@@ -47,27 +47,27 @@ Cup* Pot::removeCup() {
     return ret;
 }
 
-void Pot::addMilk(Cup* cup, int type) {
+void Pot::addMilk(int type) {
     MilkType milk = static_cast<MilkType>(type);
     cup->setMilk(milk);
 };
 
-void Pot::addSweetener(Cup* cup, int type) {
+void Pot::addSweetener(int type) {
     SweetenerType sweetener = static_cast<SweetenerType>(type);
     cup->setSweetener(sweetener);
 };
 
-void Pot::addSyrup(Cup* cup, int type) {
+void Pot::addSyrup(int type) {
     SyrupType syrup = static_cast<SyrupType>(type);
     cup->setSyrup(syrup);
 };
 
-void Pot::addSpice(Cup* cup, int type) {
+void Pot::addSpice(int type) {
     SpiceType spice = static_cast<SpiceType>(type);
     cup->setSpice(spice);
 };
 
-void Pot::addAlcohol(Cup* cup, int type) {
+void Pot::addAlcohol(int type) {
     AlcoholType alcohol = static_cast<AlcoholType>(type);
     cup->setAlcohol(alcohol);
 }
