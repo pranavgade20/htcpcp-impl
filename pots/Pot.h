@@ -37,11 +37,11 @@ private:
 public:
     Pot() : brewing(false),cup(nullptr) {};
     void brew(Request* req);
-    virtual void addMilk(Cup* cup, int type);
-    virtual void addSweetener(Cup* cup, int type);
-    virtual void addSyrup(Cup* cup, int type);
-    virtual void addSpice(Cup* cup, int type);
-    virtual void addAlcohol(Cup* cup, int type);
+    virtual void addMilk(int type);
+    virtual void addSweetener(int type);
+    virtual void addSyrup(int type);
+    virtual void addSpice(int type);
+    virtual void addAlcohol(int type);
 
     Cup* removeCup();
     bool isBrewing();
