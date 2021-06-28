@@ -29,11 +29,11 @@ void Pot::brew(Request* req) {
     std::map<std::string, int> add_map;
     cup = new Cup;
     brewing = true;
-    addMilk(cup, add_map["milk-type"]);
-    addSweetener(cup, add_map["sweetener-type"]); 
-    addSyrup(cup, add_map["syrup-type"]);
-    addSpice(cup, add_map["spice-type"]);
-    addAlcohol(cup, add_map["alcohol-type"]);
+    addMilk(add_map["milk-type"]);
+    addSweetener(add_map["sweetener-type"]); 
+    addSyrup(add_map["syrup-type"]);
+    addSpice(add_map["spice-type"]);
+    addAlcohol(add_map["alcohol-type"]);
     brewing = false;
 };
 
