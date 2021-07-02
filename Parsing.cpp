@@ -36,9 +36,16 @@ obj<<accept_additions;
 temp=" ";
 
 vector<string> holder;
-map <string,string> holdermap;
 
+map <string, int> add_map;
 
+// initialising all additions with NONE    
+add_map["milk-type"] = MilkType::NONE;
+add_map["spice-type"] = SpiceType::NONE;
+add_map["sweetener-type"] = SweetenerType::NONE;
+add_map["syrup-type"] = SyrupType::NONE;
+add_map["alcohol-type"] = AlcoholType::NONE;
+    
 while(obj>>temp){
     holder.push_back(temp);
 }
@@ -52,75 +59,98 @@ while (it!=holder.end())
     string val;
     getline(tempobj,type,'=');
     getline(tempobj,val,';');
-    holdermap[type]=val;
-    it++;
-}
-map<string,int> parsedmap;
 
-if(holdermap["milk-type"]=="CREAM"){
-    parsedmap["milk-type"]=MilkType::CREAM;
-}
-else if(holdermap["milk-type"]=="HALF_AND_HALF"){
-    parsedmap["milk-type"]=MilkType::HALF_AND_HALF;
-}
-else if(holdermap["milk-type"]=="WHOLE_MILK"){
-    parsedmap["milk-type"]=MilkType::WHOLE_MILK;
-}
-else if(holdermap["milk-type"]=="PART_SKIM"){
-    parsedmap["milk-type"]=MilkType::PART_SKIM;
-}
-else if(holdermap["milk-type"]=="NON_DAIRY"){
-    parsedmap["milk-type"]=MilkType::NON_DAIRY;
-}
-if(holdermap["spice-type"]=="CINNAMON"){
-    parsedmap["spice-type"]=SpiceType::CINNAMON;
-}
-else if(holdermap["spice-type"]=="NUTMEG"){
-    parsedmap["spice-type"]=SpiceType::NUTMEG;
-}
-else if(holdermap["spice-type"]=="CARDAMOM"){
-    parsedmap["spice-type"]=SpiceType::CARDAMOM;
-}
-else if(holdermap["spice-type"]=="CLOVE"){
-    parsedmap["spice-type"]=SpiceType::CLOVE;
-}
-if(holdermap["sweetener-type"]=="SUGAR"){
-    parsedmap["sweetener-type"]=MilkType::SUGAR;
-}
-else if(holdermap["sweetener-type"]=="STEVIA"){
-    parsedmap["sweetener-type"]=MilkType::STEVIA;
-}
-else if(holdermap["sweetener-type"]=="HONEY"){
-    parsedmap["sweetener-type"]=MilkType::HONEY;
-}
-else if(holdermap["sweetener-type"]=="MAPLE_SYRUP"){
-    parsedmap["sweetener-type"]=MilkType::MAPLE_SYRUP;
-}
-else if(holdermap["sweetener-type"]=="AGAVE"){
-    parsedmap["sweetener-type"]=MilkType::AGAVE;
-}
-if(holdermap["syrup-type"]=="VANILLA"){
-    parsedmap["syrup-type"]=MilkType::VANILLA;
-}
-else if(holdermap["syrup-type"]=="ALMOND"){
-    parsedmap["syrup-type"]=MilkType::ALMOND;
-}
-else if(holdermap["syrup-type"]=="RASPBERRY"){
-    parsedmap["syrup-type"]=MilkType::RASPBERRY;
-}
-else if(holdermap["syrup-type"]=="CHOCOLATE"){
-    parsedmap["syrup-type"]=MilkType::CHOCOLATE;
-}
-if(holdermap["alcohol-type"]=="WHISKY"){
-    parsedmap["alcohol-type"]=MilkType::WHISKY;
-}
-else if(holdermap["alcohol-type"]=="RUM"){
-    parsedmap["alcohol-type"]=MilkType::RUM;
-}
-else if(holdermap["alcohol-type"]=="KAHLUA"){
-    parsedmap["alcohol-type"]=MilkType::KAHLUA;
-}
-else if(holdermap["alcohol-type"]=="AQUAVIT"){
-    parsedmap["alcohol-type"]=MilkType::AQUAVIT;
-}
+    if(type=="milk-type) {
+        if(val=="Cream"){
+            add_map[type]=MilkType::CREAM;
+        }
+        else if(val=="Half-and-half"){
+            add_map[type]=MilkType::HALF_AND_HALF;
+        }
+        else if(val=="Whole-milk"){
+            add_map[type]=MilkType::WHOLE_MILK;
+        }
+        else if(val=="Part-skim"){
+            add_map[type]=MilkType::PART_SKIM;
+        }
+        else if(val=="Skim"){
+            add_map[type]=MilkType::SKIM;
+        }
+        else if(val=="Non-dairy"){
+            add_map[type]=MilkType::NON_DAIRY;
+        }
+        else {
+            throw Error("wrong milk-type";
+        }
+    } else if(type=="spice-type") {
+        if(val=="Cinnamon"){
+            add_map[type]=SpiceType::CINNAMON;
+        }
+        else if(val=="Nutmeg"){
+            add_map[type]=SpiceType::NUTMEG;
+        }
+        else if(val=="Cardamom"){
+            add_map[type]=SpiceType::CARDAMOM;
+        }
+        else if(val=="Clove"){
+            add_map[type]=SpiceType::CLOVE;
+        }
+        else {
+            throw Error("wrong spice type");
+        }
+    } else if(type=="sweetener-type") {
+        if(val=="Sugar"){
+            add_map[type]=SweetenerType::SUGAR;
+        }
+        else if(val=="Stevia"){
+            add_map[type]=SweetenerType::STEVIA;
+        }
+        else if(val=="Honey"){
+            add_map[type]=SweetenerType::HONEY;
+        }
+        else if(val=="Maple-syrup"){
+            add_map[type]=SweetenerType::MAPLE_SYRUP;
+        }
+        else if(val=="Agave"){
+            add_map[type]=SweetenerType::AGAVE;
+        }
+        else {
+            throw Error("wrong sweetener type");
+        }
+    } else if(type=="syrup-type") {
+        if(val=="Vanilla"){
+            add_map[type]=SyrupType::VANILLA;
+        }
+        else if(val=="Almond"){
+            add_map[type]=SyrupType::ALMOND;
+        }
+        else if(val=="Raspberry"){
+            add_map[type]=SyrupType::RASPBERRY;
+        }
+        else if(val=="Chocolate"){
+            add_map[type]=SyrupType::CHOCOLATE;
+        }
+        else {
+            throw Error("wrong syrup type");
+        }
+    } else if(type=="alcohol-type){
+        if(val=="Whisky"){
+            add_map[type]=AlcoholType::WHISKY;
+        }
+        else if(val=="Rum"){
+            add_map[type]=AlcoholType::RUM;
+        }
+        else if(val=="Kahlua"){
+            add_map[type]=AlcoholType::KAHLUA;
+        }
+        else if(val=="Aquavit"){
+            add_map[type]=AlcoholType::AQUAVIT;
+        }
+        else {
+            throw Error("wrong alcohol type");
+        }
+    } else {
+        throw Error("wrong addition type");
+    }
+    it++;
 }
