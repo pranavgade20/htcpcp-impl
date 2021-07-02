@@ -80,7 +80,7 @@ while (it!=holder.end())
             add_map[type]=MilkType::NON_DAIRY;
         }
         else {
-            throw Error("wrong milk-type";
+            throw string("wrong milk-type");
         }
     } else if(type=="spice-type") {
         if(val=="Cinnamon"){
@@ -96,7 +96,7 @@ while (it!=holder.end())
             add_map[type]=SpiceType::CLOVE;
         }
         else {
-            throw Error("wrong spice type");
+            throw string("wrong spice type");
         }
     } else if(type=="sweetener-type") {
         if(val=="Sugar"){
@@ -115,7 +115,7 @@ while (it!=holder.end())
             add_map[type]=SweetenerType::AGAVE;
         }
         else {
-            throw Error("wrong sweetener type");
+            throw string("wrong sweetener type");
         }
     } else if(type=="syrup-type") {
         if(val=="Vanilla"){
@@ -131,7 +131,7 @@ while (it!=holder.end())
             add_map[type]=SyrupType::CHOCOLATE;
         }
         else {
-            throw Error("wrong syrup type");
+            throw string("wrong syrup type");
         }
     } else if(type=="alcohol-type){
         if(val=="Whisky"){
@@ -147,10 +147,10 @@ while (it!=holder.end())
             add_map[type]=AlcoholType::AQUAVIT;
         }
         else {
-            throw Error("wrong alcohol type");
+            throw string("wrong alcohol type");
         }
     } else {
-        throw Error("wrong addition type");
+        throw string("wrong addition type");
     }
     it++;
 }
