@@ -25,8 +25,7 @@ std::string method, path, protocol;
  *socket >> path;
  *socket >> protocol;
   
-    
-
+  
 std::cout << method << path << std::endl;
 string input;
 string line;
@@ -85,7 +84,7 @@ while (it!=holder.end())
     getline(tempobj,type,'=');
     getline(tempobj,val,';');
 
-    if(type=="milk-type) {
+    if(type=="milk-type") {
         if(val=="Cream"){
             add_map[type]=MilkType::CREAM;
         }
@@ -104,9 +103,6 @@ while (it!=holder.end())
         else if(val=="Non-dairy"){
             add_map[type]=MilkType::NON_DAIRY;
         }
-        else {
-            throw string("wrong milk-type");
-        }
     } else if(type=="spice-type") {
         if(val=="Cinnamon"){
             add_map[type]=SpiceType::CINNAMON;
@@ -119,9 +115,6 @@ while (it!=holder.end())
         }
         else if(val=="Clove"){
             add_map[type]=SpiceType::CLOVE;
-        }
-        else {
-            throw string("wrong spice type");
         }
     } else if(type=="sweetener-type") {
         if(val=="Sugar"){
@@ -139,9 +132,6 @@ while (it!=holder.end())
         else if(val=="Agave"){
             add_map[type]=SweetenerType::AGAVE;
         }
-        else {
-            throw string("wrong sweetener type");
-        }
     } else if(type=="syrup-type") {
         if(val=="Vanilla"){
             add_map[type]=SyrupType::VANILLA;
@@ -155,10 +145,7 @@ while (it!=holder.end())
         else if(val=="Chocolate"){
             add_map[type]=SyrupType::CHOCOLATE;
         }
-        else {
-            throw string("wrong syrup type");
-        }
-    } else if(type=="alcohol-type){
+    } else if(type=="alcohol-type"){
         if(val=="Whisky"){
             add_map[type]=AlcoholType::WHISKY;
         }
@@ -171,11 +158,6 @@ while (it!=holder.end())
         else if(val=="Aquavit"){
             add_map[type]=AlcoholType::AQUAVIT;
         }
-        else {
-            throw string("wrong alcohol type");
-        }
-    } else {
-        throw string("wrong addition type");
     }
     it++;
     std::string line;
