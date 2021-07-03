@@ -19,10 +19,17 @@
 #define HTCPCP_REQUEST_H
 
 #include "Socket.h"
+#include <string>
 
 class Request {
-public:
-    Request(Socket* socket);
+    private:
+        std::map <string, int> add_map;
+        std::string method;
+        std::string path;
+        std::string protocol;
+    public:
+        Request(Socket* socket);
+        std::string get_
 };
 
 

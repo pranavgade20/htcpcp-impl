@@ -20,7 +20,7 @@
 #include <iostream>
 
 Request::Request(Socket *socket) {
-std::string method, path, protocol;
+
  *socket >> method;
  *socket >> path;
  *socket >> protocol;
@@ -61,7 +61,6 @@ temp=" ";
 
 vector<string> holder;
 
-map <string, int> add_map;
 
 // initialising all additions with NONE    
 add_map["milk-type"] = MilkType::NONE;
