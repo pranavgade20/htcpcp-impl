@@ -70,9 +70,13 @@ Request::Request(Socket* socket) {
         std::string addition_type = addition.substr(0, split);
         std::string addition_content = addition.substr(split+2, addition.length());
 
+        addition_map[addition_type] = getAddition(addition_type, addition_content);
+
         additions.erase(0, ptr + delimiter.length());
     }
     std::cout << additions << std::endl;
+
+    //TODO parse boundary and set content
 }
 
 int getAddition(std::string type, std::string content) {
