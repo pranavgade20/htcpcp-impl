@@ -21,8 +21,12 @@
 #include "Socket.h"
 
 class Request {
-public:
-    Request(Socket* socket);
+    private:
+        std::string method;
+        std::string path;
+        std::string protocol;
+    public:
+        Request(Socket* socket);
 };
 
 
