@@ -20,7 +20,7 @@
 #include <iostream>
 
 Request::Request(Socket *socket) {
-std::string method, path, protocol;
+
  *socket >> method;
  *socket >> path;
  *socket >> protocol;
