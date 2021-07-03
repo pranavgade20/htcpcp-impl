@@ -20,16 +20,17 @@
 
 #include "Socket.h"
 #include <string>
+#include <map>
 
 class Request {
     private:
-        std::map <string, int> add_map;
+        std::map<std::string, std::string> headers;
+        std::map<std::string, int> addition_map;
         std::string method;
         std::string path;
         std::string protocol;
     public:
         Request(Socket* socket);
-        std::string get_
 };
 
 

@@ -18,152 +18,73 @@
 #include "Request.h"
 
 #include <iostream>
+#include <sstream>
 
-Request::Request(Socket *socket) {
-
- *socket >> method;
- *socket >> path;
- *socket >> protocol;
-  
-  
-std::cout << method << path << std::endl;
-string input;
-string line;
-
-while (getline(cin, line))
-{   input+="$";
-    input += line;
-    if (line == "start")
-        break;
+std::string readuntil(Socket* in, std::string delimiter) {
+    std::string cr;
+    char delim = *(delimiter.rbegin());
+    size_t sz = delimiter.size(), tot;
+    do {
+        std::string temp;
+        std::getline(*in, temp, delim);
+        cr += temp + delim;
+        tot = cr.size();
+    } while ((tot < sz) || (cr.substr(tot - sz, sz) != delimiter));
+    return cr.substr(0, tot - sz);
 }
 
-stringstream obj(input);
-string temp=" ";
-int t=6;
-while(t--){
-    getline(obj,temp,':');
-    };
-    getline(obj,temp,';');
-string content_type=temp.substr(temp.find(" ")+1,(temp.length()-1));
+Request::Request(Socket* socket) {
+    *socket >> method;
+    *socket >> path;
+    *socket >> protocol;
 
-obj.str(std::string());
-obj<<input;
-
-t=8;
-while(t--){
-    getline(obj,temp,'$');
-}
-string accept_additions=temp.substr(temp.find(" ")+1,(temp.length()-17));
-
-obj.str(std::string());
-obj<<accept_additions;
-temp=" ";
-
-vector<string> holder;
-
-
-// initialising all additions with NONE    
-add_map["milk-type"] = MilkType::NONE;
-add_map["spice-type"] = SpiceType::NONE;
-add_map["sweetener-type"] = SweetenerType::NONE;
-add_map["syrup-type"] = SyrupType::NONE;
-add_map["alcohol-type"] = AlcoholType::NONE;
-    
-while(obj>>temp){
-    holder.push_back(temp);
-}
-vector<string> ::iterator it=holder.begin();
-while (it!=holder.end())
-{
-    stringstream tempobj;
-    string temp1=*it;
-    tempobj<<temp1;
-    string type;
-    string val;
-    getline(tempobj,type,'=');
-    getline(tempobj,val,';');
-
-    if(type=="milk-type") {
-        if(val=="Cream"){
-            add_map[type]=MilkType::CREAM;
+    std::string temp = readuntil(socket, "\r\n");
+    while ((temp = readuntil(socket, "\r\n")) != "") {
+        std::cout << temp << std::endl;
+        int split = temp.find(": ", 0);
+        if (split == std::string::npos) {
+            method = "INVALID";
+            return;
         }
-        else if(val=="Half-and-half"){
-            add_map[type]=MilkType::HALF_AND_HALF;
-        }
-        else if(val=="Whole-milk"){
-            add_map[type]=MilkType::WHOLE_MILK;
-        }
-        else if(val=="Part-skim"){
-            add_map[type]=MilkType::PART_SKIM;
-        }
-        else if(val=="Skim"){
-            add_map[type]=MilkType::SKIM;
-        }
-        else if(val=="Non-dairy"){
-            add_map[type]=MilkType::NON_DAIRY;
-        }
-    } else if(type=="spice-type") {
-        if(val=="Cinnamon"){
-            add_map[type]=SpiceType::CINNAMON;
-        }
-        else if(val=="Nutmeg"){
-            add_map[type]=SpiceType::NUTMEG;
-        }
-        else if(val=="Cardamom"){
-            add_map[type]=SpiceType::CARDAMOM;
-        }
-        else if(val=="Clove"){
-            add_map[type]=SpiceType::CLOVE;
-        }
-    } else if(type=="sweetener-type") {
-        if(val=="Sugar"){
-            add_map[type]=SweetenerType::SUGAR;
-        }
-        else if(val=="Stevia"){
-            add_map[type]=SweetenerType::STEVIA;
-        }
-        else if(val=="Honey"){
-            add_map[type]=SweetenerType::HONEY;
-        }
-        else if(val=="Maple-syrup"){
-            add_map[type]=SweetenerType::MAPLE_SYRUP;
-        }
-        else if(val=="Agave"){
-            add_map[type]=SweetenerType::AGAVE;
-        }
-    } else if(type=="syrup-type") {
-        if(val=="Vanilla"){
-            add_map[type]=SyrupType::VANILLA;
-        }
-        else if(val=="Almond"){
-            add_map[type]=SyrupType::ALMOND;
-        }
-        else if(val=="Raspberry"){
-            add_map[type]=SyrupType::RASPBERRY;
-        }
-        else if(val=="Chocolate"){
-            add_map[type]=SyrupType::CHOCOLATE;
-        }
-    } else if(type=="alcohol-type"){
-        if(val=="Whisky"){
-            add_map[type]=AlcoholType::WHISKY;
-        }
-        else if(val=="Rum"){
-            add_map[type]=AlcoholType::RUM;
-        }
-        else if(val=="Kahlua"){
-            add_map[type]=AlcoholType::KAHLUA;
-        }
-        else if(val=="Aquavit"){
-            add_map[type]=AlcoholType::AQUAVIT;
-        }
+        headers[temp.substr(0, split)] = temp.substr(split+2, temp.length());
+        std::cout << temp.substr(0, split) << "||" << temp.substr(split+2, temp.length()) << std::endl;
     }
-    it++;
-    std::string line;
-    *socket >> line;
-    std::cout << line << std::endl;
+
+    if(headers["Content-Type"]!="message/coffeepot"){
+        method="INVALID";
+        return;
+    }
+    if (headers.count("Accept-Additions") == 0) {
+        method = "INVALID";
+        return;
+    }
+
+    std::string additions = headers["Accept-Additions"];
+    std::string delimiter = "; ";
+    size_t ptr = 0;
+    std::string addition;
+    while ((ptr = additions.find(delimiter)) != std::string::npos) {
+        addition = additions.substr(0, ptr);
+        int split = addition.find("=", 0);
+        if (split == std::string::npos) {
+            method = "INVALID";
+            return;
+        }
+        std::string addition_type = addition.substr(0, split);
+        std::string addition_content = addition.substr(split+2, addition.length());
+
+        addition_map[addition_type] = getAddition(addition_type, addition_content);
+
+        additions.erase(0, ptr + delimiter.length());
+    }
+    std::cout << additions << std::endl;
+
+    //TODO parse boundary and set content
 }
 
+int getAddition(std::string type, std::string content) {
+    return -1;
+}
 
 // Sample request
 
