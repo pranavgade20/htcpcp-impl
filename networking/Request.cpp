@@ -20,12 +20,11 @@
 #include <iostream>
 
 Request::Request(Socket *socket) {
-  private:
-    std::string method, path, protocol;
-    *socket >> method;
-    *socket >> path;
-    *socket >> protocol;
-  public:
+std::string method, path, protocol;
+ *socket >> method;
+ *socket >> path;
+ *socket >> protocol;
+  
     
 
 std::cout << method << path << std::endl;
