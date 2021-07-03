@@ -50,3 +50,7 @@ void Cup::setSpice(SpiceType spice) {
 void Cup::setAlcohol(AlcoholType alcohol) {
     this->alcohol = alcohol;
 };
+
+std::string Cup::getDescription() {
+    return "Your coffee is ready!"
+}

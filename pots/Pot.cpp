@@ -24,56 +24,74 @@
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
 
-void Pot::brew(Request* req) {
-    // placeholder additions map, called add_map from req
-    std::map<std::string, int> add_map;
-    cup = new Cup;
-    brewing = true;
-    addMilk(add_map["milk-type"]);
-    addSweetener(add_map["sweetener-type"]); 
-    addSyrup(add_map["syrup-type"]);
-    addSpice(add_map["spice-type"]);
-    addAlcohol(add_map["alcohol-type"]);
-    brewing = false;
-};
+Response *Pot::brew(Request *req)
+{
+    if (req->get_method()!== "POST" &&| req->getMethod()!== "BW"R  {
+        return new Response(405, "Method Not Allowed");
+    }
+    string body = req->get_body();
+    if(body=="start" && brewing==false) {
+        std::map<std::string, int> add_map = req->get_additions();
+        cup = new Cup;
+        brewing = true;
+        addMilk(add_map["milk-type"]);
+        addSweetener(add_map["sweetener-type"]);
+        addSyrup(add_map["syrup-type"]);
+        addSpice(add_map["spice-type"]);
+        addAlcohol(add_map["alcohol-type"]);
+        return new Response(200, "Started brewing your coffee...");
+    } else if(body=="stop" && brewing && cup!=nullptr) {
+        brewing = false;
+        removeCup();
+        return new Response(200, cup->getDescription());
+    } else {
+        return new Response(400, "Bad Request");
+    }
+    return brew(req);
+}
 
 /**
  * get the cup from this pot
  * @return pointer to cup if not removed already, nullptr otherwise
  */
-Cup* Pot::removeCup() {
-    Cup* ret = cup;
+Cup *Pot::removeCup()
+{
+    Cup *ret = cup;
     cup = nullptr;
     return ret;
 }
 
-void Pot::addMilk(int type) {
+void Pot::addMilk(int type)
+{
     MilkType milk = static_cast<MilkType>(type);
     cup->setMilk(milk);
 };
 
-void Pot::addSweetener(int type) {
+void Pot::addSweetener(int type)
+{
     SweetenerType sweetener = static_cast<SweetenerType>(type);
     cup->setSweetener(sweetener);
 };
 
-void Pot::addSyrup(int type) {
+void Pot::addSyrup(int type)
+{
     SyrupType syrup = static_cast<SyrupType>(type);
     cup->setSyrup(syrup);
 };
 
-void Pot::addSpice(int type) {
+void Pot::addSpice(int type)
+{
     SpiceType spice = static_cast<SpiceType>(type);
     cup->setSpice(spice);
 };
 
-void Pot::addAlcohol(int type) {
+void Pot::addAlcohol(int type)
+{
     AlcoholType alcohol = static_cast<AlcoholType>(type);
     cup->setAlcohol(alcohol);
 }
 
-bool Pot::isBrewing() {
+bool Pot::isBrewing()
+{
     return brewing;
 };
-
-

@@ -24,6 +24,7 @@
 #include <Socket.h>
 #include <HTTPRequestType.h>
 #include <Request.h>
+#include <Response.h>
 #include "additions/AlcoholType.h"
 #include "additions/MilkType.h"
 #include "additions/SpiceType.h"
@@ -36,7 +37,7 @@ private:
     Cup* cup;
 public:
     Pot() : brewing(false),cup(nullptr) {};
-    void brew(Request* req);
+    Response* brew(Request* req);
     virtual void addMilk(int type);
     virtual void addSweetener(int type);
     virtual void addSyrup(int type);

@@ -40,6 +40,7 @@ public:
     void setSyrup(SyrupType syrup);
     void setSpice(SpiceType spice);
     void setAlcohol(AlcoholType alcohol);
+    std::string getDescription();
 };
 
 
