@@ -26,9 +26,9 @@
 
 Response *Pot::brew(Request *req)
 {
-    if (req->getMethod()!= "POST" && req->getMethod()!= "BREW")  {
-        return new Response(405, "Method Not Allowed");
-    }
+//     if (req->getMethod()!= "POST" && req->getMethod()!= "BREW")  {
+//         return new Response(405, "Method Not Allowed");
+//     }
     if(req->getContentType()!="message/coffeepot") {
         return new Response(415, "Unsupported Media Type");
     }
