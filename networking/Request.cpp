@@ -50,7 +50,10 @@ Request::Request(Socket* socket) {
         std::cout << temp.substr(0, split) << "||" << temp.substr(split+2, temp.length()) << std::endl;
     }
 
-    //TODO make sure Content-type is correct
+    if(headers["Content-Type"]!="message/coffeepot"){
+        method="INVALID";
+        return;
+    }
     if (headers.count("Accept-Additions") == 0) {
         method = "INVALID";
         return;
