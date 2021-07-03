@@ -26,13 +26,16 @@
 
 Response *Pot::brew(Request *req)
 {
-    if (req->get_method()!== "POST" &&| req->getMethod()!== "BW"R  {
+    if (req->getMethod()!= "POST" && req->getMethod()!= "BREW")  {
         return new Response(405, "Method Not Allowed");
     }
-    string body = req->get_body();
+    if(req->getContentType()!="message/coffeepot") {
+        return new Response(415, "Unsupported Media Type");
+    }
+    string body = req->getBody();
     if(body=="start" && brewing==false) {
-        std::map<std::string, int> add_map = req->get_additions();
-        cup = new Cup;
+        std::map<std::string, int> add_map = req->getAdditions();
+        cup = new Cup();
         brewing = true;
         addMilk(add_map["milk-type"]);
         addSweetener(add_map["sweetener-type"]);
@@ -42,12 +45,11 @@ Response *Pot::brew(Request *req)
         return new Response(200, "Started brewing your coffee...");
     } else if(body=="stop" && brewing && cup!=nullptr) {
         brewing = false;
-        removeCup();
-        return new Response(200, cup->getDescription());
+        Cup* readyCup = removeCup();
+        return new Response(200, readyCup->getDescription());
     } else {
         return new Response(400, "Bad Request");
     }
-    return brew(req);
 }
 
 /**
