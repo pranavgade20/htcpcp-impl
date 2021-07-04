@@ -29,7 +29,7 @@
 Response *Pot::brew(Request *req)
 {
     if (req->getMethod()!= "POST" && req->getMethod()!= "BREW")  {
-        return new Response(405, "Method Not Allowed");
+        return new Response(405);
     }
 //     if(req->getContentType()!="message/coffeepot") {
 //         return new Response(415, "Unsupported Media Type");
@@ -39,18 +39,22 @@ Response *Pot::brew(Request *req)
         std::map<std::string, int> add_map = req->getAdditions();
         cup = new Cup();
         brewing = true;
-        addMilk(add_map["milk-type"]);
-        addSweetener(add_map["sweetener-type"]);
-        addSyrup(add_map["syrup-type"]);
-        addSpice(add_map["spice-type"]);
-        addAlcohol(add_map["alcohol-type"]);
-        return new Response(200, "OK", "Started brewing your coffee...");
+        try {
+            addMilk(add_map["milk-type"]);
+            addSweetener(add_map["sweetener-type"]);
+            addSyrup(add_map["syrup-type"]);
+            addSpice(add_map["spice-type"]);
+            addAlcohol(add_map["alcohol-type"]);
+            return new Response(200, "Started brewing your coffee...");
+        } catch (int err) {
+            return new Response(err);
+        }
     } else if(body=="stop" && brewing && cup!=nullptr) {
         brewing = false;
         Cup* readyCup = removeCup();
-        return new Response(200, "OK", readyCup->getDescription());
+        return new Response(200, readyCup->getDescription());
     } else {
-        return new Response(400, "Bad Request");
+        return new Response(400);
     }
 }
 
