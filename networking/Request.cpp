@@ -118,7 +118,7 @@ std::string Request::getBody() {
 
 int getAddition(std::string type, std::string content) {
     if (type == "alcohol-type") {
-        if (content == "Whiskey") return (int)AlcoholType::WHISKY;
+        if (content == "Whisky") return (int)AlcoholType::WHISKY;
         else if (content == "Rum") return (int)AlcoholType::RUM;
         else if (content == "Kahlua") return (int)AlcoholType::KAHLUA;
         else if (content == "Aquavit") return (int)AlcoholType::AQUAVIT;
