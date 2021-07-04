@@ -21,38 +21,38 @@
 
 Response::Response(int response_code) {} // to do - Manasvi
 
-Response::Response(int response_code, std::string body) // - to fix
-{
-    this->response_code = response_code;
-    this->response_code_string = response_code_string;
+// Response::Response(int response_code, std::string body) // - to fix
+// {
+//     this->response_code = response_code;
+//     this->response_code_string = response_code_string;
 
-    headers["Server"] = "Coffee Pot";
-    headers["Content-Type"] = "text/html; charset=utf-8";
+//     headers["Server"] = "Coffee Pot";
+//     headers["Content-Type"] = "text/html; charset=utf-8";
 
-        if (response_code == 200)
-    {
-        std::cout << "HTCPC/1.0 200 OK" << std::endl;
-    }
-    else if (response_code == 406)
-    {
-        std::cout << "HTCPC/1.0 406 Not Acceptable" << std::endl;
-    }
-    else if (response_code == 405)
-    {
-    }
-    else if (response_code == 400)
-    {
-    }
-    else if (response_code == 418)
-    {
-        std::cout << "HTCPC/1.0 418 I'm a teapot" << std::endl;
-        headers["Server"] = "Tea Pot";
-    }
+//         if (response_code == 200)
+//     {
+//         std::cout << "HTCPC/1.0 200 OK" << std::endl;
+//     }
+//     else if (response_code == 406)
+//     {
+//         std::cout << "HTCPC/1.0 406 Not Acceptable" << std::endl;
+//     }
+//     else if (response_code == 405)
+//     {
+//     }
+//     else if (response_code == 400)
+//     {
+//     }
+//     else if (response_code == 418)
+//     {
+//         std::cout << "HTCPC/1.0 418 I'm a teapot" << std::endl;
+//         headers["Server"] = "Tea Pot";
+//     }
 
-    std::cout << "Server: " + headers["Server"] << std::endl;
-    std::cout << "Content-Type: " + headers["Content-Type"] << std::endl;
-    std::cout << body << std::endl;
-}
+//     std::cout << "Server: " + headers["Server"] << std::endl;
+//     std::cout << "Content-Type: " + headers["Content-Type"] << std::endl;
+//     std::cout << body << std::endl;
+// }
 
 // make a static method which gets error string from code, like I'm a teapot from 418
 
