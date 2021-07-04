@@ -50,7 +50,7 @@ Response *Pot::brew(Request *req)
         Cup* readyCup = removeCup();
         return new Response(200, "OK", readyCup->getDescription());
     } else {
-        return new Response(400, "Bad Request");
+        return new Response(400, "Bad Request", "Bad Request");
     }
 }
 
