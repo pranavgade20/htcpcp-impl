@@ -19,7 +19,9 @@
 
 #include <iostream>
 
-Response::Response(int response_code, std::string response_code_string)
+Response::Response(int response_code) {} // to do - Manasvi
+
+Response::Response(int response_code, std::string body) // - to fix
 {
     this->response_code = response_code;
     this->response_code_string = response_code_string;
@@ -51,6 +53,8 @@ Response::Response(int response_code, std::string response_code_string)
     std::cout << "Content-Type: " + headers["Content-Type"] << std::endl;
     std::cout << body << std::endl;
 }
+
+// make a static method which gets error string from code, like I'm a teapot from 418
 
 void Response::sendResponse(Socket* socket) {
     *socket << "HTTP/1.0 " << this->response_code << this->response_code_string << "\r\n";

@@ -32,10 +32,9 @@ private:
     std::map<std::string, std::string> headers;
     std::string body;
 public:
-    Response(int response_code, std::string response_code_string);
-    Response(int response_code, std::string response_code_string, std::string body):
+    Response(int response_code);
+    Response(int response_code, std::string body):
             response_code(response_code),
-            response_code_string(response_code_string),
             body(body) {};
     void sendResponse(Socket* socket);
 };
