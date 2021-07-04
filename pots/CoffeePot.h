@@ -1,5 +1,6 @@
 #include "Pot.h"
 
-class CoffeePot {
-    
+class CoffeePot: public Pot {
+    public:
+    CoffeePot();
 };
