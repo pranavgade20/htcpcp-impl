@@ -21,16 +21,22 @@
 #include "Socket.h"
 #include <string>
 #include <map>
+#include <vector>
 
 class Request {
     private:
         std::map<std::string, std::string> headers;
         std::map<std::string, int> addition_map;
+        std::vector<std::string> body_headers;
         std::string method;
         std::string path;
         std::string protocol;
+        std::string body;
     public:
         Request(Socket* socket);
+        std::string getMethod();
+        std::map<std::string, int> getAdditions();
+        std::string getBody();
 };
 
 

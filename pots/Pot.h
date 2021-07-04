@@ -30,9 +30,9 @@
 #include "additions/SpiceType.h"
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
-
-class Pot { 
-private: 
+class Response;
+class Pot {
+private:
     bool brewing;
     Cup* cup;
 public:

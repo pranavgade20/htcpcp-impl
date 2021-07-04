@@ -52,5 +52,5 @@ void Cup::setAlcohol(AlcoholType alcohol) {
 };
 
 std::string Cup::getDescription() {
-    return "Your coffee is ready!"
+    return "Your coffee is ready!";
 }

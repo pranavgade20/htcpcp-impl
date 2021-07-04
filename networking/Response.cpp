@@ -19,13 +19,13 @@
 
 #include <iostream>
 
-Response::Response(int response_code, std::string body)
+Response::Response(int response_code, std::string response_code_string)
 {
     this->response_code = response_code;
-    this->body = body;
+    this->response_code_string = response_code_string;
 
     headers["Server"] = "Coffee Pot";
-    headers["Content-Type"] = "text/html; charset=utf-8"
+    headers["Content-Type"] = "text/html; charset=utf-8";
 
         if (response_code == 200)
     {
@@ -50,6 +50,14 @@ Response::Response(int response_code, std::string body)
     std::cout << "Server: " + headers["Server"] << std::endl;
     std::cout << "Content-Type: " + headers["Content-Type"] << std::endl;
     std::cout << body << std::endl;
+}
+
+void Response::sendResponse(Socket* socket) {
+    *socket << "HTTP/1.0 " << this->response_code << this->response_code_string << "\r\n";
+    for (auto it : this->headers) {
+        *socket << it.first << ": " << it.second << "\r\n";
+    }
+    *socket << "\r\n" << this->body << "\r\n";
 }
 
 // Sample Response

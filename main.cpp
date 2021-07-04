@@ -20,14 +20,23 @@
 #include "networking/ServerSocket.h"
 #include "networking/Socket.h"
 #include "networking/Request.h"
+#include "networking/Response.h"
+#include "pots/Pot.h"
 
 int main() {
     ServerSocket serverSocket;
-    Socket* socket = serverSocket.accept();
+    Pot* pot = new Pot();
 
-    Request request(socket);
-    *socket << "HTTP/1.1 200 OK\r\n\r\n Hello World\r\n" << std::endl;
+    while (true) {
+        Socket* socket = serverSocket.accept();
+        Request* request = new Request(socket);
+        Response* response = pot->brew(request);
+        response->sendResponse(socket);
+        socket->close();
+        delete socket;
+        delete request;
+        delete response;
+    }
 
-    socket->close();
     return 0;
 }

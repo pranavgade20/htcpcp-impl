@@ -8,11 +8,14 @@ set(NETWORKING_SRC
         HTTPRequestType.h
         Request.cpp
         Request.h
+        Response.cpp
+        Response.h
 )
 
 add_library(networking STATIC ${NETWORKING_SRC})
 
-#target_link_libraries(networking pots)
+target_link_libraries(networking pots)
+set_property(TARGET networking PROPERTY INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/pots)
 target_include_directories(networking
         INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
         )

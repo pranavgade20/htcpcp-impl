@@ -28,10 +28,16 @@ class Response
 {
 private:
     int response_code;
-    std::string body;
+    std::string response_code_string;
     std::map<std::string, std::string> headers;
+    std::string body;
 public:
-    Response(int response_code, std::string body);
+    Response(int response_code, std::string response_code_string);
+    Response(int response_code, std::string response_code_string, std::string body):
+            response_code(response_code),
+            response_code_string(response_code_string),
+            body(body) {};
+    void sendResponse(Socket* socket);
 };
 
 #endif // HTCPCP_RESPONSE_H/**//// HTCPCP/1.0 418 I'm a teapot// Date: Fri, 04 Jun 2021 15:22:53 GMT// Server: Tea Pot// Content-Type: text/html; charset=utf-8//// Your coffee with skin milk, maple syrup is eready :))D3)))

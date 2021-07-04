@@ -24,6 +24,8 @@
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
 
+#include <iostream>
+
 Response *Pot::brew(Request *req)
 {
     if (req->getMethod()!= "POST" && req->getMethod()!= "BREW")  {
@@ -32,7 +34,7 @@ Response *Pot::brew(Request *req)
 //     if(req->getContentType()!="message/coffeepot") {
 //         return new Response(415, "Unsupported Media Type");
 //     }
-    string body = req->getBody();
+    std::string body = req->getBody();
     if(body=="start" && brewing==false) {
         std::map<std::string, int> add_map = req->getAdditions();
         cup = new Cup();
@@ -42,11 +44,11 @@ Response *Pot::brew(Request *req)
         addSyrup(add_map["syrup-type"]);
         addSpice(add_map["spice-type"]);
         addAlcohol(add_map["alcohol-type"]);
-        return new Response(200, "Started brewing your coffee...");
+        return new Response(200, "OK", "Started brewing your coffee...");
     } else if(body=="stop" && brewing && cup!=nullptr) {
         brewing = false;
         Cup* readyCup = removeCup();
-        return new Response(200, readyCup->getDescription());
+        return new Response(200, "OK", readyCup->getDescription());
     } else {
         return new Response(400, "Bad Request");
     }
