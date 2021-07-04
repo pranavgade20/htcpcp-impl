@@ -83,7 +83,74 @@ Request::Request(Socket* socket) {
 }
 
 int getAddition(std::string type, std::string content) {
-    return -1;
+if(addition_map["milk-type"]=="CREAM"){
+        return MilkType::CREAM;
+        }
+else if(addition_map["milk-type"]=="HALF_AND_HALF"){
+         return ilkType::HALF_AND_HALF;
+}   
+else if(addition_map["milk-type"]=="WHOLE_MILK"){
+    return MilkType::WHOLE_MILK;
+}
+else if(addition_map["milk-type"]=="PART_SKIM"){
+    return MilkType::PART_SKIM;
+}
+else if(addition_map["milk-type"]=="NON_DAIRY"){
+    return MilkType::NON_DAIRY;
+}
+if(addition_map["spice-type"]=="CINNAMON"){
+    return SpiceType::CINNAMON;
+}
+else if(addition_map["spice-type"]=="NUTMEG"){
+    return SpiceType::NUTMEG;
+}
+else if(addition_map["spice-type"]=="CARDAMOM"){
+    return SpiceType::CARDAMOM;
+}
+else if(addition_map["spice-type"]=="CLOVE"){
+    return SpiceType::CLOVE;
+}
+else{
+}
+if(addition_map["sweetener-type"]=="SUGAR"){
+    return SweetenerType::SUGAR;
+}
+else if(addition_map["sweetener-type"]=="STEVIA"){
+    return SweetenerType::STEVIA;
+}
+else if(addition_map["sweetener-type"]=="HONEY"){
+    return SweetenerType::HONEY;
+}
+else if(addition_map["sweetener-type"]=="MAPLE_SYRUP"){
+    return SweetenerType::MAPLE_SYRUP;
+}
+else if(addition_map["sweetener-type"]=="AGAVE"){
+    return SweetenerType::AGAVE;
+}
+if(addition_map["syrup-type"]=="VANILLA"){
+    return SyrupType::VANILLA;
+}
+else if(addition_map["syrup-type"]=="ALMOND"){
+    return SyrupType::ALMOND;
+}
+else if(addition_map["syrup-type"]=="RASPBERRY"){
+    return SyrupType::RASPBERRY;
+}
+else if(addition_map["syrup-type"]=="CHOCOLATE"){
+    return SyrupType::CHOCOLATE;
+}
+if(addition_map["alcohol-type"]=="WHISKY"){
+    return AlcoholType::WHISKY;
+}
+else if(addition_map["alcohol-type"]=="RUM"){
+   return AlcoholType::RUM;
+}
+else if(addition_map["alcohol-type"]=="KAHLUA"){
+    return AlcoholType::KAHLUA;
+}
+else if(addition_map["alcohol-type"]=="AQUAVIT"){
+   return AlcoholType::AQUAVIT;
+}
 }
 
 // Sample request
