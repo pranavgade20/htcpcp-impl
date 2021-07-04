@@ -1,6 +1,9 @@
+#ifndef HTCPCP_TEAPOT_H
+#define HTCPCP_TEAPOT_H
+
 #include "Pot.h"
 
-class TeaPot: public Pot {
+class TeaPot : public Pot {
     public:
         TeaPot();
         void addMilk(int type);
@@ -9,3 +12,5 @@ class TeaPot: public Pot {
         void addSpice(int type);
         void addAlcohol(int type);
 };
+
+#endif

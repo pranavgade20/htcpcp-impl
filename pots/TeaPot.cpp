@@ -1,6 +1,5 @@
 #include "TeaPot.h"
 
-TeaPot::TeaPot() : Pot() {};
 
 void TeaPot::addMilk(int type)
 {
