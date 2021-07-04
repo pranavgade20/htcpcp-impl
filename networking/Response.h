@@ -18,17 +18,18 @@
 #ifndef HTCPCP_RESPONSE_H
 #define HTCPCP_RESPONSE_H
 
-#include <string>
 #include "Request.h"
 #include "CoffeePot.h"
 #include "TeaPot.h"
+#include <string>
+#include <map>
 
 class Response
 {
 private:
     int response_code;
     std::string body;
-    std::string headers;
+    std::map<std::string, std::string> headers;
 public:
     Response(int response_code, std::string body);
 };

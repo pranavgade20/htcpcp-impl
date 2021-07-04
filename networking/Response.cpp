@@ -17,10 +17,54 @@
 
 #include "Response.h"
 
-#include<iostream>
+#include <iostream>
 
-Response::Response(int response_code, std::string body) {
-    //this->response_code = 
-     
+Response::Response(int response_code, std::string body)
+{
+    this->response_code = response_code;
+    this->body = body;
+
+    headers["Server"] = "Coffee Pot";
+    headers["Content-Type"] = "text/html; charset=utf-8"
+
+        if (response_code == 200)
+    {
+        std::cout << "HTCPC/1.0 200 OK" << std::endl;
+    }
+    else if (response_code == 406)
+    {
+        std::cout << "HTCPC/1.0 406 Not Acceptable" << std::endl;
+    }
+    else if (response_code == 405)
+    {
+    }
+    else if (response_code == 400)
+    {
+    }
+    else if (response_code == 418)
+    {
+        std::cout << "HTCPC/1.0 418 I'm a teapot" << std::endl;
+        headers["Server"] = "Tea Pot";
+    }
+
+    std::cout << "Server: " + headers["Server"] << std::endl;
+    std::cout << "Content-Type: " + headers["Content-Type"] << std::endl;
+    std::cout << body << std::endl;
 }
 
+// Sample Response
+
+// HTCPCP/1.0 406 Not Acceptable
+// Date: Fri, 04 Jun 2021 15:22:53 GMT
+// Server: Coffee Pot
+// Content-Type: text/html; charset=utf-8
+
+// HTCPCP/1.0 418 I'm a teapot
+// Date: Fri, 04 Jun 2021 15:22:53 GMT
+// Server: Tea Pot
+// Content-Type: text/html; charset=utf-8
+
+// HTCPCP/1.0 200 OK
+// Date: Fri, 04 Jun 2021 15:22:53 GMT
+// Server: Coffee Pot
+// Content-Type: text/html; charset=utf-8
