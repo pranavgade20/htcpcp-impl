@@ -21,8 +21,7 @@
 
 Response::Response(int response_code) {
     this->response_code = response_code;
-    setErrorString(response_code);
-    body = response_code_string;
+    body = setErrorString(response_code);
 
     headers["Server"] = "Coffee Pot";
     if (response_code == 418) {
