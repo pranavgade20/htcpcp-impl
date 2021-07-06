@@ -29,7 +29,7 @@ private:
     std::string response_code_string;
     std::map<std::string, std::string> headers;
     std::string body;
-    static setErrorString(int response_code)
+    static std::string setErrorString(int response_code)
 public:
     Response(int response_code);
     Response(int response_code, std::string body):

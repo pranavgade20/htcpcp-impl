@@ -45,7 +45,7 @@ Response::Response(int response_code, std::string body) {
 
 // make a static method which gets error string from code, like I'm a teapot from 418
 
-void Response::setErrorString(int response_code) {
+std::string Response::setErrorString(int response_code) {
     if (response_code == 200) {
         response_code_string = "OK";
     }
@@ -66,6 +66,8 @@ void Response::setErrorString(int response_code) {
     } else {
         response_code_string = "Internal Server Error";
     }
+
+    return response_code_string;
 }
 
 void Response::sendResponse(Socket* socket) {
