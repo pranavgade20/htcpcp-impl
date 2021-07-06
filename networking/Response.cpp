@@ -21,7 +21,7 @@
 
 Response::Response(int response_code) {
     this->response_code = response_code;
-    error_string(response_code);
+    setErrorString(response_code);
     body = response_code_string;
 
     headers["Server"] = "Coffee Pot";
@@ -33,8 +33,8 @@ Response::Response(int response_code) {
 
 Response::Response(int response_code, std::string body) { 
     this->response_code = response_code;
-    // this->response_code_string = response_code_string;
     this->body = body;
+    setErrorString(response_code);
 
     headers["Server"] = "Coffee Pot";
     if (response_code == 418) {
@@ -45,7 +45,7 @@ Response::Response(int response_code, std::string body) {
 
 // make a static method which gets error string from code, like I'm a teapot from 418
 
-void Response::error_string(int response_code) {
+void Response::setErrorString(int response_code) {
     if (response_code == 200) {
         response_code_string = "OK";
     }
@@ -63,6 +63,8 @@ void Response::error_string(int response_code) {
     }
     else if (response_code == 418) {
         response_code_string = "I'm a teapot";
+    } else {
+        response_code_string = "Internal Server Error";
     }
 }
 
