@@ -21,7 +21,8 @@
 
 Response::Response(int response_code) {
     this->response_code = response_code;
-    body = setErrorString(response_code);
+    response_code_string = getErrorString(response_code);
+    body = getErrorString(response_code);
 
     headers["Server"] = "Coffee Pot";
     if (response_code == 418) {
@@ -33,7 +34,7 @@ Response::Response(int response_code) {
 Response::Response(int response_code, std::string body) { 
     this->response_code = response_code;
     this->body = body;
-    setErrorString(response_code);
+    response_code_string = getErrorString(response_code);
 
     headers["Server"] = "Coffee Pot";
     if (response_code == 418) {
@@ -44,29 +45,27 @@ Response::Response(int response_code, std::string body) {
 
 // make a static method which gets error string from code, like I'm a teapot from 418
 
-std::string Response::setErrorString(int response_code) {
+std::string Response::getErrorString(int response_code) {
     if (response_code == 200) {
-        response_code_string = "OK";
+        return "OK";
     }
     else if (response_code == 400) {
-        response_code_string = "Bad Request";
+        return "Bad Request";
     }
     else if (response_code == 405) {
-        response_code_string = "Method Not Allowed";
+        return "Method Not Allowed";
     }
     else if (response_code == 406) {
-        response_code_string = "Not Acceptable";
+        return "Not Acceptable";
     }
     else if (response_code == 415) {
-        response_code_string = "Unsupported Media Type";
+        return "Unsupported Media Type";
     }
     else if (response_code == 418) {
-        response_code_string = "I'm a teapot";
+        return "I'm a teapot";
     } else {
-        response_code_string = "Internal Server Error";
+        return "Internal Server Error";
     }
-
-    return response_code_string;
 }
 
 void Response::sendResponse(Socket* socket) {
