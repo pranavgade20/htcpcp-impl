@@ -5,6 +5,10 @@ include(additions/CMakeLists.txt)
 set(POTS_SRC
         Pot.cpp
         Pot.h
+        TeaPot.cpp
+        TeaPot.h
+        CoffeePot.cpp
+        CoffeePot.h
         Cup.cpp
         Cup.h
         ${ADDITIONS_SRC}

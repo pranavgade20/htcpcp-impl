@@ -22,6 +22,8 @@
 #include "networking/Request.h"
 #include "networking/Response.h"
 #include "pots/Pot.h"
+#include "pots/CoffeePot.h"
+#include "pots/TeaPot.h"
 
 int main() {
     ServerSocket serverSocket;

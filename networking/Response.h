@@ -19,8 +19,6 @@
 #define HTCPCP_RESPONSE_H
 
 #include "Request.h"
-#include "CoffeePot.h"
-#include "TeaPot.h"
 #include <string>
 #include <map>
 
