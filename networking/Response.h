@@ -32,9 +32,8 @@ private:
     static std::string getErrorString(int response_code);
 public:
     Response(int response_code);
-    Response(int response_code, std::string body):
-            response_code(response_code),
-            body(body) {};
+    Response(int response_code, std::string body);
+
     void sendResponse(Socket* socket);
 };
 
