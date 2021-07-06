@@ -37,6 +37,7 @@ public:
             response_code(response_code),
             body(body) {};
     void sendResponse(Socket* socket);
+    static error_string(int response_code)
 };
 
 #endif // HTCPCP_RESPONSE_H/**//// HTCPCP/1.0 418 I'm a teapot// Date: Fri, 04 Jun 2021 15:22:53 GMT// Server: Tea Pot// Content-Type: text/html; charset=utf-8//// Your coffee with skin milk, maple syrup is eready :))D3)))

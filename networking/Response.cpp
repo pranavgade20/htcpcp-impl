@@ -19,42 +19,52 @@
 
 #include <iostream>
 
-Response::Response(int response_code) {} // to do - Manasvi
-
-Response::Response(int response_code, std::string body) // - to fix
-{
+Response::Response(int response_code) {
     this->response_code = response_code;
-    this->response_code_string = response_code_string;
+    error_string(response_code);
+    body = response_code_string;
 
     headers["Server"] = "Coffee Pot";
-    headers["Content-Type"] = "text/html; charset=utf-8";
-
-        if (response_code == 200)
-    {
-        std::cout << "HTCPC/1.0 200 OK" << std::endl;
-    }
-    else if (response_code == 406)
-    {
-        std::cout << "HTCPC/1.0 406 Not Acceptable" << std::endl;
-    }
-    else if (response_code == 405)
-    {
-    }
-    else if (response_code == 400)
-    {
-    }
-    else if (response_code == 418)
-    {
-        std::cout << "HTCPC/1.0 418 I'm a teapot" << std::endl;
+    if (response_code == 418) {
         headers["Server"] = "Tea Pot";
     }
+    headers["Content-Type"] = "text/html; charset=utf-8";
+} 
 
-    std::cout << "Server: " + headers["Server"] << std::endl;
-    std::cout << "Content-Type: " + headers["Content-Type"] << std::endl;
-    std::cout << body << std::endl;
+Response::Response(int response_code, std::string body) { 
+    this->response_code = response_code;
+    // this->response_code_string = response_code_string;
+    this->body = body;
+
+    headers["Server"] = "Coffee Pot";
+    if (response_code == 418) {
+        headers["Server"] = "Tea Pot";
+    }
+    headers["Content-Type"] = "text/html; charset=utf-8";
 }
 
 // make a static method which gets error string from code, like I'm a teapot from 418
+
+void Response::error_string(int response_code) {
+    if (response_code == 200) {
+        response_code_string = "OK";
+    }
+    else if (response_code == 400) {
+        response_code_string = "Bad Request";
+    }
+    else if (response_code == 405) {
+        response_code_string = "Method Not Allowed";
+    }
+    else if (response_code == 406) {
+        response_code_string = "Not Acceptable";
+    }
+    else if (response_code == 415) {
+        response_code_string = "Unsupported Media Type";
+    }
+    else if (response_code == 418) {
+        response_code_string = "I'm a teapot";
+    }
+}
 
 void Response::sendResponse(Socket* socket) {
     *socket << "HTTP/1.0 " << this->response_code << this->response_code_string << "\r\n";
