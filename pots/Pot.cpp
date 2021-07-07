@@ -27,33 +27,52 @@
 
 #include <iostream>
 
-Response *Pot::brew(Request *req) {
-    if (req->getMethod() != "POST" && req->getMethod() != "BREW") {
+Response *Pot::brew(Request *req)
+{
+    if (req->getMethod() != "POST" && req->getMethod() != "BREW")
+    {
         return new Response(405);
     }
-//     if(req->getContentType()!="message/coffeepot") {
-//         return new Response(415, "Unsupported Media Type");
-//     }
+    //     if(req->getContentType()!="message/coffeepot") {
+    //         return new Response(415, "Unsupported Media Type");
+    //     }
     std::string body = req->getBody();
-    if (body == "start" && brewing == false) {
+    if (body == "start" && brewing == false)
+    {
         std::map<std::string, int> add_map = req->getAdditions();
         cup = new Cup();
         brewing = true;
-        try {
+        try
+        {
             addMilk(add_map["milk-type"]);
             addSweetener(add_map["sweetener-type"]);
             addSyrup(add_map["syrup-type"]);
             addSpice(add_map["spice-type"]);
             addAlcohol(add_map["alcohol-type"]);
             return new Response(200, "Started brewing your coffee...");
-        } catch (int err) {
+        }
+        catch (int err)
+        {
             return new Response(err);
         }
-    } else if (body == "stop" && brewing && cup != nullptr) {
+    }
+    else if (body == "stop" && brewing && cup != nullptr)
+    {
         brewing = false;
         Cup *readyCup = removeCup();
-        return new Response(200, readyCup->getDescription());
-    } else {
+        if (readyCup->getDescription() == "")
+        {
+            std::string description = "Your Coffee is ready!";
+            return new Response(200, description);
+        }
+        else
+        {
+            std::string description = "Your Coffee with " + readyCup->getDescription() + " is ready!";
+            return new Response(200, description);
+        }
+    }
+    else
+    {
         return new Response(400);
     }
 }
@@ -62,41 +81,49 @@ Response *Pot::brew(Request *req) {
  * get the cup from this pot
  * @return pointer to cup if not removed already, nullptr otherwise
  */
-Cup *Pot::removeCup() {
+Cup *Pot::removeCup()
+{
     Cup *ret = cup;
     cup = nullptr;
     return ret;
 }
 
-void Pot::addMilk(int type) {
+void Pot::addMilk(int type)
+{
     MilkType milk = static_cast<MilkType>(type);
     cup->setMilk(milk);
 };
 
-void Pot::addSweetener(int type) {
+void Pot::addSweetener(int type)
+{
     SweetenerType sweetener = static_cast<SweetenerType>(type);
     cup->setSweetener(sweetener);
 };
 
-void Pot::addSyrup(int type) {
+void Pot::addSyrup(int type)
+{
     SyrupType syrup = static_cast<SyrupType>(type);
     cup->setSyrup(syrup);
 };
 
-void Pot::addSpice(int type) {
+void Pot::addSpice(int type)
+{
     SpiceType spice = static_cast<SpiceType>(type);
     cup->setSpice(spice);
 };
 
-void Pot::addAlcohol(int type) {
+void Pot::addAlcohol(int type)
+{
     AlcoholType alcohol = static_cast<AlcoholType>(type);
     cup->setAlcohol(alcohol);
 }
 
-bool Pot::isBrewing() {
+bool Pot::isBrewing()
+{
     return brewing;
 }
 
-std::string Pot::getServerName() {
+std::string Pot::getServerName()
+{
     return "Pot";
 };

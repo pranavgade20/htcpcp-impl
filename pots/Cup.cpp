@@ -59,18 +59,30 @@ void Cup::setAlcohol(AlcoholType alcohol)
 
 std::string Cup::getDescription()
 {
-    std::vector<std::string> v2=getAdditionsArray();
-    int size=v2.size();
-    std::string output="";
-    if()for (int i = 0; i < size-2; i++)
+    std::vector<std::string> v2 = getAdditionsArray();
+    int size = v2.size();
+    std::string output = "";
+    if (size>=3)
     {
-        output+=v2[i];
-        output+=", ";
+        for (int i = 0; i < size - 2; i++)
+        {
+            output += v2[i];
+            output += ", ";
+        }
+        output += v2[size - 2];
+        output += " and ";
+        output += v2[size - 1];
+        return output;
     }
-    output+=v2[size-2];
-    output+=" and ";
-    output+=v2[size-1];
-    
+    else if(size==1){
+        return v2[0];
+    }
+    else if (size==2){
+        output+=v2[0];
+        output+=" and ";
+        output+=v2[1];
+        return output;
+    }
 }
 std::vector<std::string> Cup::getAdditionsArray()
 {
