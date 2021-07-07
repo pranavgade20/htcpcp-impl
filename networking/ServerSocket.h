@@ -29,7 +29,8 @@ private:
     int server_fd;
 public:
     ServerSocket(int port);
-    Socket* accept();
+
+    Socket *accept();
 };
 
 

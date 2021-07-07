@@ -6,4 +6,4 @@ set(ADDITIONS_SRC
         additions/SpiceType.h
         additions/SweetenerType.h
         additions/SyrupType.h
-)
+        )

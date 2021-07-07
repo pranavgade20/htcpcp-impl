@@ -6,6 +6,8 @@
 class CoffeePot : public Pot {
 public:
     CoffeePot() {};
+
+    virtual std::string getServerName();
 };
 
 #endif

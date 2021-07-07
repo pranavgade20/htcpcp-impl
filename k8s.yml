@@ -1,0 +1,73 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: htcpcp-coffeepot
+  labels:
+    app: coffeepot
+spec:
+  containers:
+    - name: coffeepot
+      image: htcpcp
+      imagePullPolicy: IfNotPresent
+      args:
+        - "80"
+        - "coffeepot"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: coffeepot-service
+spec:
+  selector:
+    app: coffeepot
+  ports:
+    - port: 80
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: htcpcp-teapot
+  labels:
+    app: teapot
+spec:
+  containers:
+    - name: teapot
+      image: htcpcp
+      imagePullPolicy: IfNotPresent
+      args:
+        - "80"
+        - "teapot"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: teapot-service
+spec:
+  selector:
+    app: teapot
+  ports:
+    - port: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: htcpcp-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: "/teapot"
+            backend:
+              service:
+                name: teapot-service
+                port:
+                  number: 80
+          - pathType: Prefix
+            path: "/coffeepot"
+            backend:
+              service:
+                name: coffeepot-service
+                port:
+                  number: 80
+---

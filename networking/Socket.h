@@ -29,15 +29,19 @@ private:
     static const int bufSize = 1024;
     char outBuf_[bufSize];
     char inBuf_[bufSize + 16 - sizeof(int)];
-    int  fd_;
+    int fd_;
 public:
     Socket(int fd);
+
     ~Socket();
+
     void close();
 
 protected:
     int overflow(int c);
+
     int underflow();
+
     int sync();
 };
 

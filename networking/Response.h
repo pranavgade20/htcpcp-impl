@@ -22,14 +22,13 @@
 #include <string>
 #include <map>
 
-class Response
-{
+class Response {
 private:
     int response_code;
     std::string response_code_string;
-    std::map<std::string, std::string> headers;
+    std::map <std::string, std::string> headers;
     std::string body;
-    static std::string getErrorString(int response_code);
+
 public:
     Response(int response_code);
     Response(int response_code, std::string body);

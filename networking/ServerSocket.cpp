@@ -32,7 +32,7 @@ ServerSocket::ServerSocket(int port) {
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(port);
 
-    if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) == -1) {
+    if (bind(server_fd, (struct sockaddr *) &address, sizeof(address)) == -1) {
         throw -1;
     }
 
@@ -41,9 +41,9 @@ ServerSocket::ServerSocket(int port) {
     }
 }
 
-Socket* ServerSocket::accept() {
+Socket *ServerSocket::accept() {
     socklen_t address_size = sizeof(address);
-    int socket_fd = ::accept(server_fd, (struct sockaddr*)&address, &address_size);
+    int socket_fd = ::accept(server_fd, (struct sockaddr *) &address, &address_size);
     if (socket_fd == -1) throw socket_fd;
     return new Socket(socket_fd);
 }

@@ -16,9 +16,9 @@
  *************************************************************************/
 
 #ifndef HTCPCP_CUP_H
-#define HTCPCP_CUP_H 
+#define HTCPCP_CUP_H
 
-#include <string> 
+#include <string>
 
 #include "additions/AlcoholType.h"
 #include "additions/MilkType.h"
@@ -35,11 +35,17 @@ private:
     AlcoholType alcohol;
 public:
     Cup();
+
     void setMilk(MilkType milk);
+
     void setSweetener(SweetenerType sweetener);
+
     void setSyrup(SyrupType syrup);
+
     void setSpice(SpiceType spice);
+
     void setAlcohol(AlcoholType alcohol);
+
     std::string getDescription();
 };
 
