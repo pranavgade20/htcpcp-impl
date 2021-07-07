@@ -83,6 +83,7 @@ std::string Cup::getDescription()
         output+=v2[1];
         return output;
     }
+    return output;
 }
 std::vector<std::string> Cup::getAdditionsArray()
 {
@@ -109,7 +110,7 @@ std::vector<std::string> Cup::getAdditionsArray()
     }
     else if (milk == MilkType::NON_DAIRY)
     {
-        v1.push_back("Non-Dairy");
+        v1.push_back("Non-Dairy Milk");
     }
     if (spice == SpiceType::CINNAMON)
     {
@@ -129,16 +130,16 @@ std::vector<std::string> Cup::getAdditionsArray()
     }
     if (sweetener == SweetenerType::SUGAR)
     {
-        v1.push_back("Cinnamon");
+        v1.push_back("Sugar");
     }
     else if (sweetener == SweetenerType::STEVIA)
     {
         v1.push_back("Stevia");
     }
-    else if (sweetener == SweetenerType::STEVIA)
-    {
-        v1.push_back("Honey");
-    }
+
+
+
+
     else if (sweetener == SweetenerType::HONEY)
     {
         v1.push_back("Honey");
@@ -153,19 +154,19 @@ std::vector<std::string> Cup::getAdditionsArray()
     }
     if (syrup == SyrupType::VANILLA)
     {
-        v1.push_back("Vanilla");
+        v1.push_back("Vanilla Syrup");
     }
     else if (syrup == SyrupType::ALMOND)
     {
-        v1.push_back("Almond");
+        v1.push_back("Almond Syrup");
     }
     else if (syrup == SyrupType::RASPBERRY)
     {
-        v1.push_back("Raspberry");
+        v1.push_back("Raspberry Syrup");
     }
     else if (syrup == SyrupType::CHOCOLATE)
     {
-        v1.push_back("Chocolate");
+        v1.push_back("Chocolate Syrup");
     }
     if (alcohol == AlcoholType::WHISKY)
     {
@@ -183,4 +184,5 @@ std::vector<std::string> Cup::getAdditionsArray()
     {
         v1.push_back("Aquavit");
     }
+    return v1;
 }
