@@ -28,7 +28,7 @@ private:
     struct sockaddr_in address;
     int server_fd;
 public:
-    ServerSocket();
+    ServerSocket(int port);
     Socket* accept();
 };
 

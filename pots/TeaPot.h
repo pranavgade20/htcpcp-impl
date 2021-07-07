@@ -5,7 +5,7 @@
 
 class TeaPot : public Pot {
     public:
-        TeaPot();
+        TeaPot() {};
         void addMilk(int type);
         void addSweetener(int type);
         void addSyrup(int type);

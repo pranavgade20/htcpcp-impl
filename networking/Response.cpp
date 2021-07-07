@@ -69,11 +69,22 @@ std::string Response::getErrorString(int response_code) {
 }
 
 void Response::sendResponse(Socket* socket) {
-    *socket << "HTTP/1.0 " << this->response_code << this->response_code_string << "\r\n";
+    *socket << "HTTP/1.0 " << this->response_code << getResponseString(this->response_code) << "\r\n";
     for (auto it : this->headers) {
         *socket << it.first << ": " << it.second << "\r\n";
     }
     *socket << "\r\n" << this->body << "\r\n";
+}
+
+std::string Response::getResponseString(int code) {
+    switch (code) {
+        case 200: return "OK";
+        case 400: return "Bad Request";
+        case 418: return "I'm a teapot";
+        case 500: return "Server Error";
+        //TODO add more
+    }
+    return "NOT IMPLEMENTED";
 }
 
 // Sample Response

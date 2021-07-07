@@ -17,7 +17,7 @@
 
 #include "ServerSocket.h"
 
-ServerSocket::ServerSocket() {
+ServerSocket::ServerSocket(int port) {
     server_fd = socket(AF_INET, SOCK_STREAM, 0); // tcp socket over ipv4, default protocol
     if (server_fd == 0) {
         throw server_fd;
@@ -30,7 +30,7 @@ ServerSocket::ServerSocket() {
 
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
-    address.sin_port = htons(8080);
+    address.sin_port = htons(port);
 
     if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) == -1) {
         throw -1;
