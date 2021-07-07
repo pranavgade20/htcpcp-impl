@@ -19,6 +19,7 @@
 #define HTCPCP_CUP_H 
 
 #include <string> 
+#include <vector>
 
 #include "additions/AlcoholType.h"
 #include "additions/MilkType.h"
@@ -33,6 +34,7 @@ private:
     SyrupType syrup;
     SpiceType spice;
     AlcoholType alcohol;
+    std::vector<std::string> getAdditionsArray();
 public:
     Cup();
     void setMilk(MilkType milk);
@@ -40,7 +42,7 @@ public:
     void setSyrup(SyrupType syrup);
     void setSpice(SpiceType spice);
     void setAlcohol(AlcoholType alcohol);
-    std::string getDescription();
+    std::string getDescription(); 
 };
 
 

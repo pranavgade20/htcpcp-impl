@@ -23,7 +23,8 @@
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
 
-Cup::Cup() {
+Cup::Cup()
+{
     milk = MilkType::NONE;
     sweetener = SweetenerType::NONE;
     syrup = SyrupType::NONE;
@@ -31,26 +32,143 @@ Cup::Cup() {
     alcohol = AlcoholType::NONE;
 }
 
-void Cup::setMilk(MilkType milk) {
+void Cup::setMilk(MilkType milk)
+{
     this->milk = milk;
 };
 
-void Cup::setSweetener(SweetenerType sweetener) {
+void Cup::setSweetener(SweetenerType sweetener)
+{
     this->sweetener = sweetener;
 };
 
-void Cup::setSyrup(SyrupType syrup) {
+void Cup::setSyrup(SyrupType syrup)
+{
     this->syrup = syrup;
 };
 
-void Cup::setSpice(SpiceType spice) {
+void Cup::setSpice(SpiceType spice)
+{
     this->spice = spice;
 };
 
-void Cup::setAlcohol(AlcoholType alcohol) {
+void Cup::setAlcohol(AlcoholType alcohol)
+{
     this->alcohol = alcohol;
 };
 
-std::string Cup::getDescription() {
-    return "Your coffee is ready!";
+std::string Cup::getDescription()
+{
+    std::vector<std::string> v2=getAdditionsArray();
+    int size=v2.size();
+    std::string output="";
+    if()for (int i = 0; i < size-2; i++)
+    {
+        output+=v2[i];
+        output+=", ";
+    }
+    output+=v2[size-2];
+    output+=" and ";
+    output+=v2[size-1];
+    
+}
+std::vector<std::string> Cup::getAdditionsArray()
+{
+    std::vector<std::string> v1;
+    if (milk == MilkType::CREAM)
+    {
+        v1.push_back("Cream");
+    }
+    else if (milk == MilkType::HALF_AND_HALF)
+    {
+        v1.push_back("Half and Half");
+    }
+    else if (milk == MilkType::WHOLE_MILK)
+    {
+        v1.push_back("Whole Milk");
+    }
+    else if (milk == MilkType::PART_SKIM)
+    {
+        v1.push_back("Part Skim Milk");
+    }
+    else if (milk == MilkType::SKIM)
+    {
+        v1.push_back("Skim Milk");
+    }
+    else if (milk == MilkType::NON_DAIRY)
+    {
+        v1.push_back("Non-Dairy");
+    }
+    if (spice == SpiceType::CINNAMON)
+    {
+        v1.push_back("Cinnamon");
+    }
+    else if (spice == SpiceType::NUTMEG)
+    {
+        v1.push_back("Nutmeg");
+    }
+    else if (spice == SpiceType::CARDAMOM)
+    {
+        v1.push_back("Cardamom");
+    }
+    else if (spice == SpiceType::CLOVE)
+    {
+        v1.push_back("Clove");
+    }
+    if (sweetener == SweetenerType::SUGAR)
+    {
+        v1.push_back("Cinnamon");
+    }
+    else if (sweetener == SweetenerType::STEVIA)
+    {
+        v1.push_back("Stevia");
+    }
+    else if (sweetener == SweetenerType::STEVIA)
+    {
+        v1.push_back("Honey");
+    }
+    else if (sweetener == SweetenerType::HONEY)
+    {
+        v1.push_back("Honey");
+    }
+    else if (sweetener == SweetenerType::MAPLE_SYRUP)
+    {
+        v1.push_back("Maple Syrup");
+    }
+    else if (sweetener == SweetenerType::AGAVE)
+    {
+        v1.push_back("Agave");
+    }
+    if (syrup == SyrupType::VANILLA)
+    {
+        v1.push_back("Vanilla");
+    }
+    else if (syrup == SyrupType::ALMOND)
+    {
+        v1.push_back("Almond");
+    }
+    else if (syrup == SyrupType::RASPBERRY)
+    {
+        v1.push_back("Raspberry");
+    }
+    else if (syrup == SyrupType::CHOCOLATE)
+    {
+        v1.push_back("Chocolate");
+    }
+    if (alcohol == AlcoholType::WHISKY)
+    {
+        v1.push_back("Whisky");
+    }
+    else if (alcohol == AlcoholType::RUM)
+    {
+        v1.push_back("Rum");
+    }
+    else if (alcohol == AlcoholType::KAHLUA)
+    {
+        v1.push_back("Kahlua");
+    }
+    else if (alcohol == AlcoholType::AQUAVIT)
+    {
+        v1.push_back("Aquavit");
+    }
 }
