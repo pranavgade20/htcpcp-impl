@@ -15,6 +15,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
+#include <iostream>
+#include <string>
 #include "Cup.h"
 
 #include "additions/AlcoholType.h"
@@ -35,56 +37,33 @@ Cup::Cup()
 void Cup::setMilk(MilkType milk)
 {
     this->milk = milk;
+    std::cout << "Milk set to " << (int)milk << std::endl;
 };
 
 void Cup::setSweetener(SweetenerType sweetener)
 {
     this->sweetener = sweetener;
+    std::cout << "Sweetener set to " << (int)sweetener << std::endl;
 };
 
 void Cup::setSyrup(SyrupType syrup)
 {
     this->syrup = syrup;
+    std::cout << "Syrup set to " << (int)syrup << std::endl;
 };
 
 void Cup::setSpice(SpiceType spice)
 {
     this->spice = spice;
+    std::cout << "Spice set to " << (int)spice << std::endl;
 };
 
 void Cup::setAlcohol(AlcoholType alcohol)
 {
     this->alcohol = alcohol;
+    std::cout << "Alcohol set to " << (int)alcohol << std::endl;
 };
 
-std::string Cup::getDescription()
-{
-    std::vector<std::string> v2 = getAdditionsArray();
-    int size = v2.size();
-    std::string output = "";
-    if (size>=3)
-    {
-        for (int i = 0; i < size - 2; i++)
-        {
-            output += v2[i];
-            output += ", ";
-        }
-        output += v2[size - 2];
-        output += " and ";
-        output += v2[size - 1];
-        return output;
-    }
-    else if(size==1){
-        return v2[0];
-    }
-    else if (size==2){
-        output+=v2[0];
-        output+=" and ";
-        output+=v2[1];
-        return output;
-    }
-    return output;
-}
 std::vector<std::string> Cup::getAdditionsArray()
 {
     std::vector<std::string> v1;
@@ -136,10 +115,6 @@ std::vector<std::string> Cup::getAdditionsArray()
     {
         v1.push_back("Stevia");
     }
-
-
-
-
     else if (sweetener == SweetenerType::HONEY)
     {
         v1.push_back("Honey");
@@ -185,4 +160,33 @@ std::vector<std::string> Cup::getAdditionsArray()
         v1.push_back("Aquavit");
     }
     return v1;
+}
+
+std::string Cup::getDescription()
+{
+    std::vector<std::string> v2 = getAdditionsArray();
+    int size = v2.size();
+    std::string output = "";
+    if (size>=3)
+    {
+        for (int i = 0; i < size - 2; i++)
+        {
+            output += v2[i];
+            output += ", ";
+        }
+        output += v2[size - 2];
+        output += " and ";
+        output += v2[size - 1];
+        return output;
+    }
+    else if(size==1){
+        return v2[0];
+    }
+    else if (size==2){
+        output+=v2[0];
+        output+=" and ";
+        output+=v2[1];
+        return output;
+    }
+    return output;
 }
