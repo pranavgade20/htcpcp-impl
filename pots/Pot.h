@@ -16,7 +16,7 @@
  *************************************************************************/
 
 #ifndef HTCPCP_POT_H
-#define HTCPCP_POT_H 
+#define HTCPCP_POT_H
 
 #include <string>
 #include <map>
@@ -30,21 +30,32 @@
 #include "additions/SpiceType.h"
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
+
 class Response;
+
 class Pot {
 private:
     bool brewing;
-    Cup* cup;
+    Cup *cup;
 public:
-    Pot() : brewing(false),cup(nullptr) {};
-    Response* brew(Request* req);
+    Pot() : brewing(false), cup(nullptr) {};
+
+    Response *brew(Request *req);
+
     virtual void addMilk(int type);
+
     virtual void addSweetener(int type);
+
     virtual void addSyrup(int type);
+
     virtual void addSpice(int type);
+
     virtual void addAlcohol(int type);
 
-    Cup* removeCup();
+    virtual std::string getServerName();
+
+    Cup *removeCup();
+
     bool isBrewing();
 };
 

@@ -17,6 +17,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
 #include "networking/ServerSocket.h"
 #include "networking/Socket.h"
 #include "networking/Request.h"
@@ -25,15 +26,23 @@
 #include "pots/CoffeePot.h"
 #include "pots/TeaPot.h"
 
-int main() {
-    ServerSocket serverSocket;
-    Pot* pot = new Pot();
+int main(int argc, char **argv) {
+    ServerSocket serverSocket((std::stoi(argv[1])));
+    Pot *pot;
+    if (strcmp(argv[2], "coffeepot") == 0) {
+        pot = new CoffeePot;
+    } else if (strcmp(argv[2], "teapot") == 0) {
+        pot = new TeaPot;
+    } else pot = new Pot;
+
+    std::cout << "listening as a " << argv[2] << " on port " << argv[1] << std::endl;
 
     while (true) {
-        Socket* socket = serverSocket.accept();
-        Request* request = new Request(socket);
-        Response* response = pot->brew(request);
+        Socket *socket = serverSocket.accept();
+        Request *request = new Request(socket);
+        Response *response = pot->brew(request);
         response->sendResponse(socket);
+        std::cout << "Response sent." << std::endl;
         socket->close();
         delete socket;
         delete request;

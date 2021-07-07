@@ -20,7 +20,7 @@
 
 
 enum class SweetenerType {
-    NONE = 3<<29, SUGAR, STEVIA, HONEY, MAPLE_SYRUP, AGAVE,
+    NONE = 3 << 29, SUGAR, STEVIA, HONEY, MAPLE_SYRUP, AGAVE,
 };
 
 

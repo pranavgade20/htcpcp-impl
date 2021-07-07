@@ -22,19 +22,20 @@
 #include <string>
 #include <map>
 
-class Response
-{
+class Response {
 private:
     int response_code;
     std::string response_code_string;
-    std::map<std::string, std::string> headers;
+    std::map <std::string, std::string> headers;
     std::string body;
-    static std::string getErrorString(int response_code);
+
 public:
     Response(int response_code);
     Response(int response_code, std::string body);
 
     void sendResponse(Socket* socket);
+
+    static std::string getResponseString(int code);
 };
 
 #endif // HTCPCP_RESPONSE_H/**//// HTCPCP/1.0 418 I'm a teapot// Date: Fri, 04 Jun 2021 15:22:53 GMT// Server: Tea Pot// Content-Type: text/html; charset=utf-8//// Your coffee with skin milk, maple syrup is eready :))D3)))

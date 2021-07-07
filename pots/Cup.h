@@ -16,7 +16,7 @@
  *************************************************************************/
 
 #ifndef HTCPCP_CUP_H
-#define HTCPCP_CUP_H 
+#define HTCPCP_CUP_H
 
 #include <string> 
 #include <vector>
@@ -37,11 +37,17 @@ private:
     std::vector<std::string> getAdditionsArray();
 public:
     Cup();
+
     void setMilk(MilkType milk);
+
     void setSweetener(SweetenerType sweetener);
+
     void setSyrup(SyrupType syrup);
+
     void setSpice(SpiceType spice);
+
     void setAlcohol(AlcoholType alcohol);
+    
     std::string getDescription(); 
 };
 

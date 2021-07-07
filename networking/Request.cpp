@@ -26,8 +26,8 @@
 #include <sstream>
 
 int getAddition(std::string type, std::string content);
-std::string readuntil(Socket *in, std::string delimiter)
-{
+
+std::string readuntil(Socket *in, std::string delimiter) {
     std::string cr;
     char delim = *(delimiter.rbegin());
     size_t sz = delimiter.size(), tot;
@@ -40,8 +40,7 @@ std::string readuntil(Socket *in, std::string delimiter)
     return cr.substr(0, tot - sz);
 }
 
-Request::Request(Socket *socket)
-{
+Request::Request(Socket *socket) {
     *socket >> method;
     *socket >> path;
     *socket >> protocol;
@@ -118,32 +117,32 @@ std::string Request::getBody() {
 
 int getAddition(std::string type, std::string content) {
     if (type == "alcohol-type") {
-        if (content == "Whisky") return (int)AlcoholType::WHISKY;
-        else if (content == "Rum") return (int)AlcoholType::RUM;
-        else if (content == "Kahlua") return (int)AlcoholType::KAHLUA;
-        else if (content == "Aquavit") return (int)AlcoholType::AQUAVIT;
-        else return (int)AlcoholType::NONE;
+        if (content == "Whisky") return (int) AlcoholType::WHISKY;
+        else if (content == "Rum") return (int) AlcoholType::RUM;
+        else if (content == "Kahlua") return (int) AlcoholType::KAHLUA;
+        else if (content == "Aquavit") return (int) AlcoholType::AQUAVIT;
+        else return (int) AlcoholType::NONE;
     } else if (type == "milk-type") {
-        if (content == "Cream") return (int)MilkType::CREAM;
-        else if (content == "Half-and-half") return (int)MilkType::HALF_AND_HALF;
-        else if (content == "Part-Skim") return (int)MilkType::PART_SKIM;
-        else if (content == "Skim") return (int)MilkType::SKIM;
-        else if (content == "Non-Dairy") return (int)MilkType::NON_DAIRY;
-        else if (content == "Whole-milk") return (int)MilkType::WHOLE_MILK;
-        else return (int)MilkType::NONE;
+        if (content == "Cream") return (int) MilkType::CREAM;
+        else if (content == "Half-and-half") return (int) MilkType::HALF_AND_HALF;
+        else if (content == "Part-Skim") return (int) MilkType::PART_SKIM;
+        else if (content == "Skim") return (int) MilkType::SKIM;
+        else if (content == "Non-Dairy") return (int) MilkType::NON_DAIRY;
+        else if (content == "Whole-milk") return (int) MilkType::WHOLE_MILK;
+        else return (int) MilkType::NONE;
     } else if (type == "spice-type") {
-        if (content == "Cinnamon") return (int)SpiceType::CINNAMON;
-        else if (content == "Nutmeg") return (int)SpiceType::NUTMEG;
-        else if (content == "Cardamom") return (int)SpiceType::CARDAMOM;
-        else if (content == "Clove") return (int)SpiceType::CLOVE;
-        else return (int)SpiceType::NONE;
+        if (content == "Cinnamon") return (int) SpiceType::CINNAMON;
+        else if (content == "Nutmeg") return (int) SpiceType::NUTMEG;
+        else if (content == "Cardamom") return (int) SpiceType::CARDAMOM;
+        else if (content == "Clove") return (int) SpiceType::CLOVE;
+        else return (int) SpiceType::NONE;
     } else if (type == "sweetener-type") {
-        if (content == "Sugar") return (int)SweetenerType::SUGAR;
-        else if (content == "Stevia") return (int)SweetenerType::STEVIA;
-        else if (content == "Honey") return (int)SweetenerType::HONEY;
-        else if (content == "Maple-syrup") return (int)SweetenerType::MAPLE_SYRUP;
-        else if (content == "Agave") return (int)SweetenerType::AGAVE;
-        else return (int)SweetenerType::NONE;
+        if (content == "Sugar") return (int) SweetenerType::SUGAR;
+        else if (content == "Stevia") return (int) SweetenerType::STEVIA;
+        else if (content == "Honey") return (int) SweetenerType::HONEY;
+        else if (content == "Maple-syrup") return (int) SweetenerType::MAPLE_SYRUP;
+        else if (content == "Agave") return (int) SweetenerType::AGAVE;
+        else return (int) SweetenerType::NONE;
     }
     return -1;
 }

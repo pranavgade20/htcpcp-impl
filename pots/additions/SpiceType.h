@@ -19,8 +19,8 @@
 #define HTCPCP_SPICETYPE_H
 
 
-enum class SpiceType { 
-    NONE = 2<<29, CINNAMON, NUTMEG, CARDAMOM, CLOVE,
+enum class SpiceType {
+    NONE = 2 << 29, CINNAMON, NUTMEG, CARDAMOM, CLOVE,
 };
 
 
