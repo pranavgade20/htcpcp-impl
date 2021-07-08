@@ -43,19 +43,13 @@ public:
     Response *brew(Request *req);
 
     virtual void addMilk(int type);
-
     virtual void addSweetener(int type);
-
     virtual void addSyrup(int type);
-
     virtual void addSpice(int type);
-
     virtual void addAlcohol(int type);
-
     virtual std::string getServerName();
 
     Cup *removeCup();
-
     bool isBrewing();
 };
 

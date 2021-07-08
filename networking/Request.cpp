@@ -60,6 +60,12 @@ Request::Request(Socket *socket) {
     size_t ptr = 0;
     std::string delimiter = "; ";
     if (headers.count("Accept-Additions")) {
+        addition_map["milk-type"] = (int)MilkType::NONE;
+        addition_map["sweetener-type"] = (int)SweetenerType::NONE;
+        addition_map["syrup-type"] = (int)SyrupType::NONE;
+        addition_map["spice-type"] = (int)SpiceType::NONE;
+        addition_map["alcohol-type"] = (int)AlcoholType::NONE;
+
         std::string additions = headers["Accept-Additions"];
         std::string addition;
         while ((ptr = additions.find(delimiter)) != std::string::npos) {
@@ -70,8 +76,7 @@ Request::Request(Socket *socket) {
                 return;
             }
             std::string addition_type = addition.substr(0, split);
-            std::string addition_content = addition.substr(split + 2, addition.length());
-
+            std::string addition_content = addition.substr(split + 1, addition.length());
             addition_map[addition_type] = getAddition(addition_type, addition_content);
 
             additions.erase(0, ptr + delimiter.length());
@@ -85,7 +90,7 @@ Request::Request(Socket *socket) {
             int split = sub.find("=", 0);
             if (split != std::string::npos) {
                 std::string title = sub.substr(0, split);
-                std::string value = sub.substr(split + 2, sub.length());
+                std::string value = sub.substr(split + 1, sub.length());
                 if (title == "boundary") {
                     readuntil(socket, value);
                     break;

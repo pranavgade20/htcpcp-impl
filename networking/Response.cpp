@@ -55,6 +55,10 @@ void Response::sendResponse(Socket *socket) {
     *socket << "\r\n" << this->body << "\r\n";
 }
 
+void Response::addHeader(std::string key, std::string value) {
+    headers[key] = value;
+}
+
 // Sample Response
 
 // HTCPCP/1.0 406 Not Acceptable
