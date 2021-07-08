@@ -167,26 +167,17 @@ std::string Cup::getDescription()
     std::vector<std::string> v2 = getAdditionsArray();
     int size = v2.size();
     std::string output = "";
-    if (size>=3)
+    for (int i = 0; i < size - 2; i++)
     {
-        for (int i = 0; i < size - 2; i++)
-        {
-            output += v2[i];
-            output += ", ";
-        }
+        output += v2[i];
+        output += ", ";
+    }
+    if(size>=2) {
         output += v2[size - 2];
         output += " and ";
+    }
+    if(size>=1) {
         output += v2[size - 1];
-        return output;
     }
-    else if(size==1){
-        return v2[0];
-    }
-    else if (size==2){
-        output+=v2[0];
-        output+=" and ";
-        output+=v2[1];
-        return output;
-    }
-    return output;
+    return output;    
 }
