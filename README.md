@@ -15,7 +15,7 @@ To stop brewing coffee:
 3. Tech-Stack/Tooling
 4. Project Structure
    - Pot
-   - Derrived Pots
+   - Derived Pots
    - Cup/Additions
    - Request/Response
    - Networking
