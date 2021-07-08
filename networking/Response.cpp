@@ -52,7 +52,7 @@ void Response::sendResponse(Socket *socket) {
     for (auto it : this->headers) {
         *socket << it.first << ": " << it.second << "\r\n";
     }
-    *socket << "\r\n" << this->body << "\r\n";
+    *socket << "\r\n" << this->body << "\r\n\r\n";
 }
 
 void Response::addHeader(std::string key, std::string value) {

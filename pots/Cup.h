@@ -39,16 +39,13 @@ public:
     Cup();
 
     void setMilk(MilkType milk);
-
     void setSweetener(SweetenerType sweetener);
-
     void setSyrup(SyrupType syrup);
-
     void setSpice(SpiceType spice);
-
     void setAlcohol(AlcoholType alcohol);
-    
-    std::string getDescription(); 
+
+    static std::string getAdditionName(int addition);
+    std::string getDescription();
 };
 
 

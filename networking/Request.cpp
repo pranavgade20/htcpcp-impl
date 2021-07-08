@@ -81,6 +81,15 @@ Request::Request(Socket *socket) {
 
             additions.erase(0, ptr + delimiter.length());
         }
+        addition = additions.substr(0, ptr);
+        int split = addition.find("=", 0);
+        if (split == std::string::npos) {
+            method = "INVALID";
+            return;
+        }
+        std::string addition_type = addition.substr(0, split);
+        std::string addition_content = addition.substr(split + 1, addition.length()-split-2);
+        addition_map[addition_type] = getAddition(addition_type, addition_content);
     }
 
     if (headers.count("Content-type") != 0) {
@@ -148,6 +157,12 @@ int getAddition(std::string type, std::string content) {
         else if (content == "Maple-syrup") return (int) SweetenerType::MAPLE_SYRUP;
         else if (content == "Agave") return (int) SweetenerType::AGAVE;
         else return (int) SweetenerType::NONE;
+    } else if (type == "syrup-type") {
+        if (content == "Vanilla") return (int) SyrupType::VANILLA;
+        else if (content == "Almond") return (int) SyrupType::ALMOND;
+        else if (content == "Raspberry") return (int) SyrupType::RASPBERRY;
+        else if (content == "Chocolate") return (int) SyrupType::CHOCOLATE;
+        else return (int) SyrupType::NONE;
     }
     return -1;
 }

@@ -11,7 +11,7 @@ add_executable(htcpcp main.cpp)
 
 target_link_libraries(htcpcp PRIVATE networking)
 target_link_libraries(htcpcp PRIVATE pots)
-
+target_link_options (htcpcp PRIVATE -static -pthread)
 target_include_directories(htcpcp PUBLIC
         "${PROJECT_BINARY_DIR}"
         )

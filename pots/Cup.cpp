@@ -25,8 +25,7 @@
 #include "additions/SweetenerType.h"
 #include "additions/SyrupType.h"
 
-Cup::Cup()
-{
+Cup::Cup() {
     milk = MilkType::NONE;
     sweetener = SweetenerType::NONE;
     syrup = SyrupType::NONE;
@@ -34,150 +33,110 @@ Cup::Cup()
     alcohol = AlcoholType::NONE;
 }
 
-void Cup::setMilk(MilkType milk)
-{
+void Cup::setMilk(MilkType milk) {
     this->milk = milk;
-    std::cout << "Milk set to " << (int)milk << std::endl;
+    std::cout << "Milk set to " << getAdditionName((int)milk) << std::endl;
 };
 
-void Cup::setSweetener(SweetenerType sweetener)
-{
+void Cup::setSweetener(SweetenerType sweetener) {
     this->sweetener = sweetener;
-    std::cout << "Sweetener set to " << (int)sweetener << std::endl;
+    std::cout << "Sweetener set to " << getAdditionName((int)sweetener) << std::endl;
 };
 
-void Cup::setSyrup(SyrupType syrup)
-{
+void Cup::setSyrup(SyrupType syrup) {
     this->syrup = syrup;
-    std::cout << "Syrup set to " << (int)syrup << std::endl;
+    std::cout << "Syrup set to " << getAdditionName((int)syrup) << std::endl;
 };
 
-void Cup::setSpice(SpiceType spice)
-{
+void Cup::setSpice(SpiceType spice) {
     this->spice = spice;
-    std::cout << "Spice set to " << (int)spice << std::endl;
+    std::cout << "Spice set to " << getAdditionName((int)spice) << std::endl;
 };
 
-void Cup::setAlcohol(AlcoholType alcohol)
-{
+void Cup::setAlcohol(AlcoholType alcohol) {
     this->alcohol = alcohol;
-    std::cout << "Alcohol set to " << (int)alcohol << std::endl;
+    std::cout << "Alcohol set to " << getAdditionName((int)alcohol) << std::endl;
 };
 
-std::vector<std::string> Cup::getAdditionsArray()
-{
-    std::vector<std::string> v1;
-    if (milk == MilkType::CREAM)
-    {
-        v1.push_back("Cream");
+std::string Cup::getAdditionName(int addition) {
+    switch (addition) {
+        case ((int)MilkType::CREAM):
+            return "Cream";
+        case ((int)MilkType::HALF_AND_HALF):
+            return "Half and Half";
+        case ((int)MilkType::WHOLE_MILK):
+            return "Whole Milk";
+        case ((int)MilkType::PART_SKIM):
+            return "Part Skim Milk";
+        case ((int)MilkType::SKIM):
+            return "Skim Milk";
+        case ((int)MilkType::NON_DAIRY):
+            return "Non-Dairy Milk";
+        case ((int)SpiceType::CINNAMON):
+            return "Cinnamon";
+        case ((int)SpiceType::NUTMEG):
+            return "Nutmeg";
+        case ((int)SpiceType::CARDAMOM):
+            return "Cardamom";
+        case ((int)SpiceType::CLOVE):
+            return "Clove";
+        case ((int)SweetenerType::SUGAR):
+            return "Sugar";
+        case ((int)SweetenerType::STEVIA):
+            return "Stevia";
+        case ((int)SweetenerType::HONEY):
+            return "Honey";
+        case ((int)SweetenerType::MAPLE_SYRUP):
+            return "Maple Syrup";
+        case ((int)SweetenerType::AGAVE):
+            return "Agave";
+        case ((int)SyrupType::VANILLA):
+            return "Vanilla Syrup";
+        case ((int)SyrupType::ALMOND):
+            return "Almond Syrup";
+        case ((int)SyrupType::RASPBERRY):
+            return "Raspberry Syrup";
+        case ((int)SyrupType::CHOCOLATE):
+            return "Chocolate Syrup";
+        case ((int)AlcoholType::WHISKY):
+            return "Whisky";
+        case ((int)AlcoholType::RUM):
+            return "Rum";
+        case ((int)AlcoholType::KAHLUA):
+            return "Kahlua";
+        case ((int)AlcoholType::AQUAVIT):
+            return "Aquavit";
+        default:
+            return "None";
     }
-    else if (milk == MilkType::HALF_AND_HALF)
-    {
-        v1.push_back("Half and Half");
-    }
-    else if (milk == MilkType::WHOLE_MILK)
-    {
-        v1.push_back("Whole Milk");
-    }
-    else if (milk == MilkType::PART_SKIM)
-    {
-        v1.push_back("Part Skim Milk");
-    }
-    else if (milk == MilkType::SKIM)
-    {
-        v1.push_back("Skim Milk");
-    }
-    else if (milk == MilkType::NON_DAIRY)
-    {
-        v1.push_back("Non-Dairy Milk");
-    }
-    if (spice == SpiceType::CINNAMON)
-    {
-        v1.push_back("Cinnamon");
-    }
-    else if (spice == SpiceType::NUTMEG)
-    {
-        v1.push_back("Nutmeg");
-    }
-    else if (spice == SpiceType::CARDAMOM)
-    {
-        v1.push_back("Cardamom");
-    }
-    else if (spice == SpiceType::CLOVE)
-    {
-        v1.push_back("Clove");
-    }
-    if (sweetener == SweetenerType::SUGAR)
-    {
-        v1.push_back("Sugar");
-    }
-    else if (sweetener == SweetenerType::STEVIA)
-    {
-        v1.push_back("Stevia");
-    }
-    else if (sweetener == SweetenerType::HONEY)
-    {
-        v1.push_back("Honey");
-    }
-    else if (sweetener == SweetenerType::MAPLE_SYRUP)
-    {
-        v1.push_back("Maple Syrup");
-    }
-    else if (sweetener == SweetenerType::AGAVE)
-    {
-        v1.push_back("Agave");
-    }
-    if (syrup == SyrupType::VANILLA)
-    {
-        v1.push_back("Vanilla Syrup");
-    }
-    else if (syrup == SyrupType::ALMOND)
-    {
-        v1.push_back("Almond Syrup");
-    }
-    else if (syrup == SyrupType::RASPBERRY)
-    {
-        v1.push_back("Raspberry Syrup");
-    }
-    else if (syrup == SyrupType::CHOCOLATE)
-    {
-        v1.push_back("Chocolate Syrup");
-    }
-    if (alcohol == AlcoholType::WHISKY)
-    {
-        v1.push_back("Whisky");
-    }
-    else if (alcohol == AlcoholType::RUM)
-    {
-        v1.push_back("Rum");
-    }
-    else if (alcohol == AlcoholType::KAHLUA)
-    {
-        v1.push_back("Kahlua");
-    }
-    else if (alcohol == AlcoholType::AQUAVIT)
-    {
-        v1.push_back("Aquavit");
-    }
-    return v1;
 }
 
-std::string Cup::getDescription()
-{
-    std::vector<std::string> v2 = getAdditionsArray();
-    int size = v2.size();
+std::vector <std::string> Cup::getAdditionsArray() {
+    std::vector <std::string> ret;
+    if (this->milk != MilkType::NONE) ret.push_back(getAdditionName((int)this->milk));
+    if (this->sweetener != SweetenerType::NONE) ret.push_back(getAdditionName((int)this->sweetener));
+    if (this->syrup != SyrupType::NONE) ret.push_back(getAdditionName((int)this->syrup));
+    if (this->spice != SpiceType::NONE) ret.push_back(getAdditionName((int)this->spice));
+    if (this->alcohol != AlcoholType::NONE) ret.push_back(getAdditionName((int)this->alcohol));
+    return ret;
+}
+
+std::string Cup::getDescription() {
+    std::vector<std::string> additions = getAdditionsArray();
     std::string output = "";
-    for (int i = 0; i < size - 2; i++)
-    {
-        output += v2[i];
-        output += ", ";
+
+    for (int i = 0; i < additions.size() - 2; ++i) {
+        output += additions[i] + ", ";
     }
-    if(size>=2) {
-        output += v2[size - 2];
-        output += " and ";
+
+    if (additions.size() >= 2) {
+        output += additions[additions.size()-2] + ", and ";
+
     }
-    if(size>=1) {
-        output += v2[size - 1];
+
+    if (additions.size() >= 1) {
+        output += additions[additions.size()-1];
+
     }
-    return output;    
+    return output;
 }
