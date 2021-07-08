@@ -14,12 +14,12 @@ To stop brewing coffee:
 2. Goal
 3. Tech-Stack/Tooling
 4. Project Structure
-   -Pot
-   -Derrived Pots
-   -Cup/Additions
-   -Request/Response
-   -Networking
-   -Docker/k8s
+   - Pot
+   - Derrived Pots
+   - Cup/Additions
+   - Request/Response
+   - Networking
+   - Docker/k8s
 5. Processing
 6. Results
 7. Future Scope of the Project
