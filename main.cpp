@@ -27,6 +27,14 @@
 #include "pots/DecafPot.h"
 #include "pots/TeaPot.h"
 
+/**
+ * The entrypoint to our program. It takes in the port and pot type, ans starts a ServerSocket to
+ * listen at the specified port. When a request is received, it uses the brew method of the appropriate
+ * pot to brew your coffee and return  the correct response
+ * @param argc
+ * @param argv
+ * @return nothing, it listens forever
+ */
 int main(int argc, char **argv) {
     ServerSocket serverSocket((std::stoi(argv[1])));
     Pot *pot;

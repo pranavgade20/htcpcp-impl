@@ -26,22 +26,59 @@
 
 class Socket : public std::streambuf, public std::ostream, public std::istream {
 private:
+    /**
+     * The size of our buffers
+     */
     static const int bufSize = 1024;
+    /**
+     * Array to buffer output
+     */
     char outBuf_[bufSize];
+    /**
+     * Array to buffer input
+     */
     char inBuf_[bufSize + 16 - sizeof(int)];
+    /**
+     * file descriptor pointing to our socket
+     */
     int fd_;
 public:
+    /**
+     * constructs a Socket object that uses fd for read/write calls
+     * @param fd the file descriptor this socket is wrapped around
+     */
     Socket(int fd);
 
+    /**
+     * destructor to flush buffers and close file descriptor
+     */
     ~Socket();
 
+    /**
+     * closes the connection
+     */
     void close();
 
 protected:
+    /**
+     * writes a byte to the socket. we are required to override this as we are inheriting from
+     * ostream
+     * @param c the byte to write.
+     * @return EOF if writing is not possible
+     */
     int overflow(int c);
 
+    /**
+     * read a byte from the socket. we are required to override this as we are inheriting from
+     * istream
+     * @return one byte read from the socket, EOF otherwise
+     */
     int underflow();
 
+    /**
+     * flush the output buffer
+     * @return -1 if we can't write to the socket, 0 otherwise
+     */
     int sync();
 };
 

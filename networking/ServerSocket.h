@@ -25,11 +25,25 @@
 
 class ServerSocket {
 private:
+    /**
+     * port and address we will listen on
+     */
     struct sockaddr_in address;
+    /**
+     * file descriptor of incoming connections
+     */
     int server_fd;
 public:
+    /**
+     * creates a ServerSocket listening on the specified port
+     * @param port the port to listen on
+     */
     ServerSocket(int port);
 
+    /**
+     * wait for an incoming connection, and return a Socket object representing the incoming connection
+     * @return a Socket object representing the incoming connection
+     */
     Socket *accept();
 };
 
