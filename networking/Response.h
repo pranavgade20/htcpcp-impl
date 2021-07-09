@@ -30,13 +30,23 @@ private:
     std::string body;
 
 public:
+    /**
+     * A constructor
+     */
     Response(int response_code);
+    /**
+     * A constructor
+     */
     Response(int response_code, std::string body);
-
-    void addHeader(std::string key, std::string value);
-    void sendResponse(Socket* socket);
-
+    /**
+     * @return a Response string
+     */
     static std::string getResponseString(int code);
+    void addHeader(std::string key, std::string value);
+    /**
+     * sends the Response with appropriate Response strings and header values
+     */
+    void sendResponse(Socket* socket);
 };
 
 #endif // HTCPCP_RESPONSE_H
