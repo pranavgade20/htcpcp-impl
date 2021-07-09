@@ -9,6 +9,8 @@ set(POTS_SRC
         TeaPot.h
         CoffeePot.cpp
         CoffeePot.h
+        DecafPot.h
+        DecafPot.cpp
         Cup.cpp
         Cup.h
         ${ADDITIONS_SRC}

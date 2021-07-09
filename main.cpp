@@ -24,6 +24,7 @@
 #include "networking/Response.h"
 #include "pots/Pot.h"
 #include "pots/CoffeePot.h"
+#include "pots/DecafPot.h"
 #include "pots/TeaPot.h"
 
 int main(int argc, char **argv) {
@@ -31,6 +32,8 @@ int main(int argc, char **argv) {
     Pot *pot;
     if (strcmp(argv[2], "coffeepot") == 0) {
         pot = new CoffeePot;
+    } else if (strcmp(argv[2], "decafpot") == 0) {
+        pot = new DecafPot;
     } else if (strcmp(argv[2], "teapot") == 0) {
         pot = new TeaPot;
     } else pot = new Pot;
