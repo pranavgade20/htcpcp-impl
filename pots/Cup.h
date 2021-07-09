@@ -36,6 +36,9 @@ private:
     AlcoholType alcohol;
     std::vector<std::string> getAdditionsArray();
 public:
+    /**
+     * basic constructor
+     */
     Cup();
 
     void setMilk(MilkType milk);
@@ -44,6 +47,11 @@ public:
     void setSpice(SpiceType spice);
     void setAlcohol(AlcoholType alcohol);
 
+    /**
+     * get addition name
+     * @param addition code of addition
+     * @return string of name
+     */
     static std::string getAdditionName(int addition);
     std::string getDescription();
 };
