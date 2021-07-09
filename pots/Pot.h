@@ -36,19 +36,17 @@ class Response;
 class Pot {
 private:
     bool brewing;
-    Cup *cup;
-public:
-    Pot() : brewing(false), cup(nullptr) {};
-
-    Response *brew(Request *req);
-
+    Cup *cup;    
+protected:    
     virtual void addMilk(int type);
     virtual void addSweetener(int type);
     virtual void addSyrup(int type);
     virtual void addSpice(int type);
     virtual void addAlcohol(int type);
+public:
+    Pot() : brewing(false), cup(nullptr) {};
+    Response *brew(Request *req);
     virtual std::string getServerName();
-
     Cup *removeCup();
     bool isBrewing();
 };
