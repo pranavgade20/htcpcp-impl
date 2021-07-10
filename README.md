@@ -8,15 +8,12 @@ communicate.
 
 ## Building and Usage
 1. Use cmake to build.
-1. `docker build --tag htcpcp .` to build the docker image
-1. `kubectl apply -f k8s.yml` to deploy to your kubernetes cluster
-1. Alternatively, run the built binary `htcpcp` locally with: `./htcpcp 8080 coffeepot`
+2. `docker build --tag htcpcp .` to build the docker image
+3. `kubectl apply -f k8s.yml` to deploy to your kubernetes cluster
+4. Alternatively, run the built binary `htcpcp` locally with: `./htcpcp 8080 coffeepot`
 
-1. To start brewing coffee:
-   `curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'start\r\n' localhost:8080`
-
-   To stop brewing and get your coffee:
-   `curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'stop\r\n' localhost:8080`
+5. To start brewing coffee:```curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'start\r\n' localhost:8080```
+6. To stop brewing and get your coffee:```curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'stop\r\n' localhost:8080```
 
 ## Contents
 1. [Introduction](https://github.com/pranavgade20/htcpcp-impl/wiki/1.-Introduction)
@@ -32,3 +29,4 @@ communicate.
 5. [Processing](https://github.com/pranavgade20/htcpcp-impl/wiki/5.-Processing)
 6. [Results](https://github.com/pranavgade20/htcpcp-impl/wiki/6.-Results)
 7. [Future Scope of the Project](https://github.com/pranavgade20/htcpcp-impl/wiki/7.-Future-Scope-of-the-project)
+

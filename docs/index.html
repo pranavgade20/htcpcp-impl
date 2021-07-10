@@ -71,22 +71,11 @@ $(function() {
 Building and Usage</h1>
 <ol type="1">
 <li>Use cmake to build.</li>
-</ol>
-<ol type="1">
 <li><code>docker build --tag htcpcp .</code> to build the docker image</li>
-</ol>
-<ol type="1">
 <li><code>kubectl apply -f k8s.yml</code> to deploy to your kubernetes cluster</li>
-</ol>
-<ol type="1">
 <li>Alternatively, run the built binary <code>htcpcp</code> locally with: <code>./htcpcp 8080 coffeepot</code></li>
-</ol>
-<ol type="1">
-<li><p class="startli">To start brewing coffee: &lsquo;curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'start\r<br  />
-&rsquo; localhost:8080`</p>
-<p class="startli">To stop brewing and get your coffee: &lsquo;curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'stop\r<br  />
-&rsquo; localhost:8080`</p>
-</li>
+<li>To start brewing coffee:<code>curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'start\r\n' localhost:8080</code></li>
+<li>To stop brewing and get your coffee:<code>curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'stop\r\n' localhost:8080</code></li>
 </ol>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Contents</h1>
