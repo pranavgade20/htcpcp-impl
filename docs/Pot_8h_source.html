@@ -93,37 +93,45 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Cup_8h.html">Cup.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Socket_8h.html">Socket.h</a>&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;HTTPRequestType.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Request_8h.html">Request.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Response_8h.html">Response.h</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AlcoholType_8h.html">additions/AlcoholType.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MilkType_8h.html">additions/MilkType.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SpiceType_8h.html">additions/SpiceType.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SweetenerType_8h.html">additions/SweetenerType.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SyrupType_8h.html">additions/SyrupType.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">class </span><a class="code" href="classResponse.html">Response</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classPot.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPot.html">Pot</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classPot.html#a3e8a1869e576325553aeeee9249d2602">   41</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPot.html#a3e8a1869e576325553aeeee9249d2602">brewing</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classPot.html#afcc6d1f83f16defb95ddc16731044bf8">   45</a></span>&#160;    <a class="code" href="classCup.html">Cup</a> *<a class="code" href="classPot.html#afcc6d1f83f16defb95ddc16731044bf8">cup</a>;    </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:    </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#a113bb00981b9c3ddc190438e99af4777">addMilk</a>(<span class="keywordtype">int</span> type);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Request_8h.html">Request.h</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Response_8h.html">Response.h</a>&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AlcoholType_8h.html">additions/AlcoholType.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MilkType_8h.html">additions/MilkType.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SpiceType_8h.html">additions/SpiceType.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SweetenerType_8h.html">additions/SweetenerType.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SyrupType_8h.html">additions/SyrupType.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span><a class="code" href="classResponse.html">Response</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classPot.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPot.html">Pot</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classPot.html#a3e8a1869e576325553aeeee9249d2602">   40</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPot.html#a3e8a1869e576325553aeeee9249d2602">brewing</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classPot.html#afcc6d1f83f16defb95ddc16731044bf8">   44</a></span>&#160;    <a class="code" href="classCup.html">Cup</a> *<a class="code" href="classPot.html#afcc6d1f83f16defb95ddc16731044bf8">cup</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#a113bb00981b9c3ddc190438e99af4777">addMilk</a>(<span class="keywordtype">int</span> type);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#a9bbbc42f39ce1f41b9a473e78d21109b">addSweetener</a>(<span class="keywordtype">int</span> type);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#ad369293991bc29ea9ebf32650f6c6b02">addSyrup</a>(<span class="keywordtype">int</span> type);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#a55d3653dd15d2a6f97dbc93ae2ba789e">addSpice</a>(<span class="keywordtype">int</span> type);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#a4ef37658a1c26b6c7bcf7e38e2dd60be">addAlcohol</a>(<span class="keywordtype">int</span> type);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classPot.html#ae4bf1b0b1d09f2da493dde957125d529">   71</a></span>&#160;    <a class="code" href="classPot.html#ae4bf1b0b1d09f2da493dde957125d529">Pot</a>() : <a class="code" href="classPot.html#a3e8a1869e576325553aeeee9249d2602">brewing</a>(false), <a class="code" href="classPot.html#afcc6d1f83f16defb95ddc16731044bf8">cup</a>(nullptr) {};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classResponse.html">Response</a> *<a class="code" href="classPot.html#abc89910fa55885596af91069cf3116d2">brew</a>(<a class="code" href="classRequest.html">Request</a> *req);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="classPot.html#abfc665c5c809d8ae4c6f84855aed8db6">getServerName</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classCup.html">Cup</a> *<a class="code" href="classPot.html#a93fc80ab1fdd94cbcc1c3e418226ae85">removeCup</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPot.html#a2954ab88c3b761b54b2711c7c94814f8">isBrewing</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//HTCPCP_POT_H</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#ad369293991bc29ea9ebf32650f6c6b02">addSyrup</a>(<span class="keywordtype">int</span> type);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#a55d3653dd15d2a6f97dbc93ae2ba789e">addSpice</a>(<span class="keywordtype">int</span> type);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPot.html#a4ef37658a1c26b6c7bcf7e38e2dd60be">addAlcohol</a>(<span class="keywordtype">int</span> type);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classPot.html#ae4bf1b0b1d09f2da493dde957125d529">   75</a></span>&#160;    <a class="code" href="classPot.html#ae4bf1b0b1d09f2da493dde957125d529">Pot</a>() : <a class="code" href="classPot.html#a3e8a1869e576325553aeeee9249d2602">brewing</a>(false), <a class="code" href="classPot.html#afcc6d1f83f16defb95ddc16731044bf8">cup</a>(nullptr) {};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classResponse.html">Response</a> *<a class="code" href="classPot.html#abc89910fa55885596af91069cf3116d2">brew</a>(<a class="code" href="classRequest.html">Request</a> *req);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="classPot.html#abfc665c5c809d8ae4c6f84855aed8db6">getServerName</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classCup.html">Cup</a> *<a class="code" href="classPot.html#a93fc80ab1fdd94cbcc1c3e418226ae85">removeCup</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPot.html#a2954ab88c3b761b54b2711c7c94814f8">isBrewing</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//HTCPCP_POT_H</span></div>
 <div class="ttc" id="aAlcoholType_8h_html"><div class="ttname"><a href="AlcoholType_8h.html">AlcoholType.h</a></div></div>
 <div class="ttc" id="aCup_8h_html"><div class="ttname"><a href="Cup_8h.html">Cup.h</a></div></div>
 <div class="ttc" id="aMilkType_8h_html"><div class="ttname"><a href="MilkType_8h.html">MilkType.h</a></div></div>
@@ -134,10 +142,10 @@ $(function() {
 <div class="ttc" id="aSweetenerType_8h_html"><div class="ttname"><a href="SweetenerType_8h.html">SweetenerType.h</a></div></div>
 <div class="ttc" id="aSyrupType_8h_html"><div class="ttname"><a href="SyrupType_8h.html">SyrupType.h</a></div></div>
 <div class="ttc" id="aclassCup_html"><div class="ttname"><a href="classCup.html">Cup</a></div><div class="ttdef"><b>Definition:</b> Cup.h:30</div></div>
-<div class="ttc" id="aclassPot_html"><div class="ttname"><a href="classPot.html">Pot</a></div><div class="ttdef"><b>Definition:</b> Pot.h:36</div></div>
+<div class="ttc" id="aclassPot_html"><div class="ttname"><a href="classPot.html">Pot</a></div><div class="ttdef"><b>Definition:</b> Pot.h:35</div></div>
 <div class="ttc" id="aclassPot_html_a113bb00981b9c3ddc190438e99af4777"><div class="ttname"><a href="classPot.html#a113bb00981b9c3ddc190438e99af4777">Pot::addMilk</a></div><div class="ttdeci">virtual void addMilk(int type)</div><div class="ttdef"><b>Definition:</b> Pot.cpp:87</div></div>
 <div class="ttc" id="aclassPot_html_a2954ab88c3b761b54b2711c7c94814f8"><div class="ttname"><a href="classPot.html#a2954ab88c3b761b54b2711c7c94814f8">Pot::isBrewing</a></div><div class="ttdeci">bool isBrewing()</div><div class="ttdef"><b>Definition:</b> Pot.cpp:112</div></div>
-<div class="ttc" id="aclassPot_html_a3e8a1869e576325553aeeee9249d2602"><div class="ttname"><a href="classPot.html#a3e8a1869e576325553aeeee9249d2602">Pot::brewing</a></div><div class="ttdeci">bool brewing</div><div class="ttdef"><b>Definition:</b> Pot.h:41</div></div>
+<div class="ttc" id="aclassPot_html_a3e8a1869e576325553aeeee9249d2602"><div class="ttname"><a href="classPot.html#a3e8a1869e576325553aeeee9249d2602">Pot::brewing</a></div><div class="ttdeci">bool brewing</div><div class="ttdef"><b>Definition:</b> Pot.h:40</div></div>
 <div class="ttc" id="aclassPot_html_a4ef37658a1c26b6c7bcf7e38e2dd60be"><div class="ttname"><a href="classPot.html#a4ef37658a1c26b6c7bcf7e38e2dd60be">Pot::addAlcohol</a></div><div class="ttdeci">virtual void addAlcohol(int type)</div><div class="ttdef"><b>Definition:</b> Pot.cpp:107</div></div>
 <div class="ttc" id="aclassPot_html_a55d3653dd15d2a6f97dbc93ae2ba789e"><div class="ttname"><a href="classPot.html#a55d3653dd15d2a6f97dbc93ae2ba789e">Pot::addSpice</a></div><div class="ttdeci">virtual void addSpice(int type)</div><div class="ttdef"><b>Definition:</b> Pot.cpp:102</div></div>
 <div class="ttc" id="aclassPot_html_a93fc80ab1fdd94cbcc1c3e418226ae85"><div class="ttname"><a href="classPot.html#a93fc80ab1fdd94cbcc1c3e418226ae85">Pot::removeCup</a></div><div class="ttdeci">Cup * removeCup()</div><div class="ttdef"><b>Definition:</b> Pot.cpp:81</div></div>
@@ -145,8 +153,8 @@ $(function() {
 <div class="ttc" id="aclassPot_html_abc89910fa55885596af91069cf3116d2"><div class="ttname"><a href="classPot.html#abc89910fa55885596af91069cf3116d2">Pot::brew</a></div><div class="ttdeci">Response * brew(Request *req)</div><div class="ttdef"><b>Definition:</b> Pot.cpp:30</div></div>
 <div class="ttc" id="aclassPot_html_abfc665c5c809d8ae4c6f84855aed8db6"><div class="ttname"><a href="classPot.html#abfc665c5c809d8ae4c6f84855aed8db6">Pot::getServerName</a></div><div class="ttdeci">virtual std::string getServerName()</div><div class="ttdef"><b>Definition:</b> Pot.cpp:116</div></div>
 <div class="ttc" id="aclassPot_html_ad369293991bc29ea9ebf32650f6c6b02"><div class="ttname"><a href="classPot.html#ad369293991bc29ea9ebf32650f6c6b02">Pot::addSyrup</a></div><div class="ttdeci">virtual void addSyrup(int type)</div><div class="ttdef"><b>Definition:</b> Pot.cpp:97</div></div>
-<div class="ttc" id="aclassPot_html_ae4bf1b0b1d09f2da493dde957125d529"><div class="ttname"><a href="classPot.html#ae4bf1b0b1d09f2da493dde957125d529">Pot::Pot</a></div><div class="ttdeci">Pot()</div><div class="ttdef"><b>Definition:</b> Pot.h:71</div></div>
-<div class="ttc" id="aclassPot_html_afcc6d1f83f16defb95ddc16731044bf8"><div class="ttname"><a href="classPot.html#afcc6d1f83f16defb95ddc16731044bf8">Pot::cup</a></div><div class="ttdeci">Cup * cup</div><div class="ttdef"><b>Definition:</b> Pot.h:45</div></div>
+<div class="ttc" id="aclassPot_html_ae4bf1b0b1d09f2da493dde957125d529"><div class="ttname"><a href="classPot.html#ae4bf1b0b1d09f2da493dde957125d529">Pot::Pot</a></div><div class="ttdeci">Pot()</div><div class="ttdef"><b>Definition:</b> Pot.h:75</div></div>
+<div class="ttc" id="aclassPot_html_afcc6d1f83f16defb95ddc16731044bf8"><div class="ttname"><a href="classPot.html#afcc6d1f83f16defb95ddc16731044bf8">Pot::cup</a></div><div class="ttdeci">Cup * cup</div><div class="ttdef"><b>Definition:</b> Pot.h:44</div></div>
 <div class="ttc" id="aclassRequest_html"><div class="ttname"><a href="classRequest.html">Request</a></div><div class="ttdef"><b>Definition:</b> Request.h:26</div></div>
 <div class="ttc" id="aclassResponse_html"><div class="ttname"><a href="classResponse.html">Response</a></div><div class="ttdef"><b>Definition:</b> Response.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
