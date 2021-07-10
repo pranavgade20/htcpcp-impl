@@ -18,7 +18,9 @@
 #ifndef HTCPCP_SWEETENERTYPE_H
 #define HTCPCP_SWEETENERTYPE_H
 
-
+/**
+ * This enum represents all the available sweetener type additions
+ */
 enum class SweetenerType {
     NONE = 3 << 29, SUGAR, STEVIA, HONEY, MAPLE_SYRUP, AGAVE,
 };
