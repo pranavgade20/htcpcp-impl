@@ -18,7 +18,9 @@
 #ifndef HTCPCP_SPICETYPE_H
 #define HTCPCP_SPICETYPE_H
 
-
+/**
+ * This enum represents all the available spice type additions
+ */
 enum class SpiceType {
     NONE = 2 << 29, CINNAMON, NUTMEG, CARDAMOM, CLOVE,
 };
