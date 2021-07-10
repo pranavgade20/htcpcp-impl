@@ -22,7 +22,6 @@
 #include <map>
 #include "Cup.h"
 #include <Socket.h>
-#include <HTTPRequestType.h>
 #include <Request.h>
 #include <Response.h>
 #include "additions/AlcoholType.h"
