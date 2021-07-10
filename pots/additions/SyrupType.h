@@ -18,7 +18,9 @@
 #ifndef HTCPCP_SYRUPTYPE_H
 #define HTCPCP_SYRUPTYPE_H
 
-
+/**
+ * This enum represents all the available syrup type additions
+ */
 enum class SyrupType {
     NONE = 4 << 29, VANILLA, ALMOND, RASPBERRY, CHOCOLATE,
 };
