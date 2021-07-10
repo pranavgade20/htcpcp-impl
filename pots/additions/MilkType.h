@@ -18,7 +18,9 @@
 #ifndef HTCPCP_MILKTYPE_H
 #define HTCPCP_MILKTYPE_H
 
-
+/**
+ * This enum represents all the available milk type additions
+ */
 enum class MilkType {
     NONE = 1 << 29, CREAM, HALF_AND_HALF, WHOLE_MILK, PART_SKIM, SKIM, NON_DAIRY,
 };
