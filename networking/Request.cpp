@@ -47,14 +47,12 @@ Request::Request(Socket *socket) {
 
     std::string temp = readuntil(socket, "\r\n");
     while ((temp = readuntil(socket, "\r\n")) != "") {
-//        std::cout << temp << std::endl;
         int split = temp.find(": ", 0);
         if (split == std::string::npos) {
             method = "INVALID";
             return;
         }
         headers[temp.substr(0, split)] = temp.substr(split + 2, temp.length());
-//        std::cout << temp.substr(0, split) << "||" << temp.substr(split + 2, temp.length()) << std::endl;
     }
 
     size_t ptr = 0;
@@ -166,36 +164,3 @@ int getAddition(std::string type, std::string content) {
     }
     return -1;
 }
-
-// Sample request
-
-// BREW /pot-2 HTCPCP/1.0
-// Host: localhost:8081
-// User-Agent: curl
-// Accept: text/html
-// Accept-Language: en-US,en
-// Content-type: application/coffee-pot-command; boundary=---------------------------58123037437716747452831683647
-// Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;
-
-// -----------------------------58123037437716747452831683647
-// Content-Type: message/coffeepot
-
-// start
-
-
-// HTCPCP/1.0 406 Not Acceptable
-// Date: Fri, 04 Jun 2021 15:22:53 GMT
-// Server: Coffee Pot
-// Content-Type: text/html; charset=utf-8
-
-// HTCPCP/1.0 418 I'm a teapot
-// Date: Fri, 04 Jun 2021 15:22:53 GMT
-// Server: Tea Pot
-// Content-Type: text/html; charset=utf-8
-
-// HTCPCP/1.0 200 OK
-// Date: Fri, 04 Jun 2021 15:22:53 GMT
-// Server: Coffee Pot
-// Content-Type: text/html; charset=utf-8
-
-// <html> Brewing </html>

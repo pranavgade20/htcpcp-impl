@@ -58,20 +58,3 @@ void Response::sendResponse(Socket *socket) {
 void Response::addHeader(std::string key, std::string value) {
     headers[key] = value;
 }
-
-// Sample Response
-
-// HTCPCP/1.0 406 Not Acceptable
-// Date: Fri, 04 Jun 2021 15:22:53 GMT
-// Server: Coffee Pot
-// Content-Type: text/html; charset=utf-8
-
-// HTCPCP/1.0 418 I'm a teapot
-// Date: Fri, 04 Jun 2021 15:22:53 GMT
-// Server: Tea Pot
-// Content-Type: text/html; charset=utf-8
-
-// HTCPCP/1.0 200 OK
-// Date: Fri, 04 Jun 2021 15:22:53 GMT
-// Server: Coffee Pot
-// Content-Type: text/html; charset=utf-8
