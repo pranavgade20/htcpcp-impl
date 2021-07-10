@@ -1,10 +1,10 @@
 # htcpcp-impl
-
 This project implements a client and server conforming to RFC2324 HTCPCP/1.0 (Hyper Text Coffee Pot Control Protocol).
 
-The RFC was originally intended to be an April Fools' joke, but Error 418 (I'm a teapot) has gained popularity as a 
-classic easter egg in developer circles, so we decided to implement a server and a client conforming to this protocol to 
-communicate. 
+The RFC was originally intended to be an April Fools' joke, but Error 418 (I'm a teapot) has gained popularity as a classic easter egg in developer circles, so we decided to implement a server and a client conforming to this protocol to communicate. 
+
+## Documentation
+You can find detailed doxygen generated documentation here: [htcpcp-implementation-docs.netlify.app](https://htcpcp-implementation-docs.netlify.app/)
 
 ## Building and Usage
 1. Use cmake to build.
