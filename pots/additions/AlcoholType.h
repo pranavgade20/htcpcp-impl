@@ -19,7 +19,7 @@
 #define HTCPCP_ALCOHOLTYPE_H
 
 /**
- * This enum represents all the available milk type additions
+ * This enum represents all the available alcohol type additions
  */
 enum class AlcoholType {
     NONE = 0, WHISKY, RUM, KAHLUA, AQUAVIT,
