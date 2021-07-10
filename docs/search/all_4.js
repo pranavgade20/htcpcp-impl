@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['5_2e_2dprocessing_18',['5.-Processing',['../md_htcpcp_impl_wiki_5__Processing.html',1,'']]],
-  ['5_2e_2dprocessing_2emd_19',['5.-Processing.md',['../5_8-Processing_8md.html',1,'']]]
+  ['fd_5f_37',['fd_',['../classSocket.html#a226d5aa7dfb572eed47ed8e003d58e70',1,'Socket']]]
 ];

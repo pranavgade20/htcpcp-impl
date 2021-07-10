@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['outbuf_5f_94',['outBuf_',['../classSocket.html#ac7663ecf3b8357b48e2ba0499bd4858f',1,'Socket']]],
-  ['overflow_95',['overflow',['../classSocket.html#a8cd710db8defa8577b6f2117a1d5a8a4',1,'Socket']]]
+  ['_7esocket_120',['~Socket',['../classSocket.html#aeac4eb6379a543d38ed88977d3b6630a',1,'Socket']]]
 ];

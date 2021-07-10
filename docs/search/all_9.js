@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['body_41',['body',['../classRequest.html#ac1fb9c057c617b04af48798c3843b68a',1,'Request::body()'],['../classResponse.html#a2e0cdf7ac02fc84d48ab06b6ea02a60e',1,'Response::body()']]],
-  ['body_5fheaders_42',['body_headers',['../classRequest.html#a2a478d220a0ca8aac349f78d88b14622',1,'Request']]],
-  ['brew_43',['brew',['../classPot.html#abc89910fa55885596af91069cf3116d2',1,'Pot']]],
-  ['brewing_44',['brewing',['../classPot.html#a3e8a1869e576325553aeeee9249d2602',1,'Pot']]],
-  ['bufsize_45',['bufSize',['../classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c',1,'Socket']]]
+  ['main_54',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.cpp'],['../CupDescriptionTest_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;CupDescriptionTest.cpp'],['../PotBrewTest_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;PotBrewTest.cpp'],['../PotCupTest_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;PotCupTest.cpp']]],
+  ['main_2ecpp_55',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['maple_5fsyrup_56',['MAPLE_SYRUP',['../SweetenerType_8h.html#ac6c159e2689f23c032bc957867f8e773afdcf8c64274ab5590203eb1fe5aa506c',1,'SweetenerType.h']]],
+  ['method_57',['method',['../classRequest.html#ae81f481b58e82cad7808543f88290903',1,'Request']]],
+  ['milk_58',['milk',['../classCup.html#a318c3825af8ea18022bc0256ce2b78bd',1,'Cup']]],
+  ['milktype_59',['MilkType',['../MilkType_8h.html#aaf24889366699c67b3575f04cf6706b4',1,'MilkType.h']]],
+  ['milktype_2eh_60',['MilkType.h',['../MilkType_8h.html',1,'']]]
 ];
