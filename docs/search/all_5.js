@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['4_2e_2dcup_2d_5c_2d_2dadditions_2emd_6',['4.-Cup-\--Additions.md',['../4_8-Cup-_0c--Additions_8md.html',1,'']]]
+  ['6_2e_2dresults_20',['6.-Results',['../md_htcpcp_impl_wiki_6__Results.html',1,'']]],
+  ['6_2e_2dresults_2emd_21',['6.-Results.md',['../6_8-Results_8md.html',1,'']]]
 ];

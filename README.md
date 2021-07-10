@@ -1,13 +1,22 @@
 # htcpcp-impl
 
-## Usage
-use cmake o build.
+This project implements a client and server conforming to RFC2324 HTCPCP/1.0 (Hyper Text Coffee Pot Control Protocol).
 
-To start brewing coffee:
-` curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'start\r\n' localhost:8080`
+The RFC was originally intended to be an April Fools' joke, but Error 418 (I'm a teapot) has gained popularity as a 
+classic easter egg in developer circles, so we decided to implement a server and a client conforming to this protocol to 
+communicate. 
 
-To stop brewing coffee:
-` curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'stop\r\n' localhost:8080`
+## Building and Usage
+1. Use cmake to build.
+1. `docker build --tag htcpcp .` to build the docker image
+1. `kubectl apply -f k8s.yml` to deploy to your kubernetes cluster
+1. Alternatively, run the built binary `htcpcp` locally with: `./htcpcp 8080 coffeepot`
+
+1. To start brewing coffee:
+   `curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'start\r\n' localhost:8080`
+
+   To stop brewing and get your coffee:
+   `curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'stop\r\n' localhost:8080`
 
 ## Contents
 1. [Introduction](https://github.com/pranavgade20/htcpcp-impl/wiki/1.-Introduction)

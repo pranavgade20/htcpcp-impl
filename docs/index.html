@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>htcpcp implementation: Main Page</title>
+<title>htcpcp implementation: htcpcp-impl</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,11 +60,53 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">htcpcp implementation Documentation</div>  </div>
+<div class="title">htcpcp-impl </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Building and Usage</h1>
+<ol type="1">
+<li>Use cmake to build.</li>
+</ol>
+<ol type="1">
+<li><code>docker build --tag htcpcp .</code> to build the docker image</li>
+</ol>
+<ol type="1">
+<li><code>kubectl apply -f k8s.yml</code> to deploy to your kubernetes cluster</li>
+</ol>
+<ol type="1">
+<li>Alternatively, run the built binary <code>htcpcp</code> locally with: <code>./htcpcp 8080 coffeepot</code></li>
+</ol>
+<ol type="1">
+<li><p class="startli">To start brewing coffee: &lsquo;curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'start\r<br  />
+&rsquo; localhost:8080`</p>
+<p class="startli">To stop brewing coffee: &lsquo;curl -i -X POST -H "Accept-Additions: milk-type=Cream; syrup-type=Almond; alcohol-type=Whisky; milk-type=Skim;" --data $'stop\r<br  />
+&rsquo; localhost:8080`</p>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Contents</h1>
+<ol type="1">
+<li>Introduction</li>
+<li>Goal</li>
+<li>Tech-Stack/Tooling</li>
+<li>Project Structure<ul>
+<li><a class="el" href="classPot.html">Pot</a></li>
+<li>Derived Pots</li>
+<li>Cup/Additions</li>
+<li>Request/Response</li>
+<li>Networking</li>
+<li>Docker/k8s</li>
+</ul>
+</li>
+<li>Processing</li>
+<li>Results</li>
+<li>Future Scope of the Project </li>
+</ol>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

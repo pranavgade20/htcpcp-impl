@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>htcpcp implementation: Requirement:-Deploying-Multiple-Instances-of-the-Server</title>
+<title>htcpcp implementation: 4.1-Pot</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,14 +62,15 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Requirement:-Deploying-Multiple-Instances-of-the-Server </div>  </div>
+<div class="title">4.1-<a class="el" href="classPot.html">Pot</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>After the webserver is written, we need to host it in some way. We decided to use kubernetes for two reasons:</p><ol type="1">
-<li>Its declarative interface makes scaling, adding, and removing instances very easy. This especially makes sense in this case, as we might want to add, remove, or replace pots depending on dynamic requirements.</li>
-<li>Nginx ingress controller manages routing and security very well. So, we do not have to worry about malformed requests, overloading, and path verification.</li>
-</ol>
-<p>While satisfying this requirement, we also created a docker container. To keep it's size down, we used the <code>scratch</code> base image. Since this image contains practically nothing, not even standard libraries like libc, we are creating a static linked binary. </p>
+<div class="textblock"><p><b>The most important entity in this system is the pot, which receives commands and accordingly brews coffee as per the user's orders</b></p>
+<hr  />
+<p>It should accept requests to <code>start</code> brewing coffee, take up a cup of plain coffee and add to it milk, sweetener, syrup, spice and/or alcohol if possible (allowed in coffee pot but not in tea pot) and as requested by the client, else signal inability of the pot to brew coffee, and keep brewing the cup of coffee until receipt of command to <code>stop</code> brewing, and then remove the ready cup of coffee from itself.</p>
+<p>A state variable <code>brewing</code> keeps track of if the <a class="el" href="classPot.html">Pot</a> server is currently occupied in brewing a cup of coffee, and accordingly responds to <code>start</code> / <code>stop</code> requests. If the request method header is anything other than <code>POST</code> or <code>BREW</code> it responds with the appropriate error. The <a class="el" href="classPot.html">Pot</a> class defines a <code>brew</code> method that takes in a <code>request</code> object and returns the appropriate <code>response</code> object.</p>
+<p>If not yet <code>brewing</code>, on receiving the <code>start</code> command, the pot instantiates a <code><a class="el" href="classCup.html">Cup</a></code> object, switches to <code>brewing</code> state, and adds all the requested additions to it one by one. If all the additions are successful, it responds appropriately saying that the coffee is being brewed. If <code>brewing</code>, on receiving the <code>stop</code> command, switches of the brewing state, detaches the cup, gets a suitable description of this brewed cup of coffee, and responds accordingly with the description as the response body.</p>
+<p><img src="https://github.com/pranavgade20/htcpcp-impl/blob/master/images/class_digram.svg" alt="class diagram" style="pointer-events: none;" class="inline"/> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

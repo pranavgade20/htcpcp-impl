@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['alcoholtype_2eh_166',['AlcoholType.h',['../AlcoholType_8h.html',1,'']]]
+  ['7_2e_2dfuture_2dscope_2dof_2dthe_2dproject_2emd_177',['7.-Future-Scope-of-the-project.md',['../7_8-Future-Scope-of-the-project_8md.html',1,'']]]
 ];

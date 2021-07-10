@@ -1,20 +1,8 @@
 var searchData=
 [
-  ['cardamom_28',['CARDAMOM',['../SpiceType_8h.html#ab8561f29a82a7ea5a7d7264675a7c8bfa9dab85cdaec5ddc878b72bb4c1a8da52',1,'SpiceType.h']]],
-  ['chocolate_29',['CHOCOLATE',['../SyrupType_8h.html#a72d343e71ef0dc99b173e4c7a91172e2a901bf43de8ba73e9284d3866724d6096',1,'SyrupType.h']]],
-  ['cinnamon_30',['CINNAMON',['../SpiceType_8h.html#ab8561f29a82a7ea5a7d7264675a7c8bfadf05d16ec3532e35dddbeaad2ece8e3a',1,'SpiceType.h']]],
-  ['close_31',['close',['../classSocket.html#a75ee749264ccbcfc4dfbf5442e55dcb8',1,'Socket']]],
-  ['clove_32',['CLOVE',['../SpiceType_8h.html#ab8561f29a82a7ea5a7d7264675a7c8bfa129bffa64e390379ee22c6850730886b',1,'SpiceType.h']]],
-  ['coffeepot_33',['CoffeePot',['../classCoffeePot.html',1,'CoffeePot'],['../classCoffeePot.html#a2f3770ae2ccaa02df7a11cbd69c07602',1,'CoffeePot::CoffeePot()']]],
-  ['coffeepot_2ecpp_34',['CoffeePot.cpp',['../CoffeePot_8cpp.html',1,'']]],
-  ['coffeepot_2ecpp_2eo_2ed_35',['CoffeePot.cpp.o.d',['../CoffeePot_8cpp_8o_8d.html',1,'']]],
-  ['coffeepot_2eh_36',['CoffeePot.h',['../CoffeePot_8h.html',1,'']]],
-  ['cream_37',['CREAM',['../MilkType_8h.html#aaf24889366699c67b3575f04cf6706b4a5a98abb5284acd3a889b7d47be02f8a0',1,'MilkType.h']]],
-  ['cup_38',['Cup',['../classCup.html#a21cd09725ccc3a271f4532274c4594d4',1,'Cup']]],
-  ['cup_39',['cup',['../classPot.html#afcc6d1f83f16defb95ddc16731044bf8',1,'Pot']]],
-  ['cup_40',['Cup',['../classCup.html',1,'']]],
-  ['cup_2ecpp_41',['Cup.cpp',['../Cup_8cpp.html',1,'']]],
-  ['cup_2ecpp_2eo_2ed_42',['Cup.cpp.o.d',['../Cup_8cpp_8o_8d.html',1,'']]],
-  ['cup_2eh_43',['Cup.h',['../Cup_8h.html',1,'']]],
-  ['cupdescriptiontest_2ecpp_44',['CupDescriptionTest.cpp',['../CupDescriptionTest_8cpp.html',1,'']]]
+  ['body_41',['body',['../classRequest.html#ac1fb9c057c617b04af48798c3843b68a',1,'Request::body()'],['../classResponse.html#a2e0cdf7ac02fc84d48ab06b6ea02a60e',1,'Response::body()']]],
+  ['body_5fheaders_42',['body_headers',['../classRequest.html#a2a478d220a0ca8aac349f78d88b14622',1,'Request']]],
+  ['brew_43',['brew',['../classPot.html#abc89910fa55885596af91069cf3116d2',1,'Pot']]],
+  ['brewing_44',['brewing',['../classPot.html#a3e8a1869e576325553aeeee9249d2602',1,'Pot']]],
+  ['bufsize_45',['bufSize',['../classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c',1,'Socket']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>htcpcp implementation: Requirements:</title>
+<title>htcpcp implementation: 6.-Results</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,37 +62,21 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Requirements: </div>  </div>
+<div class="title">6.-Results </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><ul>
-<li>Accept a response code and get a response string accordingly.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md24"></a>
-How Response satisfies the Requirements:</h1>
-<ul>
-<li>On creating a new <a class="el" href="classResponse.html">Response</a> object, either of the two constructors are called depending on the parameters.</li>
-<li>Inside the constructor, <code>getResponseString()</code> is called to set the response string.</li>
-<li>Finally, we send the <a class="el" href="classResponse.html">Response</a> using our <code>sendResponse()</code> function, which is then used in our main file.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md25"></a>
-Class Fields:</h1>
-<h2><a class="anchor" id="autotoc_md26"></a>
-Private:</h2>
-<ul>
-<li><code>response_code</code></li>
-<li><code>response_code_string</code> - a string variable associated with the response code</li>
-<li><code>headers</code> - a map variable</li>
-<li><code>body</code></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md27"></a>
-Public:</h2>
-<ul>
-<li>Two Constructors - One that takes the <code>response_code</code> as a parameter and the other which takes <code>response_code</code> and the <code>body</code> as the the parameters.</li>
-<li><code>getResponseString()</code> - returns a response string associated with the code. For instance, "I'm a teapot" for 418.</li>
-<li><code>addHeader()</code></li>
-<li><code>sendResponse()</code> - prints the <a class="el" href="classResponse.html">Response</a> </li>
-</ul>
+<div class="textblock"><p><b>Sending requests to coffee pot</b></p>
+<hr  />
+<p><img src="https://github.com/pranavgade20/htcpcp-impl/blob/master/images/CoffeePot1.png" alt="" class="inline"/></p>
+<p><b>Coffee pot server-side logs</b></p>
+<hr  />
+<p><img src="https://github.com/pranavgade20/htcpcp-impl/blob/master/images/CoffeePot2.png" alt="" class="inline"/></p>
+<p><b>Sending requests to tea pot</b></p>
+<hr  />
+<p><img src="https://github.com/pranavgade20/htcpcp-impl/blob/master/images/TeaPot1.png" alt="" class="inline"/></p>
+<p><b>Tea pot server-side logs</b></p>
+<hr  />
+<p><img src="https://github.com/pranavgade20/htcpcp-impl/blob/master/images/TeaPot2.png" alt="" class="inline"/> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

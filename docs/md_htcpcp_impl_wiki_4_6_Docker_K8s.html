@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>htcpcp implementation: Requirement:-A-Web-Server</title>
+<title>htcpcp implementation: 4.6-Docker-K8s</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,10 +62,14 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Requirement:-A-Web-Server </div>  </div>
+<div class="title">4.6-Docker-K8s </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Because the protocol describes a web server, we developed a simple interface to underlying UNIX sockets. Inspired by Java networking, I have wrapped the setup and listen() calls with a <a class="el" href="classServerSocket.html">ServerSocket</a> class. This class allows you to listen for incoming connections, and returns a <a class="el" href="classSocket.html">Socket</a> object when a connection is received. This <a class="el" href="classSocket.html">Socket</a> object extends istream and ostream, and is a wrapper around the underlying read and write calls. It is especially important for buffering reading and writing to the socket. </p>
+<div class="textblock"><p>After the webserver is written, we need to host it in some way. We decided to use kubernetes for two reasons:</p><ol type="1">
+<li>Its declarative interface makes scaling, adding, and removing instances very easy. This especially makes sense in this case, as we might want to add, remove, or replace pots depending on dynamic requirements.</li>
+<li>NGINX ingress controller manages routing and security very well. So, we do not have to worry about malformed requests, overloading, and path verification.</li>
+</ol>
+<p>While satisfying this requirement, we also created a docker container. To keep it's size down, we used the <code>scratch</code> base image. Since this image contains practically nothing, not even standard libraries like libc, we are creating a static linked binary. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

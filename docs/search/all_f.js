@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['kahlua_67',['KAHLUA',['../AlcoholType_8h.html#a6f4e02002d911348518c88518e8b1ee2a26d5a158310c25aa37a6c9ae12f6dec7',1,'AlcoholType.h']]]
+  ['inbuf_5f_81',['inBuf_',['../classSocket.html#a4a58b2ca2d0c364ddd239d5ad1660f6d',1,'Socket']]],
+  ['isbrewing_82',['isBrewing',['../classPot.html#a2954ab88c3b761b54b2711c7c94814f8',1,'Pot']]]
 ];

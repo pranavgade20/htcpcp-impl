@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>htcpcp implementation: The 2 most important types of pots to be implemented are a coffee pot and a tea pot</title>
+<title>htcpcp implementation: 4.4-Request\Response</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,38 +62,19 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">The 2 most important types of pots to be implemented are a coffee pot and a tea pot </div>  </div>
+<div class="title">4.4-<a class="el" href="classRequest.html">Request</a>\Response </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md10"></a>
-Coffee Pot:</h1>
-<h2><a class="anchor" id="autotoc_md11"></a>
-Requirements:</h2>
-<ul>
-<li>Accept requests to start brewing coffee</li>
-<li>Take up a cup of plain coffee and add to it milk, sweetener, syrup, spice, alcohol as requested by the client</li>
-<li>Keep brewing the cup of coffee until receipt of command to stop brewing, and then remove the ready cup of coffee from itself.</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md12"></a>
-How Coffee Pot Satisfies the Requirements:</h2>
-<ul>
-<li>The <code><a class="el" href="classCoffeePot.html">CoffeePot</a></code> class extends the <code><a class="el" href="classPot.html">Pot</a></code> class by inheriting it, hence provides the same functionality, and more</li>
-<li>Sets the server name to "Coffee Pot", according to which the brew method sets appropriate response headers (<code>Server: Coffee <a class="el" href="classPot.html">Pot</a></code>)</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md13"></a>
-Tea Pot:</h1>
-<h2><a class="anchor" id="autotoc_md14"></a>
-Requirements:</h2>
-<ul>
-<li>Respond to every POST or BREW method request with Error 418 I'm a Teapot (to signal that coffee can not be brewed by a tea pot)</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md15"></a>
-How Tea Pot Satisfies the Requirements:</h2>
-<ul>
-<li>The <code><a class="el" href="classTeaPot.html">TeaPot</a></code> class extends and overrides parts of the <code><a class="el" href="classPot.html">Pot</a></code> class by inheriting it, hence provides same functions (names) but different functionality</li>
-<li>Sets the server name to "Tea Pot", according to which the brew method sets appropriate response headers (<code>Server: Tea <a class="el" href="classPot.html">Pot</a></code>)</li>
-<li>Overrides all the <code>add[Addition]()</code> methods to disallow addition and instead throw an error with integer code 418. This error is caught in the brew method and accordingly a response object is returned </li>
-</ul>
+<div class="textblock"><ol type="1">
+<li><b><a class="el" href="classRequest.html">Request</a></b></li>
+</ol>
+<p>We start with listening for incoming requests and then pass them onto the request constructor. The request constructor will parse input from the socket and parse the text as per the HTTP <a class="el" href="classRequest.html">Request</a> <a href="https://datatracker.ietf.org/doc/html/rfc2616">RFC 2616</a>/HTCPCP <a href="https://datatracker.ietf.org/doc/html/rfc2324">RFC 2324</a>. This gives us the headers in a <code>header map</code>(Host, User, Accept, Accept-Language, Content-Type, and Accept-Additions) and additions in <code>additions map</code>(milk-type,syrup-type,alcohol-type,sweetener-type, and spice-type) and the body. All of these are stored as a state variable in the request object.</p>
+<hr  />
+<ol type="1">
+<li><b><a class="el" href="classResponse.html">Response</a></b></li>
+</ol>
+<p>It should accept a response_code integer and get a response string accordingly. Additionally, it will set headers and send them to the client using sockets.</p>
+<p>On creating a new <a class="el" href="classResponse.html">Response</a> object, either of the two constructors is called depending on the parameters. Inside the constructor, <code>getResponseString()</code> is called to set the response string. The <code>getResponseString()</code> function works in a manner such that it returns a <a class="el" href="classResponse.html">Response</a> string from the response code (For instance, "I'm a teapot" from error code 418). Finally, we send the <a class="el" href="classResponse.html">Response</a> using our <code>sendresponse()</code> function, which is then used in the main file. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

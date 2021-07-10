@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['serversocket_2ecpp_194',['ServerSocket.cpp',['../ServerSocket_8cpp.html',1,'']]],
-  ['serversocket_2ecpp_2eo_2ed_195',['ServerSocket.cpp.o.d',['../ServerSocket_8cpp_8o_8d.html',1,'']]],
-  ['serversocket_2eh_196',['ServerSocket.h',['../ServerSocket_8h.html',1,'']]],
-  ['socket_2ecpp_197',['Socket.cpp',['../Socket_8cpp.html',1,'']]],
-  ['socket_2ecpp_2eo_2ed_198',['Socket.cpp.o.d',['../Socket_8cpp_8o_8d.html',1,'']]],
-  ['socket_2eh_199',['Socket.h',['../Socket_8h.html',1,'']]],
-  ['spicetype_2eh_200',['SpiceType.h',['../SpiceType_8h.html',1,'']]],
-  ['sweetenertype_2eh_201',['SweetenerType.h',['../SweetenerType_8h.html',1,'']]],
-  ['syruptype_2eh_202',['SyrupType.h',['../SyrupType_8h.html',1,'']]]
+  ['readme_2emd_197',['README.md',['../README_8md.html',1,'']]],
+  ['request_2ecpp_198',['Request.cpp',['../Request_8cpp.html',1,'']]],
+  ['request_2ecpp_2eo_2ed_199',['Request.cpp.o.d',['../Request_8cpp_8o_8d.html',1,'']]],
+  ['request_2eh_200',['Request.h',['../Request_8h.html',1,'']]],
+  ['response_2ecpp_201',['Response.cpp',['../Response_8cpp.html',1,'']]],
+  ['response_2ecpp_2eo_2ed_202',['Response.cpp.o.d',['../Response_8cpp_8o_8d.html',1,'']]],
+  ['response_2eh_203',['Response.h',['../Response_8h.html',1,'']]]
 ];

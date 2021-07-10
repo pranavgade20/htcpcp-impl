@@ -2616,3 +2616,5 @@ GENERATE_LEGEND        = YES
 # The default value is: YES.
 
 DOT_CLEANUP            = YES
+
+USE_MDFILE_AS_MAINPAGE = README.md

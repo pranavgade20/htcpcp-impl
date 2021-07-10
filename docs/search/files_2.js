@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['2_2e_2dpot_2emd_162',['2.-Pot.md',['../2_8-Pot_8md.html',1,'']]]
+  ['3_2e_2dtech_2dstack_2d_5c_2dtooling_2emd_168',['3.-Tech-Stack-\-Tooling.md',['../3_8-Tech-Stack-_0c-Tooling_8md.html',1,'']]]
 ];
