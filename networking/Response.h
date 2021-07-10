@@ -34,19 +34,23 @@ public:
      * A constructor
      */
     Response(int response_code);
+
     /**
      * A constructor
      */
     Response(int response_code, std::string body);
+
     /**
      * @return a Response string
      */
     static std::string getResponseString(int code);
+
     void addHeader(std::string key, std::string value);
+
     /**
      * sends the Response with appropriate Response strings and header values
      */
-    void sendResponse(Socket* socket);
+    void sendResponse(Socket *socket);
 };
 
 #endif // HTCPCP_RESPONSE_H

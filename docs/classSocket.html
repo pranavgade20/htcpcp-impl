@@ -128,6 +128,12 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>constructs a <a class="el" href="classSocket.html">Socket</a> object that uses fd for read/write calls </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>the file descriptor this socket is wrapped around </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -145,6 +151,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>destructor to flush buffers and close file descriptor </p>
 
 </div>
 </div>
@@ -163,6 +170,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>closes the connection </p>
 
 </div>
 </div>
@@ -189,6 +197,13 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>writes a byte to the socket. we are required to override this as we are inheriting from ostream </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the byte to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EOF if writing is not possible </dd></dl>
 
 </div>
 </div>
@@ -214,6 +229,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>flush the output buffer </p><dl class="section return"><dt>Returns</dt><dd>-1 if we can't write to the socket, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -239,6 +255,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>read a byte from the socket. we are required to override this as we are inheriting from istream </p><dl class="section return"><dt>Returns</dt><dd>one byte read from the socket, EOF otherwise </dd></dl>
 
 </div>
 </div>
@@ -262,6 +279,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The size of our buffers </p>
 
 </div>
 </div>
@@ -284,6 +302,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>file descriptor pointing to our socket </p>
 
 </div>
 </div>
@@ -306,6 +325,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Array to buffer input </p>
 
 </div>
 </div>
@@ -328,6 +348,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Array to buffer output </p>
 
 </div>
 </div>

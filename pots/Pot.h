@@ -42,48 +42,57 @@ private:
     /**
      * pointer to a cup in brewing state
      */
-    Cup *cup;    
-protected:    
+    Cup *cup;
+protected:
     /**
      * adds the requested milk to the cup while brewing
      */
     virtual void addMilk(int type);
+
     /**
      * adds the requested sweetener to the cup while brewing
      */
     virtual void addSweetener(int type);
+
     /**
      * adds the requested syrup to the cup while brewing
      */
     virtual void addSyrup(int type);
+
     /**
      * adds the requested spice to the cup while brewing
      */
     virtual void addSpice(int type);
+
     /**
      * adds the requested alcohol to the cup while brewing
      */
     virtual void addAlcohol(int type);
+
 public:
     /**
      * a constructor
      */
     Pot() : brewing(false), cup(nullptr) {};
+
     /**
      * responds to BREW and POST requests, else sends a response with appropriate error
      */
     Response *brew(Request *req);
+
     /**
      * getter for current server name
      */
     virtual std::string getServerName();
+
     /**
      * removes and returns the cup pointed to by this pot
-     */    
+     */
     Cup *removeCup();
+
     /**
      * getter for brewing
-     */    
+     */
     bool isBrewing();
 };
 

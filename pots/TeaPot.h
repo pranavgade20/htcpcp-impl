@@ -9,24 +9,34 @@ protected:
      * throws error 418
      */
     void addMilk(int type) override;
+
     /**
      * throws error 418
      */
     void addSweetener(int type) override;
+
     /**
      * throws error 418
      */
     void addSyrup(int type) override;
+
     /**
      * throws error 418
      */
     void addSpice(int type) override;
+
     /**
      * throws error 418
      */
     void addAlcohol(int type) override;
+
 public:
     TeaPot() {};
+
+    /**
+     * get the name of this pot
+     * @return this pot's name
+     */
     virtual std::string getServerName();
 };
 

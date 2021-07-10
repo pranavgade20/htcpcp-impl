@@ -5,7 +5,6 @@ set(NETWORKING_SRC
         ServerSocket.h
         Socket.cpp
         Socket.h
-        HTTPRequestType.h
         Request.cpp
         Request.h
         Response.cpp

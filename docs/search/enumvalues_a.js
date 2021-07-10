@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['skim_284',['SKIM',['../MilkType_8h.html#aaf24889366699c67b3575f04cf6706b4a6f295ce8fd71450ae25ec8e159cd8f71',1,'MilkType.h']]],
-  ['stevia_285',['STEVIA',['../SweetenerType_8h.html#ac6c159e2689f23c032bc957867f8e773a5453eb870d05a17aabd84f036054027b',1,'SweetenerType.h']]],
-  ['sugar_286',['SUGAR',['../SweetenerType_8h.html#ac6c159e2689f23c032bc957867f8e773a1ba0409f45005aa719f205202fed8c49',1,'SweetenerType.h']]]
+  ['whisky_278',['WHISKY',['../AlcoholType_8h.html#a6f4e02002d911348518c88518e8b1ee2aa07a74a17196b07ac451b48592f43691',1,'AlcoholType.h']]],
+  ['whole_5fmilk_279',['WHOLE_MILK',['../MilkType_8h.html#aaf24889366699c67b3575f04cf6706b4aacf4662315f8b53c83192f06e8de3a24',1,'MilkType.h']]]
 ];

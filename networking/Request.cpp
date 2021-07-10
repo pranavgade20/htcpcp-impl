@@ -60,11 +60,11 @@ Request::Request(Socket *socket) {
     size_t ptr = 0;
     std::string delimiter = "; ";
     if (headers.count("Accept-Additions")) {
-        addition_map["milk-type"] = (int)MilkType::NONE;
-        addition_map["sweetener-type"] = (int)SweetenerType::NONE;
-        addition_map["syrup-type"] = (int)SyrupType::NONE;
-        addition_map["spice-type"] = (int)SpiceType::NONE;
-        addition_map["alcohol-type"] = (int)AlcoholType::NONE;
+        addition_map["milk-type"] = (int) MilkType::NONE;
+        addition_map["sweetener-type"] = (int) SweetenerType::NONE;
+        addition_map["syrup-type"] = (int) SyrupType::NONE;
+        addition_map["spice-type"] = (int) SpiceType::NONE;
+        addition_map["alcohol-type"] = (int) AlcoholType::NONE;
 
         std::string additions = headers["Accept-Additions"];
         std::string addition;
@@ -88,7 +88,7 @@ Request::Request(Socket *socket) {
             return;
         }
         std::string addition_type = addition.substr(0, split);
-        std::string addition_content = addition.substr(split + 1, addition.length()-split-2);
+        std::string addition_content = addition.substr(split + 1, addition.length() - split - 2);
         addition_map[addition_type] = getAddition(addition_type, addition_content);
     }
 

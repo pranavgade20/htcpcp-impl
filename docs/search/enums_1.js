@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['httprequesttype_258',['HTTPRequestType',['../HTTPRequestType_8h.html#a78431899018db70ec4be51aaeba8bdf7',1,'HTTPRequestType.h']]]
+  ['milktype_252',['MilkType',['../MilkType_8h.html#aaf24889366699c67b3575f04cf6706b4',1,'MilkType.h']]]
 ];

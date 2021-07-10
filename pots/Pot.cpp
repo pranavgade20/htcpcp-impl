@@ -29,7 +29,7 @@
 
 Response *Pot::brew(Request *req) {
     if (req->getMethod() != "POST" && req->getMethod() != "BREW") {
-        Response* ret =  new Response(405);
+        Response *ret = new Response(405);
         ret->addHeader("Server", this->getServerName());
         return ret;
     }
@@ -44,12 +44,12 @@ Response *Pot::brew(Request *req) {
             addSyrup(req->getAdditions()["syrup-type"]);
             addSpice(req->getAdditions()["spice-type"]);
             addAlcohol(req->getAdditions()["alcohol-type"]);
-            Response* ret =  new Response(200, "Started brewing your coffee...");
+            Response *ret = new Response(200, "Started brewing your coffee...");
             ret->addHeader("Server", this->getServerName());
             return ret;
         }
         catch (int err) {
-            Response* ret =  new Response(err);
+            Response *ret = new Response(err);
             ret->addHeader("Server", this->getServerName());
             return ret;
         }
@@ -58,17 +58,17 @@ Response *Pot::brew(Request *req) {
         Cup *readyCup = removeCup();
         if (readyCup->getDescription() == "") {
             std::string description = "Your Coffee is ready!";
-            Response* ret =  new Response(200, description);
+            Response *ret = new Response(200, description);
             ret->addHeader("Server", this->getServerName());
             return ret;
         } else {
             std::string description = "Your Coffee with " + readyCup->getDescription() + " is ready!";
-            Response* ret =  new Response(200, description);
+            Response *ret = new Response(200, description);
             ret->addHeader("Server", this->getServerName());
             return ret;
         }
     } else {
-        Response* ret =  new Response(400);
+        Response *ret = new Response(400);
         ret->addHeader("Server", this->getServerName());
         return ret;
     }

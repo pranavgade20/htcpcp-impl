@@ -18,7 +18,7 @@
 #ifndef HTCPCP_CUP_H
 #define HTCPCP_CUP_H
 
-#include <string> 
+#include <string>
 #include <vector>
 
 #include "additions/AlcoholType.h"
@@ -34,41 +34,50 @@ private:
     SyrupType syrup;
     SpiceType spice;
     AlcoholType alcohol;
+
     /**
      * @return array of strings of additions in this cup
      */
-    std::vector<std::string> getAdditionsArray();
+    std::vector <std::string> getAdditionsArray();
+
 public:
     /**
      * basic constructor
      */
     Cup();
+
     /**
      * setter for milk
      */
     void setMilk(MilkType milk);
+
     /**
      * setter for sweetener
      */
     void setSweetener(SweetenerType sweetener);
+
     /**
      * setter for syrup
      */
     void setSyrup(SyrupType syrup);
+
     /**
      * setter for spice
      */
     void setSpice(SpiceType spice);
+
     /**
      * setter for alcohol
      */
     void setAlcohol(AlcoholType alcohol);
+
     /**
      * get addition name
      * @param addition code of addition
      * @return string of addition
      */
     static std::string getAdditionName(int addition);
+
     /**
      * get description of cup
      */

@@ -97,38 +97,38 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classSocket.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSocket.html">Socket</a> : <span class="keyword">public</span> std::streambuf, <span class="keyword">public</span> std::ostream, <span class="keyword">public</span> std::istream {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">   29</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">bufSize</a> = 1024;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classSocket.html#ac7663ecf3b8357b48e2ba0499bd4858f">   30</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classSocket.html#ac7663ecf3b8357b48e2ba0499bd4858f">outBuf_</a>[<a class="code" href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">bufSize</a>];</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classSocket.html#a4a58b2ca2d0c364ddd239d5ad1660f6d">   31</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classSocket.html#a4a58b2ca2d0c364ddd239d5ad1660f6d">inBuf_</a>[<a class="code" href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">bufSize</a> + 16 - <span class="keyword">sizeof</span>(int)];</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classSocket.html#a226d5aa7dfb572eed47ed8e003d58e70">   32</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSocket.html#a226d5aa7dfb572eed47ed8e003d58e70">fd_</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classSocket.html#a5390f8264f7872c9a8e695e01184e929">Socket</a>(<span class="keywordtype">int</span> fd);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classSocket.html#aeac4eb6379a543d38ed88977d3b6630a">~Socket</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSocket.html#a75ee749264ccbcfc4dfbf5442e55dcb8">close</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSocket.html#a8cd710db8defa8577b6f2117a1d5a8a4">overflow</a>(<span class="keywordtype">int</span> c);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSocket.html#a5c84e49e154cf132e7b9036d50376839">underflow</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSocket.html#af8e8d0957b772f0425c1c62f3b5cb471">sync</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//HTCPCP_SOCKET_H</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">   32</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">bufSize</a> = 1024;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classSocket.html#ac7663ecf3b8357b48e2ba0499bd4858f">   36</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classSocket.html#ac7663ecf3b8357b48e2ba0499bd4858f">outBuf_</a>[<a class="code" href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">bufSize</a>];</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classSocket.html#a4a58b2ca2d0c364ddd239d5ad1660f6d">   40</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classSocket.html#a4a58b2ca2d0c364ddd239d5ad1660f6d">inBuf_</a>[<a class="code" href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">bufSize</a> + 16 - <span class="keyword">sizeof</span>(int)];</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classSocket.html#a226d5aa7dfb572eed47ed8e003d58e70">   44</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSocket.html#a226d5aa7dfb572eed47ed8e003d58e70">fd_</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classSocket.html#a5390f8264f7872c9a8e695e01184e929">Socket</a>(<span class="keywordtype">int</span> fd);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classSocket.html#aeac4eb6379a543d38ed88977d3b6630a">~Socket</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSocket.html#a75ee749264ccbcfc4dfbf5442e55dcb8">close</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSocket.html#a8cd710db8defa8577b6f2117a1d5a8a4">overflow</a>(<span class="keywordtype">int</span> c);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSocket.html#a5c84e49e154cf132e7b9036d50376839">underflow</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSocket.html#af8e8d0957b772f0425c1c62f3b5cb471">sync</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//HTCPCP_SOCKET_H</span></div>
 <div class="ttc" id="aclassSocket_html"><div class="ttname"><a href="classSocket.html">Socket</a></div><div class="ttdef"><b>Definition:</b> Socket.h:27</div></div>
-<div class="ttc" id="aclassSocket_html_a226d5aa7dfb572eed47ed8e003d58e70"><div class="ttname"><a href="classSocket.html#a226d5aa7dfb572eed47ed8e003d58e70">Socket::fd_</a></div><div class="ttdeci">int fd_</div><div class="ttdef"><b>Definition:</b> Socket.h:32</div></div>
-<div class="ttc" id="aclassSocket_html_a4a58b2ca2d0c364ddd239d5ad1660f6d"><div class="ttname"><a href="classSocket.html#a4a58b2ca2d0c364ddd239d5ad1660f6d">Socket::inBuf_</a></div><div class="ttdeci">char inBuf_[bufSize+16 - sizeof(int)]</div><div class="ttdef"><b>Definition:</b> Socket.h:31</div></div>
+<div class="ttc" id="aclassSocket_html_a226d5aa7dfb572eed47ed8e003d58e70"><div class="ttname"><a href="classSocket.html#a226d5aa7dfb572eed47ed8e003d58e70">Socket::fd_</a></div><div class="ttdeci">int fd_</div><div class="ttdef"><b>Definition:</b> Socket.h:44</div></div>
+<div class="ttc" id="aclassSocket_html_a4a58b2ca2d0c364ddd239d5ad1660f6d"><div class="ttname"><a href="classSocket.html#a4a58b2ca2d0c364ddd239d5ad1660f6d">Socket::inBuf_</a></div><div class="ttdeci">char inBuf_[bufSize+16 - sizeof(int)]</div><div class="ttdef"><b>Definition:</b> Socket.h:40</div></div>
 <div class="ttc" id="aclassSocket_html_a5390f8264f7872c9a8e695e01184e929"><div class="ttname"><a href="classSocket.html#a5390f8264f7872c9a8e695e01184e929">Socket::Socket</a></div><div class="ttdeci">Socket(int fd)</div><div class="ttdef"><b>Definition:</b> Socket.cpp:20</div></div>
 <div class="ttc" id="aclassSocket_html_a5c84e49e154cf132e7b9036d50376839"><div class="ttname"><a href="classSocket.html#a5c84e49e154cf132e7b9036d50376839">Socket::underflow</a></div><div class="ttdeci">int underflow()</div><div class="ttdef"><b>Definition:</b> Socket.cpp:60</div></div>
 <div class="ttc" id="aclassSocket_html_a75ee749264ccbcfc4dfbf5442e55dcb8"><div class="ttname"><a href="classSocket.html#a75ee749264ccbcfc4dfbf5442e55dcb8">Socket::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition:</b> Socket.cpp:30</div></div>
 <div class="ttc" id="aclassSocket_html_a8cd710db8defa8577b6f2117a1d5a8a4"><div class="ttname"><a href="classSocket.html#a8cd710db8defa8577b6f2117a1d5a8a4">Socket::overflow</a></div><div class="ttdeci">int overflow(int c)</div><div class="ttdef"><b>Definition:</b> Socket.cpp:38</div></div>
-<div class="ttc" id="aclassSocket_html_ac7663ecf3b8357b48e2ba0499bd4858f"><div class="ttname"><a href="classSocket.html#ac7663ecf3b8357b48e2ba0499bd4858f">Socket::outBuf_</a></div><div class="ttdeci">char outBuf_[bufSize]</div><div class="ttdef"><b>Definition:</b> Socket.h:30</div></div>
+<div class="ttc" id="aclassSocket_html_ac7663ecf3b8357b48e2ba0499bd4858f"><div class="ttname"><a href="classSocket.html#ac7663ecf3b8357b48e2ba0499bd4858f">Socket::outBuf_</a></div><div class="ttdeci">char outBuf_[bufSize]</div><div class="ttdef"><b>Definition:</b> Socket.h:36</div></div>
 <div class="ttc" id="aclassSocket_html_aeac4eb6379a543d38ed88977d3b6630a"><div class="ttname"><a href="classSocket.html#aeac4eb6379a543d38ed88977d3b6630a">Socket::~Socket</a></div><div class="ttdeci">~Socket()</div><div class="ttdef"><b>Definition:</b> Socket.cpp:26</div></div>
 <div class="ttc" id="aclassSocket_html_af8e8d0957b772f0425c1c62f3b5cb471"><div class="ttname"><a href="classSocket.html#af8e8d0957b772f0425c1c62f3b5cb471">Socket::sync</a></div><div class="ttdeci">int sync()</div><div class="ttdef"><b>Definition:</b> Socket.cpp:46</div></div>
-<div class="ttc" id="aclassSocket_html_aff9fdc1362dac1922f33ac4c9ae88b8c"><div class="ttname"><a href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">Socket::bufSize</a></div><div class="ttdeci">static const int bufSize</div><div class="ttdef"><b>Definition:</b> Socket.h:29</div></div>
+<div class="ttc" id="aclassSocket_html_aff9fdc1362dac1922f33ac4c9ae88b8c"><div class="ttname"><a href="classSocket.html#aff9fdc1362dac1922f33ac4c9ae88b8c">Socket::bufSize</a></div><div class="ttdeci">static const int bufSize</div><div class="ttdef"><b>Definition:</b> Socket.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

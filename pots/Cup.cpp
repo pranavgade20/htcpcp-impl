@@ -35,76 +35,76 @@ Cup::Cup() {
 
 void Cup::setMilk(MilkType milk) {
     this->milk = milk;
-    std::cout << "Milk set to " << getAdditionName((int)milk) << std::endl;
+    std::cout << "Milk set to " << getAdditionName((int) milk) << std::endl;
 };
 
 void Cup::setSweetener(SweetenerType sweetener) {
     this->sweetener = sweetener;
-    std::cout << "Sweetener set to " << getAdditionName((int)sweetener) << std::endl;
+    std::cout << "Sweetener set to " << getAdditionName((int) sweetener) << std::endl;
 };
 
 void Cup::setSyrup(SyrupType syrup) {
     this->syrup = syrup;
-    std::cout << "Syrup set to " << getAdditionName((int)syrup) << std::endl;
+    std::cout << "Syrup set to " << getAdditionName((int) syrup) << std::endl;
 };
 
 void Cup::setSpice(SpiceType spice) {
     this->spice = spice;
-    std::cout << "Spice set to " << getAdditionName((int)spice) << std::endl;
+    std::cout << "Spice set to " << getAdditionName((int) spice) << std::endl;
 };
 
 void Cup::setAlcohol(AlcoholType alcohol) {
     this->alcohol = alcohol;
-    std::cout << "Alcohol set to " << getAdditionName((int)alcohol) << std::endl;
+    std::cout << "Alcohol set to " << getAdditionName((int) alcohol) << std::endl;
 };
 
 std::string Cup::getAdditionName(int addition) {
     switch (addition) {
-        case ((int)MilkType::CREAM):
+        case ((int) MilkType::CREAM):
             return "Cream";
-        case ((int)MilkType::HALF_AND_HALF):
+        case ((int) MilkType::HALF_AND_HALF):
             return "Half and Half";
-        case ((int)MilkType::WHOLE_MILK):
+        case ((int) MilkType::WHOLE_MILK):
             return "Whole Milk";
-        case ((int)MilkType::PART_SKIM):
+        case ((int) MilkType::PART_SKIM):
             return "Part Skim Milk";
-        case ((int)MilkType::SKIM):
+        case ((int) MilkType::SKIM):
             return "Skim Milk";
-        case ((int)MilkType::NON_DAIRY):
+        case ((int) MilkType::NON_DAIRY):
             return "Non-Dairy Milk";
-        case ((int)SpiceType::CINNAMON):
+        case ((int) SpiceType::CINNAMON):
             return "Cinnamon";
-        case ((int)SpiceType::NUTMEG):
+        case ((int) SpiceType::NUTMEG):
             return "Nutmeg";
-        case ((int)SpiceType::CARDAMOM):
+        case ((int) SpiceType::CARDAMOM):
             return "Cardamom";
-        case ((int)SpiceType::CLOVE):
+        case ((int) SpiceType::CLOVE):
             return "Clove";
-        case ((int)SweetenerType::SUGAR):
+        case ((int) SweetenerType::SUGAR):
             return "Sugar";
-        case ((int)SweetenerType::STEVIA):
+        case ((int) SweetenerType::STEVIA):
             return "Stevia";
-        case ((int)SweetenerType::HONEY):
+        case ((int) SweetenerType::HONEY):
             return "Honey";
-        case ((int)SweetenerType::MAPLE_SYRUP):
+        case ((int) SweetenerType::MAPLE_SYRUP):
             return "Maple Syrup";
-        case ((int)SweetenerType::AGAVE):
+        case ((int) SweetenerType::AGAVE):
             return "Agave";
-        case ((int)SyrupType::VANILLA):
+        case ((int) SyrupType::VANILLA):
             return "Vanilla Syrup";
-        case ((int)SyrupType::ALMOND):
+        case ((int) SyrupType::ALMOND):
             return "Almond Syrup";
-        case ((int)SyrupType::RASPBERRY):
+        case ((int) SyrupType::RASPBERRY):
             return "Raspberry Syrup";
-        case ((int)SyrupType::CHOCOLATE):
+        case ((int) SyrupType::CHOCOLATE):
             return "Chocolate Syrup";
-        case ((int)AlcoholType::WHISKY):
+        case ((int) AlcoholType::WHISKY):
             return "Whisky";
-        case ((int)AlcoholType::RUM):
+        case ((int) AlcoholType::RUM):
             return "Rum";
-        case ((int)AlcoholType::KAHLUA):
+        case ((int) AlcoholType::KAHLUA):
             return "Kahlua";
-        case ((int)AlcoholType::AQUAVIT):
+        case ((int) AlcoholType::AQUAVIT):
             return "Aquavit";
         default:
             return "None";
@@ -113,16 +113,16 @@ std::string Cup::getAdditionName(int addition) {
 
 std::vector <std::string> Cup::getAdditionsArray() {
     std::vector <std::string> ret;
-    if (this->milk != MilkType::NONE) ret.push_back(getAdditionName((int)this->milk));
-    if (this->sweetener != SweetenerType::NONE) ret.push_back(getAdditionName((int)this->sweetener));
-    if (this->syrup != SyrupType::NONE) ret.push_back(getAdditionName((int)this->syrup));
-    if (this->spice != SpiceType::NONE) ret.push_back(getAdditionName((int)this->spice));
-    if (this->alcohol != AlcoholType::NONE) ret.push_back(getAdditionName((int)this->alcohol));
+    if (this->milk != MilkType::NONE) ret.push_back(getAdditionName((int) this->milk));
+    if (this->sweetener != SweetenerType::NONE) ret.push_back(getAdditionName((int) this->sweetener));
+    if (this->syrup != SyrupType::NONE) ret.push_back(getAdditionName((int) this->syrup));
+    if (this->spice != SpiceType::NONE) ret.push_back(getAdditionName((int) this->spice));
+    if (this->alcohol != AlcoholType::NONE) ret.push_back(getAdditionName((int) this->alcohol));
     return ret;
 }
 
 std::string Cup::getDescription() {
-    std::vector<std::string> additions = getAdditionsArray();
+    std::vector <std::string> additions = getAdditionsArray();
     std::string output = "";
 
     for (int i = 0; i < additions.size() - 2; ++i) {
@@ -130,12 +130,12 @@ std::string Cup::getDescription() {
     }
 
     if (additions.size() >= 2) {
-        output += additions[additions.size()-2] + ", and ";
+        output += additions[additions.size() - 2] + ", and ";
 
     }
 
     if (additions.size() >= 1) {
-        output += additions[additions.size()-1];
+        output += additions[additions.size() - 1];
 
     }
     return output;

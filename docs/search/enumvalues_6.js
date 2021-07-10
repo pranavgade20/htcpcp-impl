@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maple_5fsyrup_276',['MAPLE_SYRUP',['../SweetenerType_8h.html#ac6c159e2689f23c032bc957867f8e773afdcf8c64274ab5590203eb1fe5aa506c',1,'SweetenerType.h']]]
+  ['part_5fskim_271',['PART_SKIM',['../MilkType_8h.html#aaf24889366699c67b3575f04cf6706b4a0d9e07ee7b11e1e3e9aca3f29e96ee66',1,'MilkType.h']]]
 ];
