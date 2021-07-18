@@ -3,6 +3,8 @@ This project implements a client and server conforming to RFC2324 HTCPCP/1.0 (Hy
 
 The RFC was originally intended to be an April Fools' joke, but Error 418 (I'm a teapot) has gained popularity as a classic easter egg in developer circles, so we decided to implement a server and a client conforming to this protocol to communicate. 
 
+P.S.: This branch(`master`) has been updated after the submission deadline. To see our final submission, please see https://github.com/pranavgade20/htcpcp-impl/tree/frozen
+
 ## Documentation
 You can find detailed doxygen generated documentation here: [htcpcp-implementation-docs.netlify.app](https://htcpcp-implementation-docs.netlify.app/)
 
