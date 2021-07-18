@@ -30,6 +30,8 @@
 #include "pots/DecafPot.h"
 #include "pots/TeaPot.h"
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "EndlessLoop"
 /**
  * The entrypoint to our program. It takes in the port and pot type, ans starts a ServerSocket to
  * listen at the specified port. When a request is received, it uses the brew method of the appropriate
@@ -55,16 +57,16 @@ int main(int argc, char **argv) {
     auto gc = [=]{
         while (true) {
             std::cout << threads->size() << std::endl;
-            if (threads->size() == 0) std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            if (threads->empty()) std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             else {
                 std::thread* obj = threads->front();
-                std::cout << "trying to clean a thread!" << std::endl;
+                std::cout << "[GC] trying to clean a thread!" << std::endl;
                 threads->pop_front();
-                std::cout << "trying to join a thread!" << std::endl;
+                std::cout << "[GC] trying to join a thread!" << std::endl;
                 obj->join();
-                std::cout << "joined a thread!" << std::endl;
+                std::cout << "[GC] joined a thread!" << std::endl;
                 delete obj;
-                std::cout << "cleaned a thread!" << std::endl;
+                std::cout << "[GC] cleaned a thread!" << std::endl;
             }
         }
     };
@@ -89,3 +91,5 @@ int main(int argc, char **argv) {
 
     return 0;
 }
+
+#pragma clang diagnostic pop
