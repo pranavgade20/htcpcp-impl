@@ -18,6 +18,9 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <list>
+#include <thread>
+#include <chrono>
 #include "networking/ServerSocket.h"
 #include "networking/Socket.h"
 #include "networking/Request.h"
@@ -48,17 +51,41 @@ int main(int argc, char **argv) {
 
     std::cout << "listening as a " << argv[2] << " on port " << argv[1] << std::endl;
 
+    std::list<std::thread*>* threads = new std::list<std::thread*>;
+    auto gc = [=]{
+        while (true) {
+            std::cout << threads->size() << std::endl;
+            if (threads->size() == 0) std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            else {
+                std::thread* obj = threads->front();
+                std::cout << "trying to clean a thread!" << std::endl;
+                threads->pop_front();
+                std::cout << "trying to join a thread!" << std::endl;
+                obj->join();
+                std::cout << "joined a thread!" << std::endl;
+                delete obj;
+                std::cout << "cleaned a thread!" << std::endl;
+            }
+        }
+    };
+    std::thread garbage_collector(gc);
+
     while (true) {
         Socket *socket = serverSocket.accept();
-        Request *request = new Request(socket);
-        Response *response = pot->brew(request);
-        response->sendResponse(socket);
-        std::cout << "Response sent." << std::endl;
-        socket->close();
-        delete socket;
-        delete request;
-        delete response;
+        auto lambda = [=](Socket* socket) {
+            Request *request = new Request(socket);
+            Response *response = pot->brew(request);
+            response->sendResponse(socket);
+            std::cout << "Response sent." << std::endl;
+            socket->close();
+            delete socket;
+            delete request;
+            delete response;
+        };
+        threads->push_back(new std::thread(lambda, socket));
     }
+
+    garbage_collector.join();
 
     return 0;
 }
